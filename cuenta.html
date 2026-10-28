@@ -54,12 +54,13 @@
           <select id="pTipo">
             <option value="apartado">Apartar una casa en renta (depósito)</option>
             <option value="renta">Pagar mi renta mensual</option>
-            <option value="reserva">Reservar por noches (amueblados)</option>
+            <option value="reserva">Rentar por días (amueblados)</option>
+            <option value="anual">Pagar renta anual (por adelantado)</option>
             <option value="avaluo">Avalúo profesional</option>
             <option value="asesoria">Asesoría inmobiliaria / legal</option>
           </select>
           <select id="pProp"></select>
-          <input id="pNoches" type="number" min="1" max="60" placeholder="Número de noches" hidden>
+          <input id="pNoches" type="number" min="1" max="60" placeholder="Número de días" hidden>
           <div class="fila">
             <label><input type="radio" name="pas" value="mercadopago" checked> Mercado Pago <small>(tarjeta, OXXO, SPEI)</small></label>
             <label><input type="radio" name="pas" value="stripe"> Stripe <small>(tarjeta, OXXO)</small></label>

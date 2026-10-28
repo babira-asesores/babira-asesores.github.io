@@ -20,7 +20,7 @@ if (!f) {
     const t = $("#pTipo").value;
     const lista = P.filter(p => t === "apartado" ? p.operacion === "Renta" && p.estado === "Disponible"
       : t === "renta" ? p.operacion === "Renta" && p.precio
-      : t === "reserva" ? p.precio_noche : false);
+      : t === "reserva" ? p.precio_dia : t === "anual" ? p.precio_anual : false);
     $("#pProp").hidden = ["avaluo", "asesoria"].includes(t);
     $("#pProp").innerHTML = lista.map(p => `<option value="${p.id}">${p.id} · ${p.titulo}${p.precio ? " · $" + p.precio.toLocaleString("es-MX") : ""}</option>`).join("")
       || '<option value="">No hay propiedades para esta opción</option>';

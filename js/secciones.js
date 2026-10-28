@@ -47,7 +47,7 @@ if (modo === "departamentos") {
     <div class="foto ${p.fotos[0] ? "" : "sin"}" ${p.fotos[0] ? `style="background-image:url('${p.fotos[0]}')"` : ""} data-id="${p.id}">${p.fotos[0] ? "" : '<img src="img/logo-babira.png" alt="">'}
       <span class="tag Renta">${p.tipo === "Departamento" ? "DEPARTAMENTO" : "AMUEBLADA"}</span></div>
     <div class="body"><h3>${p.titulo}</h3><div class="zona">📍 ${[p.colonia, p.ciudad].filter(Boolean).join(", ")}</div>
-      <div class="precio">${p.precio_noche ? "$" + p.precio_noche.toLocaleString("es-MX") + " / noche · " : ""}${dinero(p.precio)}</div>
+      <div class="precio">${p.precio_dia ? "$" + p.precio_dia.toLocaleString("es-MX") + " / noche · " : ""}${dinero(p.precio)}</div>
       <div class="specs">${p.caracteristicas.slice(0, 4).map(s => `<span>${s}</span>`).join("")}</div>
       <div class="cbtn"><a class="w" href="https://wa.me/${WA}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">💬 WhatsApp</a>
         <a class="m" href="cuenta.html?apartar=${p.id}">📅 Reservar</a><button class="v" data-id="${p.id}">Ver</button></div></div></article>`).join("");

@@ -5,7 +5,7 @@ import csv, json, pathlib
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FOTOS = RAIZ / "img" / "casas"
-NUM = {"precio", "precio_noche", "recamaras", "banos", "m2_terreno", "m2_construccion"}
+NUM = {"precio", "precio_dia", "precio_anual", "recamaras", "banos", "m2_terreno", "m2_construccion"}
 
 def numero(v):
     v = v.replace(",", "").replace("$", "").strip()

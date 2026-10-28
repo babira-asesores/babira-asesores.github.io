@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Cuánto vale tu casa? | Avalúos Babira Asesores</title>
+<meta name="description" content="Estima gratis el valor de venta y la renta de tu casa en Hermosillo o Nogales y solicita un avalúo profesional.">
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css"><link rel="stylesheet" href="secciones.css"><link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="marca"><img src="img/logo-babira.png" alt="Babira Asesores"><span>BABIRA<small>ASESORES · BIENES RAÍCES</small></span></a>
+  <nav class="links"><a href="index.html#catalogo">Propiedades</a><a href="departamentos.html">Departamentos</a><a href="avaluo.html">Avalúos</a><a href="index.html#servicios">Servicios</a><a href="cuenta.html">👤 Mi cuenta</a></nav>
+  <div class="acciones"><a class="b-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener">💬 <span>WhatsApp</span></a><a class="b-mail" href="mailto:asesoresbabira@gmail.com">✉️ <span>Correo</span></a></div>
+</div></header>
+<section class="mini-hero"><h1>¿Cuánto vale tu casa?</h1><p>Obtén en 1 minuto una estimación de su valor de venta y de lo que podrías cobrar de renta por día, mes o año. Para una cifra oficial, solicita un avalúo profesional.</p></section>
+
+<main class="panel">
+  <div class="tarjetas">
+    <form id="fEst" class="caja">
+      <h2>Datos de la propiedad</h2>
+      <select id="eZona" required></select>
+      <select id="eTipo"><option>Casa</option><option>Departamento</option><option>Local comercial</option><option>Terreno</option></select>
+      <div class="fila"><input id="eConst" type="number" min="0" placeholder="m² de construcción"><input id="eTerr" type="number" min="0" placeholder="m² de terreno"></div>
+      <div class="fila"><input id="eRec" type="number" min="0" max="10" placeholder="Recámaras"><input id="eBan" type="number" min="0" max="10" step="0.5" placeholder="Baños"></div>
+      <select id="eEstado"></select>
+      <select id="eEdad"></select>
+      <div id="eExtras" class="extras"></div>
+      <button class="btn prim ancho">Calcular estimación</button>
+    </form>
+
+    <div class="caja" id="res" hidden>
+      <h2>Estimación</h2>
+      <div class="kpis">
+        <div class="kpi"><b id="rVenta">—</b><span>Valor de venta estimado</span></div>
+        <div class="kpi"><b id="rMes">—</b><span>Renta mensual</span></div>
+        <div class="kpi"><b id="rAnio">—</b><span>Renta anual</span></div>
+        <div class="kpi"><b id="rDia">—</b><span>Renta por día (amueblada)</span></div>
+      </div>
+      <p class="mini gris" id="rNota"></p>
+      <div id="comparables"></div>
+      <h3>¿Quieres la cifra oficial?</h3>
+      <p class="gris">Un <b>avalúo profesional</b> es lo que piden los bancos, Infonavit, notarías y juzgados (para créditos, compra-venta, herencias, divorcios o remates).</p>
+      <form id="fSol"><input id="sNom" placeholder="Tu nombre" required><input id="sTel" type="tel" placeholder="Celular" required>
+        <select id="sMotivo"><option>Quiero vender</option><option>Quiero rentarla</option><option>Avalúo para crédito bancario/Infonavit</option><option>Herencia / sucesión</option><option>Divorcio / juicio</option><option>Solo quiero saber su valor</option></select>
+        <div class="fila"><button class="btn wa">💬 Solicitar avalúo</button><a class="btn mail" href="cuenta.html">💳 Pagar avalúo en línea</a></div></form>
+    </div>
+  </div>
+</main>
+<div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
+<script src="datos/propiedades.js"></script>
+<script src="datos/valores_zona.js"></script>
+<script type="module" src="js/avaluo.js"></script>
+</body>
+</html>

@@ -76,9 +76,10 @@ let chat;
 function instrucciones() {
   const inv = (window.PROPIEDADES || []).filter(p => p.estado === "Disponible" || p.estado === "Apartada")
     .map(p => `- ${p.id} | ${p.operacion} | ${p.tipo} | ${p.titulo} | ${p.colonia || ""}, ${p.ciudad} (${p.zona || "s/zona"}) | ` +
-      `${p.precio ? "$" + p.precio.toLocaleString("es-MX") : "precio a consultar"} | ${p.recamaras || "-"} rec, ${p.banos || "-"} baños | ` +
-      `${p.caracteristicas.join(", ")} | ${p.condiciones || ""}`).join("\n");
-  return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Más de 16 años de experiencia; servicios: rentas, compra-venta, avalúos, asesoría legal, trámite de créditos Infonavit y bancarios, administración de propiedades, y departamentos amueblados para estancias cortas.
+      `${p.precio ? "$" + p.precio.toLocaleString("es-MX") + (p.operacion === "Renta" ? " al mes" : "") : "precio a consultar"}` +
+      `${p.precio_dia ? " | $" + p.precio_dia.toLocaleString("es-MX") + " por día" : ""}${p.precio_anual ? " | $" + p.precio_anual.toLocaleString("es-MX") + " por año" : ""} | ` +
+      `${p.recamaras || "-"} rec, ${p.banos || "-"} baños | ${p.caracteristicas.join(", ")} | ${p.condiciones || ""}`).join("\n");
+  return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Más de 16 años de experiencia; Beatriz Aranda es asesora y bróker hipotecaria AMPI. Servicios: compra-venta de casas, terrenos, departamentos y locales; rentas por día, mes o año (solo de las propiedades del inventario); administración de propiedades; avalúos y estimación de valor (hay un estimador gratuito en avaluo.html); créditos hipotecarios (Infonavit, Fovissste y bancarios); asesoría legal y financiera (escrituras, contratos, sucesiones); viviendas adjudicadas y remates; desarrollo de proyectos e inversión.
 
 Tu trabajo:
 1. Entender qué busca la persona (renta o compra, zona, presupuesto, recámaras, mascotas, fecha de mudanza).

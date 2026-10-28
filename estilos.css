@@ -96,3 +96,9 @@ dialog::backdrop{background:rgba(13,47,63,.7)}
 .apartar{display:block;margin-top:8px;text-align:center;font-size:.82rem;font-weight:600;color:var(--petroleo);padding:7px;border:1.5px dashed var(--azul);border-radius:9px}
 
 [hidden]{display:none!important}
+
+.tarifas{display:flex;gap:6px;margin:-4px 0 10px}.tarifas span{flex:1;text-align:center;border:1px solid var(--borde);border-radius:8px;padding:4px;font-weight:600;font-size:.85rem;color:var(--petroleo)}
+.tarifas small{display:block;font-weight:500;color:var(--gris);font-size:.68rem;text-transform:uppercase;letter-spacing:1px}
+
+a.serv{display:block;transition:transform .2s,box-shadow .2s}a.serv:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,60,90,.12)}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.85rem}.extras label{display:flex;gap:6px;align-items:center}

@@ -9,6 +9,8 @@ window.PROPIEDADES = [
   "colonia": "Altaria Residencial (Ruba), Secc. Valencia",
   "titulo": "Casa en Altaria Residencial",
   "precio": null,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 2.5,
   "m2_terreno": 136,
@@ -25,7 +27,6 @@ window.PROPIEDADES = [
   "condiciones": "Libre de gravamen.",
   "facebook": "",
   "fecha_alta": "2026-09-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-003/01.jpg",
    "img/casas/BB-003/02.jpg",
@@ -44,6 +45,8 @@ window.PROPIEDADES = [
   "colonia": "Quintas del Sol (Blvd Musaro)",
   "titulo": "Casa en Quintas del Sol",
   "precio": 980000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 2,
   "banos": 1,
   "m2_terreno": null,
@@ -58,7 +61,6 @@ window.PROPIEDADES = [
   "condiciones": "Precio negociable. Te apoyamos con tu crédito Infonavit o bancario.",
   "facebook": "",
   "fecha_alta": "2026-08-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-004/01.jpg",
    "img/casas/BB-004/02.jpg",
@@ -76,6 +78,8 @@ window.PROPIEDADES = [
   "colonia": "Cerca de El Patio / Periférico Sur",
   "titulo": "Departamentos amueblados nuevos (4)",
   "precio": null,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 1,
   "banos": 1,
   "m2_terreno": null,
@@ -92,7 +96,6 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2026-01-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-011/01.jpg",
    "img/casas/BB-011/02.jpg",
@@ -110,6 +113,8 @@ window.PROPIEDADES = [
   "colonia": "Montebello",
   "titulo": "Casa amueblada en Montebello",
   "precio": null,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 2.5,
   "m2_terreno": null,
@@ -124,7 +129,6 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año. No se aceptan mascotas.",
   "facebook": "",
   "fecha_alta": "2025-06-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-012/01.jpg",
    "img/casas/BB-012/02.jpg",
@@ -143,6 +147,8 @@ window.PROPIEDADES = [
   "colonia": "Zona en desarrollo",
   "titulo": "Terreno de 11,426 m² para desarrollo",
   "precio": null,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": null,
   "banos": null,
   "m2_terreno": 11426,
@@ -156,7 +162,6 @@ window.PROPIEDADES = [
   "condiciones": "Oportunidad para inversionistas.",
   "facebook": "",
   "fecha_alta": "2024-01-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-013/01.jpg",
    "img/casas/BB-013/02.jpg",
@@ -175,6 +180,8 @@ window.PROPIEDADES = [
   "colonia": "Real de Sevilla Residencial (por Blvd Colosio)",
   "titulo": "Casa amueblada en Real de Sevilla con casa club",
   "precio": 24000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 2.5,
   "m2_terreno": null,
@@ -191,7 +198,6 @@ window.PROPIEDADES = [
   "condiciones": "Mantenimiento incluido.",
   "facebook": "",
   "fecha_alta": "2026-07-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-005/01.jpg",
    "img/casas/BB-005/02.jpg"
@@ -207,6 +213,8 @@ window.PROPIEDADES = [
   "colonia": "Misión del Arco",
   "titulo": "Casa en Misión del Arco",
   "precio": 12000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 1,
   "m2_terreno": null,
@@ -221,7 +229,6 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-10-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-002/01.jpg"
   ]
@@ -236,6 +243,8 @@ window.PROPIEDADES = [
   "colonia": "Villa del Cedro (Reforma final)",
   "titulo": "Casa en Villa del Cedro",
   "precio": 7000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 2,
   "banos": 1.5,
   "m2_terreno": null,
@@ -252,7 +261,6 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-05-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-007/01.jpg"
   ]
@@ -267,6 +275,8 @@ window.PROPIEDADES = [
   "colonia": "Las Quintas",
   "titulo": "Casa en Las Quintas",
   "precio": 2200000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 2,
   "m2_terreno": 171,
@@ -282,7 +292,6 @@ window.PROPIEDADES = [
   "condiciones": "Libre de gravamen.",
   "facebook": "",
   "fecha_alta": "2026-03-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-009/01.jpg"
   ]
@@ -297,6 +306,8 @@ window.PROPIEDADES = [
   "colonia": "Villa del Mediterráneo",
   "titulo": "Casa en Villa del Mediterráneo",
   "precio": 9500,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 1,
   "m2_terreno": null,
@@ -311,7 +322,6 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2026-02-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-010/01.jpg"
   ]
@@ -326,6 +336,8 @@ window.PROPIEDADES = [
   "colonia": "Tulipanes 142, Del Rastro",
   "titulo": "Local comercial en Del Rastro",
   "precio": 6000000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": null,
   "banos": null,
   "m2_terreno": 2000,
@@ -341,7 +353,6 @@ window.PROPIEDADES = [
   "condiciones": "No incluye mobiliario.",
   "facebook": "",
   "fecha_alta": "2023-06-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-014/01.jpg"
   ]
@@ -356,6 +367,8 @@ window.PROPIEDADES = [
   "colonia": "Tulipanes, Del Rastro",
   "titulo": "Casa con amplio terreno en Del Rastro",
   "precio": 2300000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 2,
   "m2_terreno": 550,
@@ -370,7 +383,6 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2023-06-01",
-  "precio_noche": null,
   "fotos": [
    "img/casas/BB-015/01.jpg"
   ]
@@ -385,6 +397,8 @@ window.PROPIEDADES = [
   "colonia": "Cerca de Blvd Ignacio Salazar",
   "titulo": "Casa semiamueblada al norte",
   "precio": null,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 3,
   "banos": 1,
   "m2_terreno": null,
@@ -399,7 +413,6 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año. Aceptamos mascotas. Hay opciones sin aval.",
   "facebook": "",
   "fecha_alta": "2026-10-07",
-  "precio_noche": null,
   "fotos": []
  },
  {
@@ -412,6 +425,8 @@ window.PROPIEDADES = [
   "colonia": "Sierra Vista",
   "titulo": "Casa amueblada en Sierra Vista",
   "precio": 11000,
+  "precio_dia": null,
+  "precio_anual": null,
   "recamaras": 2,
   "banos": 1,
   "m2_terreno": null,
@@ -428,7 +443,6 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-06-01",
-  "precio_noche": null,
   "fotos": []
  }
 ];

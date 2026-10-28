@@ -102,9 +102,12 @@ function calcularCobro({ tipo, propiedadId, noches }) {
       return { monto: p.precio, concepto: `Renta mensual ${p.id} – ${p.titulo}`, p };
     case "reserva": {
       const n = Math.max(1, Math.min(60, parseInt(noches) || 0));
-      if (!p?.precio_noche) throw new HttpsError("failed-precondition", "Esta propiedad no se renta por noche.");
-      return { monto: p.precio_noche * n, concepto: `Reserva ${n} noche(s) ${p.id} – ${p.titulo}`, p };
+      if (!p?.precio_dia) throw new HttpsError("failed-precondition", "Esta propiedad no se renta por día.");
+      return { monto: p.precio_dia * n, concepto: `Reserva ${n} día(s) ${p.id} – ${p.titulo}`, p };
     }
+    case "anual":
+      if (!p?.precio_anual) throw new HttpsError("failed-precondition", "Esta propiedad no tiene renta anual registrada.");
+      return { monto: p.precio_anual, concepto: `Renta anual ${p.id} – ${p.titulo}`, p };
     case "avaluo": return { monto: MONTOS.avaluo, concepto: "Avalúo profesional" };
     case "asesoria": return { monto: MONTOS.asesoria, concepto: "Asesoría inmobiliaria / legal" };
     default: throw new HttpsError("invalid-argument", "Tipo de pago desconocido.");
