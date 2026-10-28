@@ -1,12 +1,12 @@
 // Configuración central del sitio. Lo único que hay que llenar al crear el proyecto de Firebase.
 // Firebase Console → Configuración del proyecto → Tus apps → Web → firebaseConfig
 export const FIREBASE = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
+  apiKey: "AIzaSyCy9O_tnuvQr91Y9_RwIGFATzNiQMaoglQ",
+  authDomain: "babira-f6374.firebaseapp.com",
+  projectId: "babira-f6374",
+  storageBucket: "babira-f6374.firebasestorage.app",
+  messagingSenderId: "204944472095",
+  appId: "1:204944472095:web:20c74aa5954d0092fc3d2a",
 };
 
 export const NEGOCIO = {
