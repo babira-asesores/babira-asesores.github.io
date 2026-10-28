@@ -44,7 +44,7 @@ window.SERVICIOS = [
 ];
 
 window.CATEGORIAS = {
-  inmobiliario: { nombre: "Inmobiliario", icono: "🏡", lema: "Comprar, vender, rentar y cuidar tu patrimonio" },
+  inmobiliario: { nombre: "Inmobiliario", icono: "🏡", lema: "Comprar, vender, rentar y cuidar su propiedad" },
   juridico: { nombre: "Jurídico y trámites", icono: "⚖️", lema: "Resolvemos lo legal para que tu propiedad esté en regla" },
   financiero: { nombre: "Créditos y finanzas", icono: "🏦", lema: "El crédito correcto, sin vueltas" },
   inversion: { nombre: "Inversión", icono: "📈", lema: "Haz crecer tu dinero con bienes raíces" },

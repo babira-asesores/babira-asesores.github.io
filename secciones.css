@@ -116,3 +116,5 @@ main{padding-top:30px}
 .caso-form textarea,.caso-form input,.caso-form select{padding:11px;border:1px solid var(--borde);border-radius:10px;font:inherit;width:100%}
 .fila2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fila2 .btn{justify-content:center}
 @media(max-width:820px){.caso{grid-template-columns:1fr;padding:26px 18px}.fila2{grid-template-columns:1fr}}
+
+.hero.hero-foto h1{font-size:clamp(1.8rem,5.2vw,3.2rem);overflow-wrap:anywhere}

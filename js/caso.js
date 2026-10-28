@@ -1,5 +1,5 @@
 // "Cuéntenos su caso": el visitante elige el tipo de problema, lo describe y queda registrado en el embudo.
-import { guardarProspecto } from "./fb.js?v=20261029d";
+import { guardarProspecto } from "./fb.js?v=20261029e";
 
 const $ = s => document.querySelector(s);
 const WA = "5216621245820", MAIL = "asesoresbabira@gmail.com";

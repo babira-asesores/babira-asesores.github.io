@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261029d";
-import { guardarProspecto, gemini } from "./fb.js?v=20261029d";
+import { firebaseListo } from "./config.js?v=20261029e";
+import { guardarProspecto, gemini } from "./fb.js?v=20261029e";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -106,7 +106,7 @@ function instrucciones() {
       `${p.precio ? "$" + p.precio.toLocaleString("es-MX") + (p.operacion === "Renta" ? " al mes" : "") : "precio a consultar"}` +
       `${p.precio_dia ? " | $" + p.precio_dia.toLocaleString("es-MX") + " por día" : ""}${p.precio_anual ? " | $" + p.precio_anual.toLocaleString("es-MX") + " por año" : ""} | ` +
       `${p.recamaras || "-"} rec, ${p.banos || "-"} baños | ${p.caracteristicas.join(", ")} | ${p.condiciones || ""}`).join("\n");
-  return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Atendemos en todo México y somos especialistas en Sonora (sus 72 municipios: Hermosillo, Guaymas-San Carlos, Nogales, Cajeme-Cd. Obregón, Puerto Peñasco, San Luis Río Colorado, Navojoa, Bahía de Kino y más). Nuestra especialidad es la ADMINISTRACIÓN DE RENTAS (planes Colocación Segura, Administración Total y Patrimonio Blindado) y la ASESORÍA JURÍDICA inmobiliaria; si hablas con un propietario, ofrécele un diagnóstico gratuito de su propiedad. Más de 16 años de experiencia; Beatriz Aranda es asesora y bróker hipotecaria AMPI. Servicios: compra-venta de casas, terrenos, departamentos y locales; rentas por día, mes o año (solo de las propiedades del inventario); administración de propiedades; avalúos y estimación de valor (hay un estimador gratuito en avaluo.html); créditos hipotecarios (Infonavit, Fovissste y bancarios); asesoría legal y financiera (escrituras, contratos, sucesiones); viviendas adjudicadas y remates; desarrollo de proyectos e inversión.
+  return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Atendemos en todo México y somos especialistas en Sonora (sus 72 municipios: Hermosillo, Guaymas-San Carlos, Nogales, Cajeme-Cd. Obregón, Puerto Peñasco, San Luis Río Colorado, Navojoa, Bahía de Kino y más). Nuestra especialidad es la ADMINISTRACIÓN DE RENTAS (planes Colocación Segura, Administración Total y Renta Blindada) y la ASESORÍA JURÍDICA inmobiliaria; si hablas con un propietario, ofrécele un diagnóstico gratuito de su propiedad. Más de 16 años de experiencia; Beatriz Aranda es asesora y bróker hipotecaria AMPI. Servicios: compra-venta de casas, terrenos, departamentos y locales; rentas por día, mes o año (solo de las propiedades del inventario); administración de propiedades; avalúos y estimación de valor (hay un estimador gratuito en avaluo.html); créditos hipotecarios (Infonavit, Fovissste y bancarios); asesoría legal y financiera (escrituras, contratos, sucesiones); viviendas adjudicadas y remates; desarrollo de proyectos e inversión.
 
 Cómo conducir la conversación (es una entrevista guiada, no un buscador):
 1. Haz UNA sola pregunta por mensaje y termina SIEMPRE con esa pregunta, para que la persona siga respondiendo. Nunca cierres un mensaje sin pregunta.
