@@ -144,3 +144,43 @@ main{padding-top:30px}
 .as-cargo{display:inline-block;background:var(--grafito);color:#fff!important;padding:5px 14px;border-radius:20px;font-size:.8rem!important;margin-top:6px!important}
 .as-foto{background:linear-gradient(140deg,#2b3440,#00627f);border-color:#fff;box-shadow:0 0 0 3px var(--plata),0 10px 22px rgba(0,0,0,.2)}
 .equipo{max-width:900px}
+
+/* ===== Equipo unido: tres tarjetas en una sola sección ===== */
+.equipo{max-width:1200px;margin:28px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0}
+.asesor{position:relative;text-align:center;padding:26px 20px 20px;border-top:4px solid #b9c1ca}
+.asesor.es-ceo{border-top-color:#8a96a3;box-shadow:0 14px 34px rgba(43,52,64,.16);background:linear-gradient(180deg,#fff 0%,#f1f3f5 100%)}
+.insignia-ceo{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,#d9dee3,#aeb7c0);color:#2b3440;font-weight:800;font-size:.72rem;letter-spacing:2px;padding:5px 12px;border-radius:20px;box-shadow:inset 0 1px 0 #fff,0 3px 8px rgba(43,52,64,.18)}
+.es-ceo .as-foto{box-shadow:0 0 0 3px #aeb7c0,0 10px 22px rgba(0,0,0,.2)}
+.as-info{display:flex;flex-direction:column;align-items:center;width:100%;flex:1}
+.as-txt{font-size:.86rem}
+.as-datos{display:flex;gap:18px;justify-content:center;margin:2px 0 12px}.as-datos span{font-size:.75rem;color:var(--gris)}.as-datos b{display:block;font-size:1.25rem;color:var(--grafito)}
+.as-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:auto;width:100%}
+.ic{flex:1 1 70px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 6px;border-radius:12px;font-size:1.1rem;background:var(--fondo);transition:transform .18s,box-shadow .2s,background .2s}
+.ic small{font-size:.68rem;font-weight:600;color:var(--grafito);white-space:nowrap}
+.ic:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(43,52,64,.15)}
+.ic.wa{background:#e3f8ea}.ic.tel{background:#e6f6fd}.ic.mail{background:#fdecea}.ic.ig{background:#fbe8f3}
+/* Pestañas de especialidades */
+.sub-centro{text-align:center;color:var(--gris);margin:-8px 0 16px}
+.pestanas{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto 18px}
+.pestanas button{border:1.5px solid var(--borde);background:#fff;border-radius:30px;padding:10px 16px;font:inherit;font-size:.9rem;font-weight:600;color:var(--grafito);cursor:pointer;transition:all .2s}
+.pestanas button:hover{border-color:var(--plata)}
+.pestanas button.on{background:linear-gradient(135deg,#2b3440,#00627f);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(0,60,90,.25)}
+.esp-panel{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;animation:entra .35s ease}
+.esp-ficha{display:flex;gap:14px;background:#fff;border:1px solid rgba(43,52,64,.07);border-radius:16px;padding:18px;box-shadow:0 4px 14px rgba(0,60,90,.06);transition:transform .2s}
+.esp-ficha:hover{transform:translateY(-3px)}
+.esp-ficha i{font-style:normal;font-size:1.8rem;line-height:1}.esp-ficha b{color:var(--petroleo);font-size:1.02rem}
+.esp-ficha p{margin:4px 0 8px;color:var(--gris);font-size:.88rem}.esp-ficha a{font-weight:600;color:var(--azul);font-size:.85rem}
+/* Celular: tarjetas horizontales y pestañas deslizables = mucho menos scroll */
+@media(max-width:900px){
+  .equipo{grid-template-columns:1fr;gap:14px}
+  .asesor{display:grid;grid-template-columns:96px 1fr;gap:14px;text-align:left;padding:18px 16px;align-items:start}
+  .as-foto{width:96px;height:96px}.as-info{align-items:flex-start}
+  .asesor h3{margin:0;font-size:1.02rem}.as-tags{justify-content:flex-start;margin-bottom:10px}.as-datos{justify-content:flex-start}
+  .as-btns{justify-content:flex-start}.ic{flex:0 0 auto;min-width:62px}
+  .insignia-ceo{top:10px;right:10px}
+  .pestanas{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:2px 2px 8px;scroll-snap-type:x mandatory}
+  .pestanas button{flex:0 0 auto;scroll-snap-align:start}
+  .esp-panel{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr 1fr}
+}
+@media(max-width:420px){.asesor{grid-template-columns:76px 1fr}.as-foto{width:76px;height:76px}}

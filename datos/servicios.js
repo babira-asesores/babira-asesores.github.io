@@ -15,18 +15,18 @@ window.SERVICIOS = [
     texto: "Calcula gratis cuánto vale tu casa y solicita un avalúo para venta, crédito, herencia o juicio." },
 
   // ---------- Jurídico ----------
-  { id: "juridica", categoria: "juridico", icono: "⚖️", titulo: "Asesoría jurídica inmobiliaria", portada: true,
-    texto: "Revisión de escrituras y documentos antes de comprar, contratos de compra-venta y arrendamiento." },
-  { id: "problemas", categoria: "juridico", icono: "🧩", titulo: "Solución de problemas jurídicos",
-    texto: "Propiedades con adeudos, gravámenes, invasiones, dobles ventas o documentos irregulares. Analizamos tu caso y te damos una ruta." },
-  { id: "desalojos", categoria: "juridico", icono: "🚪", titulo: "Desalojos", portada: true,
-    texto: "Recupera tu propiedad de inquilinos morosos u ocupantes sin derecho, por la vía legal y con acompañamiento en cada etapa." },
-  { id: "sucesorios", categoria: "juridico", icono: "📜", titulo: "Juicios sucesorios", portada: true,
-    texto: "Herencias, testamentarias e intestados: regularizamos la propiedad a nombre de los herederos para que puedan venderla o habitarla." },
   { id: "tramitologia", categoria: "juridico", icono: "🗂️", titulo: "Tramitología",
     texto: "Escrituración, predial, catastro, certificados de libertad de gravamen, constancias y regularización ante dependencias." },
   { id: "express", categoria: "juridico", icono: "⚡", titulo: "Trámites express", portada: true,
     texto: "¿Lo necesitas ya? Gestionamos tus trámites inmobiliarios con prioridad y te mantenemos al tanto del avance." },
+  { id: "juridica", categoria: "juridico", icono: "⚖️", titulo: "Asesoría jurídica inmobiliaria", portada: true,
+    texto: "Revisión de escrituras y documentos antes de comprar, contratos de compra-venta y arrendamiento." },
+  { id: "sucesorios", categoria: "juridico", icono: "📜", titulo: "Juicios sucesorios", portada: true,
+    texto: "Herencias, testamentarias e intestados: regularizamos la propiedad a nombre de los herederos para que puedan venderla o habitarla." },
+  { id: "problemas", categoria: "juridico", icono: "🧩", titulo: "Solución de problemas jurídicos",
+    texto: "Propiedades con adeudos, gravámenes, invasiones, dobles ventas o documentos irregulares. Analizamos tu caso y te damos una ruta." },
+  { id: "desalojos", categoria: "juridico", icono: "🚪", titulo: "Desalojos",
+    texto: "Recupera tu propiedad de inquilinos morosos u ocupantes sin derecho, por la vía legal y con acompañamiento en cada etapa." },
 
   // ---------- Financiero ----------
   { id: "creditos", categoria: "financiero", icono: "🏦", titulo: "Créditos hipotecarios", portada: true,
