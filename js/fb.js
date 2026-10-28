@@ -31,7 +31,7 @@ export async function gemini(systemInstruction) {
   ]);
   const app = getApps()[0] || initializeApp(FIREBASE);
   return ai.getGenerativeModel(ai.getAI(app, { backend: new ai.GoogleAIBackend() }), {
-    model: "gemini-2.5-flash",
+    model: "gemini-3.8-flash",
     systemInstruction,
     generationConfig: { maxOutputTokens: 600, temperature: 0.4 },
   });
