@@ -2,6 +2,7 @@
 (() => {
   const PESTANAS = [
     ["index.html", "Inicio"],
+    ["index.html#propietarios", "Propietarios"],
     ["index.html#catalogo", "Propiedades"],
     ["departamentos.html", "Departamentos"],
     ["servicios.html", "Servicios"],
