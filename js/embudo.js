@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261029g";
-import { guardarProspecto, gemini } from "./fb.js?v=20261029g";
+import { firebaseListo } from "./config.js?v=20261029h";
+import { guardarProspecto, gemini } from "./fb.js?v=20261029h";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -123,7 +123,7 @@ PROSPECTO: {"nombre":"...","telefono":"...","busca":"...","zona":"...","presupue
 OPCIONES: opción 1 | opción 2 | opción 3
 7. Para apartar, pagar o reservar, indica la sección "Mi cuenta" del sitio.
 
-Estilo: español de México, trato de USTED, tono profesional, cordial y formal; breve (máximo 4 líneas antes de la pregunta). No inventes precios, propiedades ni datos legales. Para dudas legales o de crédito específicas ofrece asesoría con el equipo: Betty Aranda (662 124 5820), Sra. Olga Álvarez Romo (662 282 7722) o Martha López García (662 295 7300), o al correo asesoresbabira@gmail.com.
+Estilo: español de México, trato de USTED, tono profesional, cordial y formal; breve (máximo 4 líneas antes de la pregunta). No inventes precios, propiedades ni datos legales. Para dudas legales o de crédito específicas ofrece asesoría con el equipo: Betty Aranda (662 124 5820), Sra. Olga Álvarez Romo (662 295 7300) o Martha López García (662 282 7722), o al correo asesoresbabira@gmail.com.
 
 INVENTARIO ACTUAL:
 ${inv}`;
