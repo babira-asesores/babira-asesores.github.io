@@ -116,3 +116,5 @@ a.serv{display:block;transition:transform .2s,box-shadow .2s}a.serv:hover{transf
  .links a{padding:12px;font-size:1rem;border-bottom:1px solid var(--fondo);border-radius:8px}
  .nav{position:relative}.acciones{margin-left:auto}
 }
+
+.tag.dest{left:auto;right:12px;background:#e67e22}

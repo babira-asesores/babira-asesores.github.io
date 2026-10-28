@@ -2,6 +2,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-003",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -38,6 +39,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-004",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -71,6 +73,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-011",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Departamento",
   "ciudad": "Hermosillo",
@@ -106,6 +109,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-012",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Nogales",
@@ -140,6 +144,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-013",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Terreno",
   "ciudad": "Nogales",
@@ -173,6 +178,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-005",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -206,6 +212,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-002",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -236,6 +243,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-007",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -268,6 +276,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-009",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -299,6 +308,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-010",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -329,6 +339,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-014",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Local comercial",
   "ciudad": "Nogales",
@@ -360,6 +371,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-015",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Venta",
   "tipo": "Casa",
   "ciudad": "Nogales",
@@ -390,6 +402,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-001",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",
@@ -418,6 +431,7 @@ window.PROPIEDADES = [
  {
   "id": "BB-006",
   "estado": "Disponible",
+  "destacada": "",
   "operacion": "Renta",
   "tipo": "Casa",
   "ciudad": "Hermosillo",

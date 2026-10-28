@@ -42,7 +42,8 @@ function card(p) {
   const foto = p.fotos[0]
     ? `<div class="foto" style="background-image:url('${p.fotos[0]}')" data-ver="${p.id}">`
     : `<div class="foto sin" data-ver="${p.id}"><img src="img/logo-babira.png" alt="">`;
-  return `<article class="card">${foto}<span class="tag ${p.operacion}">${p.operacion.toUpperCase()}</span>
+  const dest = /^(s[ií]|x|1)$/i.test(p.destacada || '') ? '<span class="tag dest">🔥 DESTACADA</span>' : '';
+  return `<article class="card">${foto}<span class="tag ${p.operacion}">${p.operacion.toUpperCase()}</span>${dest}
     ${p.fotos.length > 1 ? `<span class="nfotos">📷 ${p.fotos.length}</span>` : ''}</div>
     <div class="body"><h3>${p.titulo}</h3><div class="zona">📍 ${[p.colonia, p.ciudad].filter(Boolean).join(', ')}</div>
     <div class="precio">${dinero(p.precio)}</div>${tarifas(p)}

@@ -30,6 +30,8 @@ orden = {"Disponible": 0, "Apartada": 1, "Rentada": 2, "Vendida": 2}
 props.sort(key=lambda p: p["fecha_alta"], reverse=True)
 # Las propiedades con más fotos reales (ya curadas) van primero: venden mejor
 props.sort(key=lambda p: -min(len(p["fotos"]), 3))
+# Las destacadas (urge venderlas/rentarlas) van hasta arriba
+props.sort(key=lambda p: 0 if p.get("destacada", "").lower() in ("si", "sí", "x", "1") else 1)
 props.sort(key=lambda p: orden.get(p["estado"], 3))
 (RAIZ / "datos" / "propiedades.js").write_text(
     "window.PROPIEDADES = " + json.dumps(props, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")

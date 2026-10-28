@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casas que ya encontraron dueño | Babira Asesores</title>
+<meta name="description" content="Historial de casas rentadas y vendidas por Babira Asesores en Hermosillo y Nogales.">
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css"><link rel="stylesheet" href="secciones.css">
+</head>
+<body>
+<header id="topnav"></header>
+<section class="mini-hero"><h1>🏆 Casas que ya encontraron dueño</h1>
+  <p>Cada una de estas propiedades se rentó o se vendió con Babira. La tuya puede ser la siguiente.</p>
+  <div class="contador"><span><b id="cR">0</b>rentadas</span><span><b id="cV">0</b>vendidas</span></div></section>
+<main>
+  <div class="grid" id="contenido"></div>
+  <section class="banda"><div><h3>¿Quieres rentar o vender tu propiedad?</h3><p>Nosotros la promocionamos, filtramos a los interesados y nos encargamos del contrato.</p></div>
+    <div class="banda-b"><a class="btn wa" href="https://wa.me/5216621245820?text=Hola%2C%20quiero%20rentar%20o%20vender%20mi%20propiedad." target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn mail" href="mailto:asesoresbabira@gmail.com?subject=Quiero%20rentar%20o%20vender">✉️ Correo</a></div></section>
+</main>
+<div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
+<script src="datos/propiedades.js"></script>
+<script>
+  const H = PROPIEDADES.filter(p => p.estado === "Rentada" || p.estado === "Vendida")
+    .sort((a, b) => (b.fecha_alta || "").localeCompare(a.fecha_alta || ""));
+  document.getElementById("cR").textContent = H.filter(p => p.estado === "Rentada").length;
+  document.getElementById("cV").textContent = H.filter(p => p.estado === "Vendida").length;
+  document.getElementById("contenido").innerHTML = H.length ? H.map(p => `<article class="card vendida">
+    <div class="foto ${p.fotos[0] ? "" : "sin"}" ${p.fotos[0] ? `style="background-image:url('${p.fotos[0]}')"` : ""}>${p.fotos[0] ? "" : '<img src="img/logo-babira.png" alt="">'}</div>
+    <span class="sello-h ${p.estado}">${p.estado.toUpperCase()}</span>
+    <div class="body"><h3>${p.titulo}</h3><div class="zona">📍 ${[p.colonia, p.ciudad].filter(Boolean).join(", ")}</div>
+    <div class="specs">${p.recamaras ? `<span>🛏 ${p.recamaras} rec.</span>` : ""}${p.caracteristicas.slice(0, 2).map(s => `<span>${s}</span>`).join("")}</div>
+    <small class="gris">${p.fecha_alta ? new Date(p.fecha_alta + "T12:00").toLocaleDateString("es-MX", { month: "long", year: "numeric" }) : ""}</small></div></article>`).join("")
+    : '<p class="gris">Muy pronto verás aquí las casas que hemos rentado y vendido.</p>';
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

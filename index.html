@@ -83,6 +83,7 @@
       <a class="js-wa" data-msg="Hola, quiero información." target="_blank" rel="noopener">💬 662 124 5820</a>
       <a class="js-mail" data-asunto="Información">✉️ asesoresbabira@gmail.com</a>
       <a href="https://www.facebook.com/AsesoresBabirabienesraices/" target="_blank" rel="noopener">📘 Facebook</a>
+      <a href="https://www.instagram.com/betty_arandads/" target="_blank" rel="noopener">📸 @betty_arandads</a>
       <span>📍 Hermosillo, Sonora</span>
     </div>
   </div>
@@ -117,7 +118,7 @@
   document.getElementById("accesos").innerHTML =
     `<a class="acceso dest" href="inversionistas.html"><i>📈</i>Inversionistas</a>` +
     SERVICIOS.filter(s => s.portada).map(s => `<a class="acceso" href="${s.enlace || "servicios.html#" + s.id}"><i>${s.icono}</i>${s.titulo}</a>`).join("") +
-    `<a class="acceso" href="betty.html"><i>👩‍💼</i>Conoce a Betty</a>`;
+    `<a class="acceso" href="betty.html"><img src="img/betty.jpg" alt="" class="mini-betty">Conoce a Betty</a>`;
 </script>
 <script type="module" src="js/embudo.js"></script>
 <script src="js/nav.js"></script>

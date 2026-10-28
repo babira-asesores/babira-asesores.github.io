@@ -10,6 +10,7 @@
     ["inversionistas.html", "Inversionistas"],
     ["betty.html", "Betty Aranda"],
     ["galeria.html", "Galería"],
+    ["historial.html", "Historial"],
   ];
   const actual = location.pathname.split("/").pop() || "index.html";
   const h = document.getElementById("topnav");
