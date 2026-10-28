@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beatriz Aranda | Asesora inmobiliaria y bróker hipotecaria AMPI</title>
+<meta name="description" content="Beatriz Adriana Aranda Álvarez: más de 16 años resolviendo compra-venta, rentas, desalojos, juicios sucesorios, trámites y créditos en Hermosillo.">
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css"><link rel="stylesheet" href="secciones.css">
+</head>
+<body data-cat="">
+<header id="topnav"></header>
+
+<section class="perfil">
+  <div class="perfil-in">
+    <div class="foto-betty"><img src="img/betty.jpg" alt="Beatriz Aranda" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'BA'}))"></div>
+    <div>
+      <span class="sello">✔ Bróker hipotecaria AMPI</span>
+      <h1>Beatriz Adriana Aranda Álvarez</h1>
+      <p class="cargo">Directora de Babira Asesores · Bienes raíces especializados</p>
+      <p>Más de <b>16 años</b> ayudando a familias e inversionistas de Hermosillo y Nogales a comprar, vender, rentar y <b>resolver los problemas legales</b> de sus propiedades. Si tu caso parece complicado, probablemente ya lo hemos resuelto antes.</p>
+      <div class="datos-b"><span><b>16+</b>años</span><span><b>2</b>ciudades</span><span><b>15+</b>servicios</span></div>
+      <div class="ctas"><a class="btn wa" href="https://wa.me/5216621245820?text=Hola%20Betty%2C%20quiero%20una%20asesor%C3%ADa." target="_blank" rel="noopener">💬 Agendar asesoría</a>
+        <a class="btn mail" href="mailto:asesoresbabira@gmail.com?subject=Asesor%C3%ADa%20con%20Betty%20Aranda">✉️ asesoresbabira@gmail.com</a>
+        <a class="btn prim" href="tel:+526621245820">📞 662 124 5820</a></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <h2 class="tit-centro">Especialidades de Betty</h2>
+  <div class="especialidades" id="esp"></div>
+
+  <section class="banda"><div><h3>Primera revisión de tu caso</h3><p>Cuéntanos qué pasa con tu propiedad. Te decimos qué opciones tienes, cuánto tiempo toma y cuánto cuesta, antes de empezar.</p></div>
+    <div class="banda-b"><a class="btn wa" href="https://wa.me/5216621245820?text=Hola%20Betty%2C%20quiero%20que%20revises%20mi%20caso." target="_blank" rel="noopener">💬 Revisar mi caso</a><a class="btn mail" href="mailto:asesoresbabira@gmail.com?subject=Revisi%C3%B3n%20de%20caso">✉️ Correo</a></div></section>
+
+  <h2 class="tit-centro">Cómo trabajamos</h2>
+  <div class="pasos"><div><b>1</b><h4>Escuchamos</h4><p>Revisamos tu situación y documentos.</p></div><div><b>2</b><h4>Proponemos</h4><p>Ruta, tiempos y costos claros.</p></div><div><b>3</b><h4>Resolvemos</h4><p>Gestionamos todo y te informamos del avance.</p></div><div><b>4</b><h4>Cerramos</h4><p>Firma, entrega o propiedad en regla.</p></div></div>
+</main>
+<div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
+<script src="datos/servicios.js"></script>
+<script>
+  // Fichas llamativas de las especialidades (lo jurídico primero)
+  const orden = ["desalojos", "sucesorios", "problemas", "juridica", "tramitologia", "express", "rehabilitacion", "inversion", "creditos", "avaluos", "compraventa", "rentas", "administracion", "remates"];
+  document.getElementById("esp").innerHTML = orden.map(id => SERVICIOS.find(s => s.id === id)).filter(Boolean).map((s, i) =>
+    `<a class="esp ${i < 6 ? "fuerte" : ""}" href="https://wa.me/5216621245820?text=${encodeURIComponent("Hola Betty, me interesa: " + s.titulo)}" target="_blank" rel="noopener">
+      <i>${s.icono}</i><b>${s.titulo}</b><span>${s.texto}</span><em>Consultar →</em></a>`).join("");
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -11,19 +11,11 @@
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="secciones.css">
 </head>
 <body>
 
-<header id="top">
-  <div class="nav">
-    <a href="#top" class="marca"><img src="img/logo-babira.png" alt="Babira Asesores"><span>BABIRA<small>ASESORES · BIENES RAÍCES</small></span></a>
-    <nav class="links"><a href="#catalogo">Propiedades</a><a href="#servicios">Servicios</a><a href="departamentos.html">Departamentos</a><a href="galeria.html">Galería</a><a href="avaluo.html">Avalúos</a><a href="#contacto">Contacto</a><a href="cuenta.html">👤 Mi cuenta</a></nav>
-    <div class="acciones">
-      <a class="b-wa js-wa" data-msg="Hola, vi su página web y quiero información." target="_blank" rel="noopener">💬 <span>WhatsApp</span></a>
-      <a class="b-mail js-mail" data-asunto="Información de propiedades">✉️ <span>Correo</span></a>
-    </div>
-  </div>
-</header>
+<header id="topnav"></header>
 
 <section class="hero">
   <div class="hero-in">
@@ -51,6 +43,8 @@
     <select id="fRec"><option value="0">Recámaras</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
     <select id="fOrden"><option value="nuevo">Más recientes</option><option value="pmenor">Precio: menor</option><option value="pmayor">Precio: mayor</option></select>
   </section>
+
+  <div class="accesos" id="accesos" style="padding:0"></div>
 
   <h2 id="catalogo">Propiedades disponibles <small id="cuenta"></small></h2>
   <div class="grid" id="grid"></div>
@@ -117,6 +111,15 @@
 
 <script src="datos/propiedades.js"></script>
 <script src="app.js"></script>
+<script src="datos/servicios.js"></script>
+<script>
+  // Accesos rápidos de la portada: inversionistas + servicios marcados con portada:true
+  document.getElementById("accesos").innerHTML =
+    `<a class="acceso dest" href="inversionistas.html"><i>📈</i>Inversionistas</a>` +
+    SERVICIOS.filter(s => s.portada).map(s => `<a class="acceso" href="${s.enlace || "servicios.html#" + s.id}"><i>${s.icono}</i>${s.titulo}</a>`).join("") +
+    `<a class="acceso" href="betty.html"><i>👩‍💼</i>Conoce a Betty</a>`;
+</script>
 <script type="module" src="js/embudo.js"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

@@ -10,3 +10,44 @@ main{padding-top:30px}
 .mosaico figcaption b{display:block;font-size:.9rem}
 .mosaico .portada::after{content:"★ Mejor foto";position:absolute;top:10px;left:10px;background:var(--azul);color:#fff;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px}
 .links a[href="departamentos.html"],.links a[href="galeria.html"]{white-space:nowrap}
+
+/* Servicios */
+.cat-bloque{max-width:1200px;margin:34px auto;padding:0 16px}.cat-bloque h2 small{display:block;font-size:.9rem;color:var(--gris);font-weight:500}
+.fichas{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.ficha-serv{background:#fff;border-radius:16px;padding:22px;box-shadow:0 4px 16px rgba(0,60,90,.07);display:flex;flex-direction:column;border-top:4px solid var(--azul)}
+.ficha-serv i{font-style:normal;font-size:2rem}.ficha-serv h3{margin:8px 0 6px;color:var(--petroleo)}.ficha-serv p{color:var(--gris);font-size:.92rem;flex:1}
+.ficha-serv .cbtn{grid-template-columns:repeat(auto-fit,minmax(80px,1fr))}
+.mini-hero.juridico{background:linear-gradient(120deg,#0d2f3f,var(--petroleo))}
+.mini-hero.inv{background:linear-gradient(120deg,#0d2f3f,#0b6b4f)}
+/* Betty */
+.perfil{background:linear-gradient(120deg,#0d2f3f,var(--petroleo) 55%,var(--azul));color:#fff}
+.perfil-in{max-width:1100px;margin:auto;padding:50px 16px;display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.foto-betty{width:260px;height:260px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,.85);box-shadow:0 18px 40px rgba(0,0,0,.35);background:var(--azul);display:flex;align-items:center;justify-content:center}
+.foto-betty img{width:100%;height:100%;object-fit:cover}.foto-betty span{font-size:5rem;font-weight:800}
+.sello{display:inline-block;background:#fff;color:var(--petroleo);font-weight:700;font-size:.8rem;padding:5px 14px;border-radius:30px}
+.perfil h1{font-size:clamp(1.6rem,4vw,2.5rem);margin:12px 0 2px}.cargo{opacity:.85;margin:0 0 14px}
+.datos-b{display:flex;gap:26px;margin:18px 0}.datos-b span{font-size:.85rem;opacity:.9}.datos-b b{display:block;font-size:1.8rem}
+.perfil .mail{background:#fff}.perfil .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.tit-centro{text-align:center;max-width:1200px;margin:44px auto 18px}
+.especialidades{max-width:1200px;margin:auto;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.esp{background:#fff;border-radius:18px;padding:22px;box-shadow:0 4px 16px rgba(0,60,90,.08);display:flex;flex-direction:column;gap:6px;transition:transform .2s}
+.esp:hover{transform:translateY(-4px)}.esp i{font-style:normal;font-size:2.2rem}.esp b{font-size:1.1rem;color:var(--petroleo)}.esp span{color:var(--gris);font-size:.88rem;flex:1}.esp em{font-style:normal;font-weight:600;color:var(--azul)}
+.esp.fuerte{background:linear-gradient(150deg,var(--petroleo),var(--azul));color:#fff}.esp.fuerte b,.esp.fuerte em{color:#fff}.esp.fuerte span{color:rgba(255,255,255,.88)}
+.pasos{max-width:1200px;margin:0 auto 30px;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.pasos div{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 14px rgba(0,60,90,.06)}.pasos b{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--azul);color:#fff;align-items:center;justify-content:center}
+.pasos h4{margin:10px 0 4px}.pasos p{margin:0;color:var(--gris);font-size:.88rem}
+/* Inversionistas */
+.proyectos{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-bottom:30px}
+.proy{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,60,90,.08)}
+.proy-img{height:200px;background:#dfeaf1 center/cover;position:relative}.est-p{position:absolute;top:12px;left:12px;background:#0b6b4f;color:#fff;font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:20px}
+.proy h3{margin:4px 0 8px}.proy p{color:var(--gris);font-size:.9rem}
+.cifras{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.cifras span{background:var(--fondo);border-radius:10px;padding:8px;font-weight:600}.cifras small{display:block;color:var(--gris);font-weight:500;font-size:.72rem}
+.barra{height:10px;background:var(--fondo);border-radius:10px;overflow:hidden}.barra i{display:block;height:100%;background:linear-gradient(90deg,#0b6b4f,var(--azul))}
+.proy details{margin:8px 0;font-size:.88rem}.proy summary{cursor:pointer;font-weight:600}
+.aviso-legal p{font-size:.9rem}
+/* Accesos de portada */
+.accesos{max-width:1200px;margin:26px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.acceso{background:#fff;border-radius:14px;padding:14px;text-align:center;box-shadow:0 4px 14px rgba(0,60,90,.08);font-weight:600;font-size:.88rem;transition:transform .2s}
+.acceso:hover{transform:translateY(-3px)}.acceso i{display:block;font-style:normal;font-size:1.8rem;margin-bottom:4px}
+.acceso.dest{background:linear-gradient(140deg,#0b6b4f,var(--azul));color:#fff}
+@media(max-width:760px){.perfil-in{grid-template-columns:1fr;text-align:center}.foto-betty{margin:auto;width:190px;height:190px}.datos-b,.perfil .ctas{justify-content:center}}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inversionistas | Babira Asesores</title>
+<meta name="description" content="Proyectos inmobiliarios en Hermosillo y Sonora con información abierta: avances, números y documentos. Únete a la red de inversionistas de Babira.">
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css"><link rel="stylesheet" href="secciones.css"><link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header id="topnav"></header>
+<section class="mini-hero inv">
+  <h1>📈 Invierte en bienes raíces con total transparencia</h1>
+  <p>Cada proyecto publica sus números, avances y documentos. Sabes en qué está tu dinero, en todo momento.</p>
+  <div class="ventajas"><span>📊 Números abiertos</span><span>📝 Avances publicados</span><span>📂 Documentos disponibles</span><span>⚖️ Respaldo legal</span></div>
+</section>
+
+<main class="panel">
+  <h2>Proyectos</h2>
+  <div class="proyectos" id="proyectos"></div>
+
+  <h2>Cómo funciona la red de inversionistas</h2>
+  <div class="pasos"><div><b>1</b><h4>Te registras</h4><p>Nos dices tu perfil y el monto que te interesa.</p></div><div><b>2</b><h4>Recibes proyectos</h4><p>Te enviamos la ficha completa de cada oportunidad.</p></div><div><b>3</b><h4>Revisas y decides</h4><p>Visita, documentos y contrato antes de invertir.</p></div><div><b>4</b><h4>Sigues el avance</h4><p>Reportes y bitácora pública del proyecto.</p></div></div>
+
+  <div class="tarjetas">
+    <form id="fInv" class="caja">
+      <h2>Únete a la red de inversionistas</h2>
+      <input id="iNom" placeholder="Nombre completo" required>
+      <input id="iTel" type="tel" placeholder="Celular" required>
+      <input id="iCorreo" type="email" placeholder="Correo" required>
+      <select id="iMonto"><option>Hasta $250,000</option><option>$250,000 – $1,000,000</option><option>$1,000,000 – $5,000,000</option><option>Más de $5,000,000</option></select>
+      <select id="iInteres"><option>Desarrollo habitacional</option><option>Compra para renta</option><option>Remates y adjudicadas</option><option>Rehabilitación y reventa</option><option>Terrenos</option><option>Cualquiera</option></select>
+      <label class="mini gris"><input type="checkbox" required> Entiendo que este registro es solo para recibir información y que toda inversión se formaliza por contrato, después de revisar el proyecto.</label>
+      <button class="btn prim ancho">Quiero recibir proyectos</button>
+    </form>
+    <div class="caja aviso-legal">
+      <h2>Transparencia y legalidad</h2>
+      <p>• En este sitio <b>no se reciben pagos de inversión</b>. Cada participación se formaliza por contrato, ante notario cuando corresponde.</p>
+      <p>• Los rendimientos que se muestran son <b>estimaciones</b>, no garantías. Toda inversión inmobiliaria implica riesgos.</p>
+      <p>• Cada proyecto publica su situación legal, avances y documentos.</p>
+      <p>• ¿Dudas? <a href="https://wa.me/5216621245820?text=Hola%2C%20tengo%20dudas%20sobre%20invertir%20con%20Babira." target="_blank" rel="noopener">💬 WhatsApp</a> · <a href="mailto:asesoresbabira@gmail.com?subject=Inversionistas">✉️ Correo</a></p>
+    </div>
+  </div>
+</main>
+<div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
+<script src="datos/proyectos.js"></script>
+<script type="module">
+  import { guardarProspecto } from "./js/fb.js";
+  const $ = s => document.querySelector(s), $$ = n => "$" + n.toLocaleString("es-MX");
+  $("#proyectos").innerHTML = PROYECTOS.map(p => {
+    const pct = p.meta && p.reunido != null ? Math.min(100, Math.round(p.reunido / p.meta * 100)) : null;
+    return `<article class="proy"><div class="proy-img" style="background-image:url('${p.imagen}')"><span class="est-p">${p.estado}</span></div>
+      <div class="body"><small class="gris">${p.id} · ${p.tipo} · ${p.ciudad}</small><h3>${p.nombre}</h3><p>${p.resumen}</p>
+      <div class="cifras"><span><small>Meta</small>${p.meta ? $$(p.meta) : "Por definir"}</span><span><small>Ticket mínimo</small>${p.ticket_minimo ? $$(p.ticket_minimo) : "Por definir"}</span>
+        <span><small>Plazo</small>${p.plazo || "Por definir"}</span><span><small>Rendimiento est.</small>${p.rendimiento || "En análisis"}</span></div>
+      ${pct != null ? `<div class="barra"><i style="width:${pct}%"></i></div><small>${$$(p.reunido)} comprometidos (${pct}%)</small>` : ""}
+      <details><summary>📝 Bitácora del proyecto (${p.avances.length})</summary>${p.avances.map(a => `<p><b>${a.fecha}</b> · ${a.texto}</p>`).join("")}</details>
+      ${p.documentos.length ? `<details><summary>📂 Documentos</summary>${p.documentos.map(d => `<p><a href="${d.url}" target="_blank" rel="noopener">${d.nombre}</a></p>`).join("")}</details>` : ""}
+      <div class="cbtn"><a class="w" href="https://wa.me/5216621245820?text=${encodeURIComponent("Hola, quiero la ficha completa del proyecto " + p.id + ": " + p.nombre)}" target="_blank" rel="noopener">💬 Pedir ficha</a>
+        <a class="m" href="mailto:asesoresbabira@gmail.com?subject=${encodeURIComponent("Proyecto " + p.id)}">✉️ Correo</a></div></div></article>`;
+  }).join("");
+  $("#fInv").onsubmit = async e => {
+    e.preventDefault();
+    const d = { nombre: $("#iNom").value, telefono: $("#iTel").value, correo: $("#iCorreo").value, presupuesto: $("#iMonto").value, busca: "Inversionista: " + $("#iInteres").value, origen: "inversionistas" };
+    const ok = await guardarProspecto(d).catch(() => false);
+    if (!ok) window.open(`https://wa.me/5216621245820?text=${encodeURIComponent(`Hola, quiero unirme a la red de inversionistas. Soy ${d.nombre}, ${d.telefono}. Monto: ${d.presupuesto}. Interés: ${$("#iInteres").value}.`)}`, "_blank");
+    e.target.innerHTML = "<h2>¡Gracias!</h2><p>Te contactaremos con los proyectos que encajan con tu perfil.</p>";
+  };
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>
