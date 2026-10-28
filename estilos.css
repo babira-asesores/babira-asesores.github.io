@@ -118,3 +118,32 @@ a.serv{display:block;transition:transform .2s,box-shadow .2s}a.serv:hover{transf
 }
 
 .tag.dest{left:auto;right:12px;background:#e67e22}
+
+/* ===== Animaciones y dinamismo ===== */
+.aparece{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.aparece.visto{opacity:1;transform:none}
+header#topnav{transition:box-shadow .3s}header#topnav .marca img{transition:height .3s}
+header#topnav.compacto{box-shadow:0 6px 24px rgba(0,60,90,.14)}header#topnav.compacto .marca img{height:40px}
+.marca img{height:50px}
+.marca span{font-size:1.15rem;letter-spacing:.5px}
+.btn,.b-wa,.b-mail,.acceso,.cbtn a,.cbtn button,.tipos button,.chips button,.flot a{position:relative;overflow:hidden;transition:transform .18s ease,box-shadow .25s ease,filter .2s}
+.btn:hover,.b-wa:hover,.b-mail:hover,.cbtn a:hover,.cbtn button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,60,90,.22);filter:brightness(1.05)}
+.btn:active,.b-wa:active,.b-mail:active,.cbtn a:active,.cbtn button:active,.acceso:active{transform:scale(.96)}
+.flot a:hover{transform:scale(1.1)}
+.onda{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;animation:onda .6s ease-out forwards}
+@keyframes onda{to{transform:scale(28);opacity:0}}
+.card .foto{overflow:hidden;transition:transform .5s}.card:hover .foto{transform:scale(1.03)}
+.foto-capa{position:absolute;inset:0;background:center/cover;opacity:0;transition:opacity .9s ease;z-index:0}
+.foto-capa.ver{opacity:1}.card .foto .tag,.card .foto .nfotos{z-index:1}
+.hero.hero-foto{animation:fondo 24s ease-in-out infinite alternate;background-size:auto,115%}
+@keyframes fondo{from{background-position:0 0,right 40%}to{background-position:0 0,right 60%}}
+.hero-logo{animation:flota 6s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-8px)}}
+.f-wa{animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{box-shadow:0 6px 16px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.5)}60%{box-shadow:0 6px 16px rgba(0,0,0,.25),0 0 0 14px rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.rapidas{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;max-width:95%;animation:entra .4s ease}
+.rapidas button{border:1.5px solid var(--azul);background:#fff;color:var(--petroleo);border-radius:20px;padding:6px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
+.rapidas button:hover{background:var(--azul);color:#fff;transform:translateY(-1px)}
+.m{animation:entra .35s ease}@keyframes entra{from{opacity:0;transform:translateY(8px)}}

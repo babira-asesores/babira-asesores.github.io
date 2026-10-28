@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261029b";
-import { guardarProspecto, gemini } from "./fb.js?v=20261029b";
+import { firebaseListo } from "./config.js?v=20261029d";
+import { guardarProspecto, gemini } from "./fb.js?v=20261029d";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -75,13 +75,29 @@ $("#chatForm").onsubmit = async e => {
         await guardarProspecto({ ...Object.fromEntries(permitidos.filter(k => d[k]).map(k => [k, String(d[k]).slice(0, 200)])), origen: "asesor-ia" });
       } catch { /* línea mal formada */ }
     }
+    // Respuestas rápidas sugeridas por el asesor (OPCIONES: a | b | c) → botones para seguir la plática
+    let opciones = [];
+    const o = respuesta.match(/OPCIONES:\s*([^\n]+)/);
+    if (o) { opciones = o[1].split("|").map(s => s.trim()).filter(Boolean).slice(0, 4); respuesta = respuesta.replace(o[0], "").trim(); }
     esperando.remove(); pintar(respuesta, "ia");
+    if (opciones.length) {
+      const fila = document.createElement("div");
+      fila.className = "rapidas";
+      opciones.forEach(t => { const b = document.createElement("button"); b.type = "button"; b.textContent = t; fila.append(b); });
+      $("#chatMsgs").append(fila); $("#chatMsgs").scrollTop = 1e6;
+    }
     historial.push({ role: "assistant", content: respuesta });
   } catch (e) {
     console.error(e);
-    esperando.remove(); pintar("Se cortó la conexión. Escríbenos por WhatsApp al 662 124 5820.", "ia");
+    esperando.remove(); pintar("Por el momento no fue posible responder. Con gusto le atendemos por WhatsApp al 662 124 5820.", "ia");
   }
 };
+
+// Tocar una respuesta rápida la envía como si la persona la hubiera escrito
+$("#chatMsgs").addEventListener("click", e => {
+  const b = e.target.closest(".rapidas button"); if (!b) return;
+  b.parentElement.remove(); $("#chatTxt").value = b.textContent; $("#chatForm").requestSubmit();
+});
 
 let chat;
 function instrucciones() {
@@ -92,14 +108,22 @@ function instrucciones() {
       `${p.recamaras || "-"} rec, ${p.banos || "-"} baños | ${p.caracteristicas.join(", ")} | ${p.condiciones || ""}`).join("\n");
   return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Atendemos en todo México y somos especialistas en Sonora (sus 72 municipios: Hermosillo, Guaymas-San Carlos, Nogales, Cajeme-Cd. Obregón, Puerto Peñasco, San Luis Río Colorado, Navojoa, Bahía de Kino y más). Nuestra especialidad es la ADMINISTRACIÓN DE RENTAS (planes Colocación Segura, Administración Total y Patrimonio Blindado) y la ASESORÍA JURÍDICA inmobiliaria; si hablas con un propietario, ofrécele un diagnóstico gratuito de su propiedad. Más de 16 años de experiencia; Beatriz Aranda es asesora y bróker hipotecaria AMPI. Servicios: compra-venta de casas, terrenos, departamentos y locales; rentas por día, mes o año (solo de las propiedades del inventario); administración de propiedades; avalúos y estimación de valor (hay un estimador gratuito en avaluo.html); créditos hipotecarios (Infonavit, Fovissste y bancarios); asesoría legal y financiera (escrituras, contratos, sucesiones); viviendas adjudicadas y remates; desarrollo de proyectos e inversión.
 
-Tu trabajo:
-1. Entender qué busca la persona (renta o compra, zona, presupuesto, recámaras, mascotas, fecha de mudanza).
-2. Recomendar SOLO propiedades del inventario de abajo, citando su clave (ej. BB-006). Si ninguna encaja, dilo y ofrece que Betty le busque opciones.
-3. Pedir nombre y celular para agendar una visita. Cuando los tengas, agrega al final una línea exacta:
+Cómo conducir la conversación (es una entrevista guiada, no un buscador):
+1. Haz UNA sola pregunta por mensaje y termina SIEMPRE con esa pregunta, para que la persona siga respondiendo. Nunca cierres un mensaje sin pregunta.
+2. Primero identifica el perfil: ¿busca dónde vivir, es propietario, tiene un problema legal o quiere invertir?
+3. Según el perfil, avanza paso a paso:
+   - Busca inmueble: renta o compra → ciudad/zona → presupuesto → recámaras → mascotas o fecha de mudanza → recomienda.
+   - Propietario: ubicación del inmueble → ¿ya está rentado? → ¿quién lo administra hoy y qué le preocupa? → explica el plan adecuado.
+   - Problema legal: qué ocurre → desde cuándo → si cuenta con contrato/escrituras → ofrece revisión del caso con el área jurídica.
+   - Inversión: monto aproximado → tipo de inversión → plazo.
+4. Recomienda SOLO propiedades del inventario de abajo, citando su clave (ej. BB-006). Si ninguna encaja, dilo con honestidad y ofrece que Betty busque opciones.
+5. Cuando haya interés real, solicita nombre y celular para que un asesor le dé seguimiento. Al tenerlos, agrega al final una línea exacta:
 PROSPECTO: {"nombre":"...","telefono":"...","busca":"...","zona":"...","presupuesto":"...","propiedad":"BB-xxx"}
-4. Para apartar, pagar o reservar, indica la sección "Mi cuenta" del sitio.
+6. Al final de cada mensaje agrega una línea con 2 a 4 respuestas cortas sugeridas para que la persona toque una, en este formato exacto:
+OPCIONES: opción 1 | opción 2 | opción 3
+7. Para apartar, pagar o reservar, indica la sección "Mi cuenta" del sitio.
 
-Reglas: español de México, cálido y breve (máximo 5 líneas). No inventes precios, propiedades ni datos legales. Para dudas legales o de crédito específicas ofrece asesoría con Betty: WhatsApp 662 124 5820 o asesoresbabira@gmail.com.
+Estilo: español de México, trato de USTED, tono profesional, cordial y formal; breve (máximo 4 líneas antes de la pregunta). No inventes precios, propiedades ni datos legales. Para dudas legales o de crédito específicas ofrece asesoría con Betty: WhatsApp 662 124 5820 o asesoresbabira@gmail.com.
 
 INVENTARIO ACTUAL:
 ${inv}`;

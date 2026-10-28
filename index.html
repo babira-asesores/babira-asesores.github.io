@@ -10,8 +10,8 @@
 <meta property="og:image" content="img/logo-babira.png">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261029b">
-<link rel="stylesheet" href="secciones.css?v=20261029b">
+<link rel="stylesheet" href="estilos.css?v=20261029d">
+<link rel="stylesheet" href="secciones.css?v=20261029d">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
     <img class="hero-logo" src="img/logo-babira.png" alt="Logo Babira Asesores">
     <div>
       <p class="kicker">Todo México · Especialistas en Sonora</p>
-      <h1>Tu propiedad rentada, cobrada y <span class="resalta">protegida</span></h1>
-      <p class="sub">Somos especialistas en <b>administración de rentas</b> y <b>asesoría jurídica inmobiliaria</b>. Encontramos al inquilino correcto, cobramos por ti, cuidamos tu casa y, si algo sale mal, te defendemos. Más de 16 años respaldando a propietarios.</p>
+      <h1>Administración de rentas y respaldo <span class="resalta">jurídico</span> para su patrimonio</h1>
+      <p class="sub">Somos especialistas en <b>administración de rentas</b> y <b>asesoría jurídica inmobiliaria</b>. Seleccionamos al inquilino adecuado, gestionamos la cobranza, cuidamos el estado de su inmueble y lo respaldamos legalmente en cada etapa. Más de 16 años de experiencia al servicio de propietarios e inversionistas.</p>
       <div class="ctas">
         <a href="#propietarios" class="btn prim">Soy propietario</a>
-        <a href="#catalogo" class="btn claro">Busco dónde vivir</a>
-        <a class="btn wa js-wa" data-msg="Hola, quiero un diagnóstico gratuito de mi propiedad." target="_blank" rel="noopener">💬 Diagnóstico gratis</a>
+        <a href="#catalogo" class="btn claro">Busco una propiedad</a>
+        <a class="btn wa js-wa" data-msg="Buen día, me gustaría solicitar una valoración sin costo de mi propiedad." target="_blank" rel="noopener">💬 Valoración sin costo</a>
       </div>
       <div class="stats"><div><b id="sTotal">—</b><span>propiedades</span></div><div><b id="sRenta">—</b><span>en renta</span></div><div><b>16+</b><span>años de experiencia</span></div></div>
     </div>
@@ -36,7 +36,7 @@
 
 <main>
   <section class="filtros" aria-label="Filtros">
-    <input id="fTexto" type="search" placeholder="🔍 Busca por colonia, zona o característica…">
+    <input id="fTexto" type="search" placeholder="🔍 Buscar por colonia, zona o característica…">
     <div class="chips" id="fOp"><button data-v="" class="on">Todas</button><button data-v="Renta">Renta</button><button data-v="Venta">Venta</button></div>
     <select id="fCiudad"><option value="">Todas las ciudades</option><option>Hermosillo</option><option>Nogales</option></select>
     <select id="fZona"><option value="">Todas las zonas</option><option>Norte</option><option>Sur</option><option>Poniente</option></select>
@@ -53,47 +53,76 @@
   <!-- Propietarios: preguntas que hacen pensar + forma de trabajar -->
   <section class="propietarios" id="propietarios">
     <p class="kicker">Para propietarios</p>
-    <h2>Tener tu casa rentada no es lo mismo que tenerla <span class="resalta">bien administrada</span></h2>
-    <p class="intro">Haz el ejercicio. Si dudas en más de una respuesta, tu patrimonio está trabajando con el freno de mano puesto.</p>
+    <h2>Una propiedad rentada no siempre es una propiedad <span class="resalta">bien administrada</span></h2>
+    <p class="intro">Le invitamos a considerar las siguientes preguntas. Si alguna le genera duda, es probable que su patrimonio no esté rindiendo todo lo que podría.</p>
     <div class="preguntas">
-      <div class="preg"><b>¿Cuándo fue la última vez que viste tu casa por dentro?</b><span>Una fuga o una humedad no avisan. Las detectamos en revisiones periódicas, con fotos.</span></div>
-      <div class="preg"><b>Si tu inquilino deja de pagar mañana, ¿qué harías primero?</b><span>Si no lo sabes, tu contrato tampoco. Lo redactamos para que tengas salida legal desde el día uno.</span></div>
-      <div class="preg"><b>¿Cuánto dinero perdiste el último año entre atrasos y meses vacía?</b><span>Un mes sin rentar cuesta más que un año de administración profesional.</span></div>
-      <div class="preg"><b>¿Tu inquilino es quien dijo ser?</b><span>Validamos identidad, ingresos y referencias antes de entregar una sola llave.</span></div>
-      <div class="preg"><b>¿Heredaste una casa que todavía no está a tu nombre?</b><span>No la puedes vender ni rentar con seguridad. El juicio sucesorio lo resolvemos nosotros.</span></div>
-      <div class="preg"><b>¿Rentas desde otra ciudad, o hasta desde otro país?</b><span>Te mandamos tu reporte cada mes y tu dinero llega a tu cuenta. Tú solo lo revisas.</span></div>
+      <div class="preg"><b>¿Conoce el estado actual de su inmueble?</b><span>Una fuga o una humedad no siempre son visibles a tiempo. Realizamos revisiones periódicas con reporte fotográfico.</span></div>
+      <div class="preg"><b>Ante un incumplimiento de pago, ¿su contrato lo protege?</b><span>Elaboramos contratos con respaldo jurídico que le brindan alternativas legales desde el primer día.</span></div>
+      <div class="preg"><b>¿Cuánto representan los atrasos y los meses sin ocupación?</b><span>Un solo mes desocupado puede costar más que la administración profesional de todo un año.</span></div>
+      <div class="preg"><b>¿Se verificó adecuadamente a su inquilino?</b><span>Validamos identidad, ingresos y referencias antes de la entrega del inmueble.</span></div>
+      <div class="preg"><b>¿Tiene un inmueble heredado que aún no está a su nombre?</b><span>Sin regularizar no es posible venderlo ni rentarlo con seguridad. Le acompañamos en el juicio sucesorio.</span></div>
+      <div class="preg"><b>¿Administra su propiedad a distancia?</b><span>Recibe un reporte mensual y el depósito de sus rentas, sin importar en qué ciudad o país se encuentre.</span></div>
     </div>
-    <a class="btn wa js-wa grande" data-msg="Hola, quiero el diagnóstico gratuito de mi propiedad." target="_blank" rel="noopener">💬 Quiero mi diagnóstico gratuito</a>
+    <a class="btn wa js-wa grande" data-msg="Buen día, me gustaría solicitar una valoración sin costo de mi propiedad." target="_blank" rel="noopener">💬 Solicitar valoración sin costo</a>
 
-    <h3 class="sub-h">Elige qué tanto quieres delegar</h3>
+    <h3 class="sub-h">Esquemas de servicio para propietarios</h3>
     <div class="planes">
       <article class="plan">
         <span class="plan-tag">Lo esencial</span><h4>Colocación Segura</h4>
-        <p>Para quien ya administra solo y necesita al inquilino correcto.</p>
+        <p>Para propietarios que administran directamente y requieren al inquilino adecuado.</p>
         <ul><li>Fotos y publicación en todos los canales</li><li>Filtro de inquilino: identidad, ingresos y referencias</li><li>Contrato redactado por nuestra área jurídica</li><li>Entrega con inventario fotográfico</li></ul>
-        <a class="btn mail js-wa" data-msg="Hola, me interesa el servicio Colocación Segura." target="_blank" rel="noopener">Me interesa</a>
+        <a class="btn mail js-wa" data-msg="Hola, me interesa el servicio Colocación Segura." target="_blank" rel="noopener">Solicitar información</a>
       </article>
       <article class="plan dest">
-        <span class="plan-tag">El favorito</span><h4>Administración Total</h4>
-        <p>Tú cobras; nosotros nos encargamos de todo lo demás.</p>
-        <ul><li>Todo lo de Colocación Segura</li><li>Cobranza mensual y seguimiento de atrasos</li><li>Mantenimiento y proveedores de confianza</li><li>Revisiones periódicas con fotos</li><li>Reporte mensual a tu celular</li></ul>
-        <a class="btn prim js-wa" data-msg="Hola, me interesa Administración Total para mi propiedad." target="_blank" rel="noopener">Me interesa</a>
+        <span class="plan-tag">Recomendado</span><h4>Administración Total</h4>
+        <p>Usted recibe su renta; nosotros nos ocupamos de todo lo demás.</p>
+        <ul><li>Todo lo de Colocación Segura</li><li>Cobranza mensual y seguimiento de atrasos</li><li>Mantenimiento y proveedores de confianza</li><li>Revisiones periódicas con fotos</li><li>Reporte mensual de su inmueble</li></ul>
+        <a class="btn prim js-wa" data-msg="Hola, me interesa Administración Total para mi propiedad." target="_blank" rel="noopener">Solicitar información</a>
       </article>
       <article class="plan">
-        <span class="plan-tag">Máxima tranquilidad</span><h4>Patrimonio Blindado</h4>
+        <span class="plan-tag">Protección integral</span><h4>Patrimonio Blindado</h4>
         <p>Administración más respaldo jurídico de principio a fin.</p>
-        <ul><li>Todo lo de Administración Total</li><li>Póliza jurídica de arrendamiento</li><li>Gestión de desalojo si llega a ser necesario</li><li>Revisión legal de escrituras y adeudos</li></ul>
-        <a class="btn mail js-wa" data-msg="Hola, me interesa Patrimonio Blindado para mi propiedad." target="_blank" rel="noopener">Me interesa</a>
+        <ul><li>Todo lo de Administración Total</li><li>Le ayudamos a que su contrato de arrendamiento sea lo más seguro posible</li><li>Gestión de desalojo si llega a ser necesario</li><li>Revisión legal de escrituras y adeudos</li></ul>
+        <a class="btn mail js-wa" data-msg="Hola, me interesa Patrimonio Blindado para mi propiedad." target="_blank" rel="noopener">Solicitar información</a>
       </article>
     </div>
+  </section>
+
+  <!-- Cuéntenos su caso -->
+  <section class="caso" id="caso">
+    <div class="caso-txt">
+      <p class="kicker">Atención personalizada</p>
+      <h2>Cuéntenos su caso</h2>
+      <p>Cada situación es distinta. Compártanos qué está ocurriendo con su propiedad y un asesor especializado le contactará con una propuesta clara: alternativas, tiempos estimados y costos, antes de comenzar.</p>
+      <ul class="caso-ventajas"><li>🔒 Su información es confidencial</li><li>⏱️ Respuesta en menos de 24 horas hábiles</li><li>⚖️ Revisión por nuestra área jurídica cuando se requiere</li></ul>
+    </div>
+    <form id="fCaso" class="caso-form">
+      <label>¿En qué podemos ayudarle?</label>
+      <div class="tipos" id="tiposCaso">
+        <button type="button" data-t="Inquilino que no paga">💸 Inquilino que no paga</button>
+        <button type="button" data-t="Desalojo">🚪 Desalojo</button>
+        <button type="button" data-t="Herencia / juicio sucesorio">📜 Herencia / sucesión</button>
+        <button type="button" data-t="Escrituras o documentos irregulares">🗂️ Escrituras o documentos</button>
+        <button type="button" data-t="Administración de mi propiedad">📋 Administrar mi propiedad</button>
+        <button type="button" data-t="Rentar o vender mi propiedad">🔑 Rentar o vender</button>
+        <button type="button" data-t="Avalúo">📐 Avalúo</button>
+        <button type="button" data-t="Crédito hipotecario">🏦 Crédito</button>
+        <button type="button" data-t="Otro">✳️ Otro</button>
+      </div>
+      <textarea id="cDesc" rows="4" placeholder="Describa brevemente su situación: ubicación del inmueble, qué ocurre y desde cuándo." required></textarea>
+      <div class="fila2"><input id="cNom" placeholder="Nombre completo" required><input id="cTel" type="tel" placeholder="Teléfono / WhatsApp" required></div>
+      <div class="fila2"><input id="cCorreo" type="email" placeholder="Correo electrónico (opcional)"><select id="cMun"><option value="">Municipio del inmueble</option></select></div>
+      <div class="fila2"><button type="submit" class="btn wa">💬 Enviar por WhatsApp</button><button type="button" id="cMail" class="btn mail">✉️ Enviar por correo</button></div>
+      <p class="mini gris" id="cOk" hidden></p>
+    </form>
   </section>
 
   <!-- Cobertura -->
   <section class="cobertura" id="cobertura">
     <div class="cob-txt">
       <p class="kicker">Cobertura</p>
-      <h2>Atendemos en todo México. <span class="resalta">Sonora lo conocemos a fondo.</span></h2>
-      <p>Sonora es nuestra casa: conocemos sus zonas, sus precios y sus trámites, y te atendemos en cualquiera de sus 72 municipios. Si tu propiedad está en otro estado, también te acompañamos.</p>
+      <h2>Atención en toda la República Mexicana, <span class="resalta">con especialidad en Sonora</span></h2>
+      <p>Conocemos a profundidad el mercado, los valores y los procedimientos de Sonora, y brindamos atención en sus 72 municipios. Si su propiedad se encuentra en otro estado, con gusto le acompañamos.</p>
     </div>
     <div class="cob-dest" id="cobDest"></div>
     <details class="cob-lista"><summary>Ver los 72 municipios de Sonora</summary><div id="cobMun"></div></details>
@@ -101,7 +130,7 @@
   </section>
 
   <section class="banda">
-    <div><h3>¿Tienes una casa para rentar o vender?</h3><p>Nosotros la promocionamos, filtramos a los inquilinos y nos encargamos de los contratos y la administración.</p></div>
+    <div><h3>¿Desea rentar o vender su propiedad?</h3><p>Nos encargamos de su promoción, de la selección de inquilinos, de los contratos y de la administración.</p></div>
     <div class="banda-b"><a class="btn wa js-wa" data-msg="Hola, tengo una propiedad y quiero que la renten o vendan." target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn mail js-mail" data-asunto="Quiero rentar o vender mi propiedad">✉️ Correo</a></div>
   </section>
 
@@ -118,10 +147,10 @@
     <a class="serv js-wa" data-msg="Hola, me interesa invertir o desarrollar un proyecto inmobiliario." target="_blank" rel="noopener"><i>🏗️</i><b>Desarrollo de proyectos e inversión</b><p>Terrenos para desarrollo, estudios de factibilidad y oportunidades para inversionistas.</p></a>
   </div>
 
-  <h2 id="contacto">¿Qué estás buscando?</h2>
+  <h2 id="contacto">¿Qué está buscando?</h2>
   <div class="contacto">
     <form id="form">
-      <input id="nom" placeholder="Tu nombre" required>
+      <input id="nom" placeholder="Su nombre" required>
       <select id="busca"><option>Quiero rentar</option><option>Quiero comprar</option><option>Quiero rentar o vender mi propiedad</option></select>
       <input id="pres" placeholder="Presupuesto aproximado">
       <input id="zona" placeholder="Zona de interés (ej. norte)">
@@ -149,7 +178,7 @@
 
 <div class="chat" id="chat" hidden>
   <div class="chat-cab"><img src="img/logo-babira.png" alt=""><div><b>Asesor Babira</b><small>Te ayudo a encontrar tu casa</small></div><button id="chatX" aria-label="Cerrar">✕</button></div>
-  <div class="chat-msgs" id="chatMsgs"><div class="m ia">¡Hola! 👋 Soy el asesor virtual de Babira. ¿Buscas rentar o comprar? Dime la zona, tu presupuesto y cuántas recámaras necesitas.</div></div>
+  <div class="chat-msgs" id="chatMsgs"><div class="m ia">Buen día. Soy el asesor virtual de Babira Asesores. ¿En qué podemos ayudarle hoy?</div><div class="rapidas"><button type="button">Busco una propiedad</button><button type="button">Soy propietario</button><button type="button">Tengo un problema legal</button><button type="button">Quiero invertir</button></div></div>
   <form class="chat-in" id="chatForm"><input id="chatTxt" placeholder="Escribe tu mensaje…" autocomplete="off" required><button>➤</button></form>
 </div>
 
@@ -161,10 +190,11 @@
 
 <dialog id="modal"><div id="modalIn"></div></dialog>
 
-<script src="datos/propiedades.js?v=20261029b"></script>
-<script src="app.js?v=20261029b"></script>
-<script src="datos/servicios.js?v=20261029b"></script>
-<script src="datos/cobertura.js?v=20261029b"></script>
+<script src="datos/propiedades.js?v=20261029d"></script>
+<script src="app.js?v=20261029d"></script>
+<script src="datos/servicios.js?v=20261029d"></script>
+<script src="datos/cobertura.js?v=20261029d"></script>
+<script type="module" src="js/caso.js?v=20261029d"></script>
 <script>
   // Cobertura: municipios destacados, los 72 de Sonora y los estados
   const chip = t => `<span>${t}</span>`;
@@ -179,7 +209,7 @@
     SERVICIOS.filter(s => s.portada).map(s => `<a class="acceso" href="${s.enlace || "servicios.html#" + s.id}"><i>${s.icono}</i>${s.titulo}</a>`).join("") +
     `<a class="acceso" href="betty.html"><img src="img/betty.jpg" alt="" class="mini-betty">Conoce a Betty</a>`;
 </script>
-<script type="module" src="js/embudo.js?v=20261029b"></script>
-<script src="js/nav.js?v=20261029b"></script>
+<script type="module" src="js/embudo.js?v=20261029d"></script>
+<script src="js/nav.js?v=20261029d"></script>
 </body>
 </html>
