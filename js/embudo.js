@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
 import { firebaseListo } from "./config.js";
-import { guardarProspecto } from "./fb.js";
+import { guardarProspecto, gemini } from "./fb.js";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -51,11 +51,44 @@ $("#chatForm").onsubmit = async e => {
   }
   const esperando = pintar("Escribiendo…", "ia esp");
   try {
-    const r = await fetch("/api/asesor", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mensajes: historial, sesion }) });
-    const { respuesta } = await r.json();
+    chat ||= (await gemini(instrucciones()))?.startChat();
+    const r = await chat.sendMessage(txt);
+    let respuesta = r.response.text().trim();
+    // El asesor marca los datos del cliente en una línea PROSPECTO: {...}; se guarda en el embudo y no se muestra
+    const m = respuesta.match(/PROSPECTO:\s*(\{[^\n]*\})/);
+    if (m) {
+      respuesta = respuesta.replace(m[0], "").trim();
+      try {
+        const d = JSON.parse(m[1]);
+        const permitidos = ["nombre", "telefono", "correo", "busca", "presupuesto", "zona", "propiedad"];
+        await guardarProspecto({ ...Object.fromEntries(permitidos.filter(k => d[k]).map(k => [k, String(d[k]).slice(0, 200)])), origen: "asesor-ia" });
+      } catch { /* línea mal formada */ }
+    }
     esperando.remove(); pintar(respuesta, "ia");
     historial.push({ role: "assistant", content: respuesta });
-  } catch {
+  } catch (e) {
+    console.error(e);
     esperando.remove(); pintar("Se cortó la conexión. Escríbenos por WhatsApp al 662 124 5820.", "ia");
   }
 };
+
+let chat;
+function instrucciones() {
+  const inv = (window.PROPIEDADES || []).filter(p => p.estado === "Disponible" || p.estado === "Apartada")
+    .map(p => `- ${p.id} | ${p.operacion} | ${p.tipo} | ${p.titulo} | ${p.colonia || ""}, ${p.ciudad} (${p.zona || "s/zona"}) | ` +
+      `${p.precio ? "$" + p.precio.toLocaleString("es-MX") : "precio a consultar"} | ${p.recamaras || "-"} rec, ${p.banos || "-"} baños | ` +
+      `${p.caracteristicas.join(", ")} | ${p.condiciones || ""}`).join("\n");
+  return `Eres el asesor virtual de Babira Asesores Bienes Raíces (Hermosillo y Nogales, Sonora). Más de 16 años de experiencia; servicios: rentas, compra-venta, avalúos, asesoría legal, trámite de créditos Infonavit y bancarios, administración de propiedades, y departamentos amueblados para estancias cortas.
+
+Tu trabajo:
+1. Entender qué busca la persona (renta o compra, zona, presupuesto, recámaras, mascotas, fecha de mudanza).
+2. Recomendar SOLO propiedades del inventario de abajo, citando su clave (ej. BB-006). Si ninguna encaja, dilo y ofrece que Betty le busque opciones.
+3. Pedir nombre y celular para agendar una visita. Cuando los tengas, agrega al final una línea exacta:
+PROSPECTO: {"nombre":"...","telefono":"...","busca":"...","zona":"...","presupuesto":"...","propiedad":"BB-xxx"}
+4. Para apartar, pagar o reservar, indica la sección "Mi cuenta" del sitio.
+
+Reglas: español de México, cálido y breve (máximo 5 líneas). No inventes precios, propiedades ni datos legales. Para dudas legales o de crédito específicas ofrece asesoría con Betty: WhatsApp 662 124 5820 o asesoresbabira@gmail.com.
+
+INVENTARIO ACTUAL:
+${inv}`;
+}
