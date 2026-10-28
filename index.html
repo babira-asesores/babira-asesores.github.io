@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babira Asesores | Casas en renta y venta en Hermosillo</title>
+<meta name="description" content="Casas y departamentos en renta y venta en Hermosillo y Nogales. Más de 16 años de experiencia, asesoría legal, avalúos y créditos Infonavit y bancarios.">
+<meta property="og:title" content="Babira Asesores · Bienes Raíces Hermosillo">
+<meta property="og:description" content="Casas en renta y venta en Hermosillo. Agenda tu cita por WhatsApp.">
+<meta property="og:image" content="img/logo-babira.png">
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header id="top">
+  <div class="nav">
+    <a href="#top" class="marca"><img src="img/logo-babira.png" alt="Babira Asesores"><span>BABIRA<small>ASESORES · BIENES RAÍCES</small></span></a>
+    <nav class="links"><a href="#catalogo">Propiedades</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav>
+    <div class="acciones">
+      <a class="b-wa js-wa" data-msg="Hola, vi su página web y quiero información." target="_blank" rel="noopener">💬 <span>WhatsApp</span></a>
+      <a class="b-mail js-mail" data-asunto="Información de propiedades">✉️ <span>Correo</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <img class="hero-logo" src="img/logo-babira.png" alt="Logo Babira Asesores">
+    <div>
+      <p class="kicker">Bienes raíces en Hermosillo y Nogales</p>
+      <h1>Tu próxima casa está aquí</h1>
+      <p class="sub">Rentas, compra-venta, avalúos y asesoría legal, respaldados por más de 16 años de experiencia. Te acompañamos con tu crédito Infonavit o bancario.</p>
+      <div class="ctas">
+        <a href="#catalogo" class="btn prim">Ver propiedades</a>
+        <a class="btn wa js-wa" data-msg="Hola, quiero agendar una cita para ver una propiedad." target="_blank" rel="noopener">💬 Agendar por WhatsApp</a>
+        <a class="btn mail js-mail" data-asunto="Quiero agendar una cita">✉️ Escribir por correo</a>
+      </div>
+      <div class="stats"><div><b id="sTotal">—</b><span>propiedades</span></div><div><b id="sRenta">—</b><span>en renta</span></div><div><b>16+</b><span>años de experiencia</span></div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="filtros" aria-label="Filtros">
+    <input id="fTexto" type="search" placeholder="🔍 Busca por colonia, zona o característica…">
+    <div class="chips" id="fOp"><button data-v="" class="on">Todas</button><button data-v="Renta">Renta</button><button data-v="Venta">Venta</button></div>
+    <select id="fCiudad"><option value="">Todas las ciudades</option><option>Hermosillo</option><option>Nogales</option></select>
+    <select id="fZona"><option value="">Todas las zonas</option><option>Norte</option><option>Sur</option><option>Poniente</option></select>
+    <select id="fRec"><option value="0">Recámaras</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
+    <select id="fOrden"><option value="nuevo">Más recientes</option><option value="pmenor">Precio: menor</option><option value="pmayor">Precio: mayor</option></select>
+  </section>
+
+  <h2 id="catalogo">Propiedades disponibles <small id="cuenta"></small></h2>
+  <div class="grid" id="grid"></div>
+
+  <section class="banda">
+    <div><h3>¿Tienes una casa para rentar o vender?</h3><p>Nosotros la promocionamos, filtramos a los inquilinos y nos encargamos de los contratos y la administración.</p></div>
+    <div class="banda-b"><a class="btn wa js-wa" data-msg="Hola, tengo una propiedad y quiero que la renten o vendan." target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn mail js-mail" data-asunto="Quiero rentar o vender mi propiedad">✉️ Correo</a></div>
+  </section>
+
+  <h2 id="servicios">Nuestros servicios</h2>
+  <div class="servicios">
+    <div class="serv"><i>🏠</i><b>Rentas</b><p>Casas y departamentos amueblados o sin amueblar. Hay opciones sin aval.</p></div>
+    <div class="serv"><i>🔑</i><b>Compra-venta</b><p>Casas, terrenos y locales, con el trámite de tu crédito Infonavit o bancario.</p></div>
+    <div class="serv"><i>⚖️</i><b>Legal y avalúos</b><p>Escrituras, contratos de arrendamiento y avalúos profesionales.</p></div>
+    <div class="serv"><i>📋</i><b>Administración</b><p>Cobranza, mantenimiento e inquilinos: tu propiedad trabajando para ti.</p></div>
+  </div>
+
+  <h2 id="contacto">¿Qué estás buscando?</h2>
+  <div class="contacto">
+    <form id="form">
+      <input id="nom" placeholder="Tu nombre" required>
+      <select id="busca"><option>Quiero rentar</option><option>Quiero comprar</option><option>Quiero rentar o vender mi propiedad</option></select>
+      <input id="pres" placeholder="Presupuesto aproximado">
+      <input id="zona" placeholder="Zona de interés (ej. norte)">
+      <textarea id="msg" rows="3" placeholder="Recámaras, mascotas, fecha de mudanza…"></textarea>
+      <button type="submit" class="btn wa">💬 Enviar por WhatsApp</button>
+      <button type="button" id="porCorreo" class="btn mail">✉️ Enviar por correo</button>
+    </form>
+    <div class="datos">
+      <img src="img/logo-babira.png" alt="Babira Asesores">
+      <a class="js-wa" data-msg="Hola, quiero información." target="_blank" rel="noopener">💬 662 124 5820</a>
+      <a class="js-mail" data-asunto="Información">✉️ asesoresbabira@gmail.com</a>
+      <a href="https://www.facebook.com/AsesoresBabirabienesraices/" target="_blank" rel="noopener">📘 Facebook</a>
+      <span>📍 Hermosillo, Sonora</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <img src="img/logo-babira.png" alt="Babira Asesores">
+  <p><b>Babira Asesores · Bienes Raíces</b><br>Legal · Avalúos · Rentas · Compra-venta</p>
+  <p><a class="js-wa" data-msg="Hola" target="_blank" rel="noopener">WhatsApp 662 124 5820</a> · <a class="js-mail" data-asunto="Contacto">asesoresbabira@gmail.com</a></p>
+  <p class="mini">© <span id="anio"></span> Babira Asesores. Hermosillo, Sonora.</p>
+</footer>
+
+<div class="flot">
+  <a class="f-mail js-mail" data-asunto="Información" aria-label="Correo">✉️</a>
+  <a class="f-wa js-wa" data-msg="Hola, vi su página y quiero información." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</div>
+
+<dialog id="modal"><div id="modalIn"></div></dialog>
+
+<script src="datos/propiedades.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
