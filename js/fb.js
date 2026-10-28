@@ -1,5 +1,5 @@
 // Conexión a Firebase (login, base de datos y funciones). Se carga solo si está configurado.
-import { FIREBASE, firebaseListo } from "./config.js?v=20261028";
+import { FIREBASE, firebaseListo } from "./config.js?v=20261028b";
 
 const V = "12.1.0";
 let cache;

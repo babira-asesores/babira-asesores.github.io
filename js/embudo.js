@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261028";
-import { guardarProspecto, gemini } from "./fb.js?v=20261028";
+import { firebaseListo } from "./config.js?v=20261028b";
+import { guardarProspecto, gemini } from "./fb.js?v=20261028b";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -52,7 +52,15 @@ $("#chatForm").onsubmit = async e => {
   const esperando = pintar("Escribiendo…", "ia esp");
   try {
     chat ||= (await gemini(instrucciones()))?.startChat();
-    const r = await chat.sendMessage(txt);
+    // Si Gemini está saturado (error temporal), reintenta hasta 3 veces con espera creciente
+    let r;
+    for (let i = 0; ; i++) {
+      try { r = await chat.sendMessage(txt); break; }
+      catch (err) {
+        if (i >= 2 || !/\[(429|500|503)/.test(err.message)) throw err;
+        await new Promise(ok => setTimeout(ok, 2000 * (i + 1)));
+      }
+    }
     let respuesta = r.response.text().trim();
     // El asesor marca los datos del cliente en una línea PROSPECTO: {...}; se guarda en el embudo y no se muestra
     const m = respuesta.match(/PROSPECTO:\s*(\{[^\n]*\})/);
