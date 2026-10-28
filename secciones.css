@@ -95,3 +95,11 @@ main{padding-top:30px}
 .cob-lista{margin-top:10px}.cob-lista summary{cursor:pointer;font-weight:600;color:var(--petroleo);padding:8px 0}
 .cob-lista div{display:flex;flex-wrap:wrap;gap:6px;padding:8px 0}.cob-lista div span{background:var(--fondo);border-radius:20px;padding:5px 11px;font-size:.8rem}
 @media(max-width:700px){.plan.dest{transform:none}.propietarios{padding:30px 18px}}
+
+/* Portada con el esquema claro original de Babira + foto suave de fondo */
+.hero.hero-foto{background:linear-gradient(100deg,#fff 0%,rgba(255,255,255,.96) 45%,rgba(230,246,253,.82) 100%),url("img/casas/BB-012/01.jpg") right center/cover;color:var(--oscuro);border-bottom:1px solid var(--borde)}
+.hero.hero-foto .kicker{color:var(--petroleo)}.hero.hero-foto .sub{color:var(--gris)}
+.hero.hero-foto .hero-logo{background:none;padding:0;border-radius:0;filter:drop-shadow(0 12px 30px rgba(0,155,220,.25))}
+.hero.hero-foto .stats b{color:var(--azul)}.hero.hero-foto .stats span{color:var(--gris)}
+.hero.hero-foto .btn.claro{background:#fff;color:var(--petroleo);border:2px solid var(--azul)}
+.resalta{background:linear-gradient(transparent 62%,rgba(0,155,220,.28) 62%)}

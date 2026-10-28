@@ -10,8 +10,8 @@
 <meta property="og:image" content="img/logo-babira.png">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261029a">
-<link rel="stylesheet" href="secciones.css?v=20261029a">
+<link rel="stylesheet" href="estilos.css?v=20261029b">
+<link rel="stylesheet" href="secciones.css?v=20261029b">
 </head>
 <body>
 
@@ -45,6 +45,10 @@
   </section>
 
   <div class="accesos" id="accesos" style="padding:0"></div>
+
+
+  <h2 id="catalogo">Propiedades disponibles <small id="cuenta"></small></h2>
+  <div class="grid" id="grid"></div>
 
   <!-- Propietarios: preguntas que hacen pensar + forma de trabajar -->
   <section class="propietarios" id="propietarios">
@@ -95,9 +99,6 @@
     <details class="cob-lista"><summary>Ver los 72 municipios de Sonora</summary><div id="cobMun"></div></details>
     <details class="cob-lista"><summary>Ver los estados donde atendemos</summary><div id="cobEdo"></div></details>
   </section>
-
-  <h2 id="catalogo">Propiedades disponibles <small id="cuenta"></small></h2>
-  <div class="grid" id="grid"></div>
 
   <section class="banda">
     <div><h3>¿Tienes una casa para rentar o vender?</h3><p>Nosotros la promocionamos, filtramos a los inquilinos y nos encargamos de los contratos y la administración.</p></div>
@@ -160,10 +161,10 @@
 
 <dialog id="modal"><div id="modalIn"></div></dialog>
 
-<script src="datos/propiedades.js?v=20261029a"></script>
-<script src="app.js?v=20261029a"></script>
-<script src="datos/servicios.js?v=20261029a"></script>
-<script src="datos/cobertura.js?v=20261029a"></script>
+<script src="datos/propiedades.js?v=20261029b"></script>
+<script src="app.js?v=20261029b"></script>
+<script src="datos/servicios.js?v=20261029b"></script>
+<script src="datos/cobertura.js?v=20261029b"></script>
 <script>
   // Cobertura: municipios destacados, los 72 de Sonora y los estados
   const chip = t => `<span>${t}</span>`;
@@ -178,7 +179,7 @@
     SERVICIOS.filter(s => s.portada).map(s => `<a class="acceso" href="${s.enlace || "servicios.html#" + s.id}"><i>${s.icono}</i>${s.titulo}</a>`).join("") +
     `<a class="acceso" href="betty.html"><img src="img/betty.jpg" alt="" class="mini-betty">Conoce a Betty</a>`;
 </script>
-<script type="module" src="js/embudo.js?v=20261029a"></script>
-<script src="js/nav.js?v=20261029a"></script>
+<script type="module" src="js/embudo.js?v=20261029b"></script>
+<script src="js/nav.js?v=20261029b"></script>
 </body>
 </html>
