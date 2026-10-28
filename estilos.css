@@ -80,3 +80,19 @@ dialog::backdrop{background:rgba(13,47,63,.7)}
  .ctas,.stats{justify-content:center}.sub{margin-left:auto;margin-right:auto}
  .contacto,form{grid-template-columns:1fr}
 }
+
+/* Asesor virtual y apartado */
+.f-chat{background:var(--azul)}
+.chat{position:fixed;right:16px;bottom:16px;width:min(370px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:#fff;border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.3);z-index:40;display:flex;flex-direction:column;overflow:hidden}
+.chat[hidden]{display:none}
+.chat-cab{display:flex;align-items:center;gap:10px;padding:12px 14px;background:linear-gradient(120deg,var(--petroleo),var(--azul));color:#fff}
+.chat-cab img{width:40px;background:#fff;border-radius:10px;padding:3px}.chat-cab small{display:block;opacity:.85;font-size:.75rem}
+.chat-cab button{margin-left:auto;background:none;border:0;color:#fff;font-size:1.1rem;cursor:pointer}
+.chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--fondo)}
+.m{max-width:85%;padding:9px 12px;border-radius:14px;font-size:.88rem;line-height:1.4;white-space:pre-wrap}
+.m.ia{background:#fff;align-self:flex-start;border-bottom-left-radius:4px}.m.yo{background:var(--azul);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.m.esp{opacity:.6}.m a{color:var(--petroleo);font-weight:600;text-decoration:underline;cursor:pointer}
+.chat-in{display:flex;border-top:1px solid var(--borde)}.chat-in input{flex:1;border:0;padding:14px;font:inherit;outline:0}.chat-in button{border:0;background:var(--azul);color:#fff;width:54px;font-size:1.1rem;cursor:pointer}
+.apartar{display:block;margin-top:8px;text-align:center;font-size:.82rem;font-weight:600;color:var(--petroleo);padding:7px;border:1.5px dashed var(--azul);border-radius:9px}
+
+[hidden]{display:none!important}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi cuenta | Babira Asesores</title>
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="marca"><img src="img/logo-babira.png" alt="Babira Asesores"><span>BABIRA<small>MI CUENTA</small></span></a>
+  <div class="acciones" style="margin-left:auto">
+    <a class="b-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener">💬 <span>WhatsApp</span></a>
+    <a class="b-mail" href="mailto:asesoresbabira@gmail.com">✉️ <span>Correo</span></a>
+  </div>
+</div></header>
+
+<main class="panel">
+  <div id="aviso" class="aviso" hidden></div>
+
+  <section id="vAcceso" class="caja angosta" hidden>
+    <img src="img/logo-babira.png" alt="" class="logo-c">
+    <h1>Bienvenido a Babira</h1>
+    <p class="gris">Crea tu cuenta para apartar casas, pagar tu renta, reservar y dar seguimiento a tus trámites.</p>
+    <button id="google" class="btn prim ancho">Continuar con Google</button>
+    <div class="sep">o con tu correo</div>
+    <form id="fAcceso">
+      <input id="aNombre" placeholder="Nombre completo (solo para registrarte)">
+      <input id="aCorreo" type="email" placeholder="Correo" required>
+      <input id="aPass" type="password" placeholder="Contraseña (mín. 6)" minlength="6" required>
+      <div class="fila"><button class="btn prim" data-modo="entrar">Entrar</button><button class="btn mail" data-modo="registro">Crear cuenta</button></div>
+      <a id="olvide" class="gris mini">¿Olvidaste tu contraseña?</a>
+    </form>
+  </section>
+
+  <section id="vCuenta" hidden>
+    <div class="cab"><h1>Hola, <span id="nombre"></span></h1><button id="salir" class="btn mail">Salir</button></div>
+
+    <div class="tarjetas">
+      <div class="caja">
+        <h2>💳 Pagar en línea</h2>
+        <form id="fPago">
+          <select id="pTipo">
+            <option value="apartado">Apartar una casa en renta (depósito)</option>
+            <option value="renta">Pagar mi renta mensual</option>
+            <option value="reserva">Reservar por noches (amueblados)</option>
+            <option value="avaluo">Avalúo profesional</option>
+            <option value="asesoria">Asesoría inmobiliaria / legal</option>
+          </select>
+          <select id="pProp"></select>
+          <input id="pNoches" type="number" min="1" max="60" placeholder="Número de noches" hidden>
+          <div class="fila">
+            <label><input type="radio" name="pas" value="mercadopago" checked> Mercado Pago <small>(tarjeta, OXXO, SPEI)</small></label>
+            <label><input type="radio" name="pas" value="stripe"> Stripe <small>(tarjeta, OXXO)</small></label>
+          </div>
+          <button class="btn prim ancho">Continuar al pago seguro</button>
+          <p class="mini gris">El monto se calcula en nuestro servidor con el inventario vigente.</p>
+        </form>
+      </div>
+
+      <div class="caja">
+        <h2>📅 Agendar visita o asesoría</h2>
+        <form id="fCita">
+          <select id="cProp"></select>
+          <input id="cFecha" type="datetime-local" required>
+          <input id="cTel" placeholder="Teléfono" required>
+          <textarea id="cNota" rows="2" placeholder="Comentarios"></textarea>
+          <button class="btn wa ancho">Solicitar cita</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="caja"><h2>🧾 Mis pagos</h2><div id="pagos" class="tabla"></div></div>
+    <div class="caja"><h2>📌 Mis citas</h2><div id="citas" class="tabla"></div></div>
+  </section>
+
+  <section id="vSinConfig" class="caja angosta" hidden>
+    <img src="img/logo-babira.png" alt="" class="logo-c">
+    <h1>Muy pronto</h1>
+    <p class="gris">Las cuentas de cliente y los pagos en línea se activan al conectar el sistema. Mientras tanto, atendemos por WhatsApp y correo.</p>
+    <div class="fila"><a class="btn wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn mail" href="mailto:asesoresbabira@gmail.com">✉️ Correo</a></div>
+  </section>
+</main>
+
+<script src="datos/propiedades.js"></script>
+<script type="module" src="js/cuenta.js"></script>
+</body>
+</html>

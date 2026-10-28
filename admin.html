@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Panel Babira | Administración</title>
+<link rel="icon" href="img/logo-babira.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="marca"><img src="img/logo-babira.png" alt="Babira Asesores"><span>BABIRA<small>PANEL DE ADMINISTRACIÓN</small></span></a>
+  <div class="acciones" style="margin-left:auto"><button id="salir" class="btn mail" hidden>Salir</button></div>
+</div></header>
+
+<main class="panel">
+  <div id="aviso" class="aviso" hidden></div>
+  <section id="vLogin" class="caja angosta" hidden>
+    <img src="img/logo-babira.png" alt="" class="logo-c"><h1>Acceso administradores</h1>
+    <button id="google" class="btn prim ancho">Entrar con Google</button>
+  </section>
+
+  <section id="vPanel" hidden>
+    <div class="kpis">
+      <div class="kpi"><b id="kNuevos">0</b><span>Prospectos nuevos</span></div>
+      <div class="kpi"><b id="kActivos">0</b><span>En seguimiento</span></div>
+      <div class="kpi"><b id="kCerrados">0</b><span>Cerrados</span></div>
+      <div class="kpi"><b id="kConv">0%</b><span>Conversión</span></div>
+      <div class="kpi"><b id="kCobrado">$0</b><span>Cobrado en línea</span></div>
+      <div class="kpi"><b id="kDisp">0</b><span>Propiedades disponibles</span></div>
+    </div>
+    <div class="tabs"><button data-t="tEmbudo" class="on">Embudo de ventas</button><button data-t="tCitas">Citas</button><button data-t="tPagos">Pagos</button><button data-t="tInv">Inventario</button><button data-t="tChats">Conversaciones IA</button></div>
+    <div id="tEmbudo" class="tab"><div class="embudo" id="embudo"></div></div>
+    <div id="tCitas" class="tab caja" hidden><div id="citas" class="tabla"></div></div>
+    <div id="tPagos" class="tab caja" hidden><div id="pagos" class="tabla"></div></div>
+    <div id="tInv" class="tab caja" hidden>
+      <p class="gris">El inventario maestro vive en <b>datos/inventario.csv</b> en GitHub. Edítalo ahí y el sitio se actualiza solo en 1–2 minutos.</p>
+      <div id="inv" class="tabla"></div>
+    </div>
+    <div id="tChats" class="tab caja" hidden><div id="chats"></div></div>
+  </section>
+</main>
+
+<script src="datos/propiedades.js"></script>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

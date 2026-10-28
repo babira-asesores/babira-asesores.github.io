@@ -5,7 +5,7 @@ import csv, json, pathlib
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FOTOS = RAIZ / "img" / "casas"
-NUM = {"precio", "recamaras", "banos", "m2_terreno", "m2_construccion"}
+NUM = {"precio", "precio_noche", "recamaras", "banos", "m2_terreno", "m2_construccion"}
 
 def numero(v):
     v = v.replace(",", "").replace("$", "").strip()
@@ -19,7 +19,7 @@ with open(RAIZ / "datos" / "inventario.csv", encoding="utf-8-sig", newline="") a
     for fila in csv.DictReader(f):
         if not fila.get("id"):
             continue
-        p = {k: (numero(v) if k in NUM else v.strip()) for k, v in fila.items()}
+        p = {k: (numero(v or "") if k in NUM else (v or "").strip()) for k, v in fila.items()}
         p["caracteristicas"] = [c.strip() for c in fila["caracteristicas"].split(";") if c.strip()]
         carpeta = FOTOS / p["id"]
         p["fotos"] = sorted(f"img/casas/{p['id']}/{x.name}" for x in carpeta.glob("*")
@@ -31,4 +31,5 @@ props.sort(key=lambda p: p["fecha_alta"], reverse=True)
 props.sort(key=lambda p: orden.get(p["estado"], 3))
 (RAIZ / "datos" / "propiedades.js").write_text(
     "window.PROPIEDADES = " + json.dumps(props, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
+(RAIZ / "functions" / "propiedades.json").write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
 print(f"{len(props)} propiedades, {sum(len(p['fotos']) for p in props)} fotos")

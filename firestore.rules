@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function esAdmin() { return request.auth != null && exists(/databases/$(db)/documents/admins/$(request.auth.uid)); }
+    function suyo(uid) { return request.auth != null && request.auth.uid == uid; }
+
+    // Lista de administradores (Betty y equipo): solo se edita desde la consola de Firebase.
+    match /admins/{uid} { allow read: if suyo(uid); allow write: if false; }
+
+    // Clientes registrados: cada quien ve y edita su perfil.
+    match /clientes/{uid} {
+      allow read: if suyo(uid) || esAdmin();
+      allow create, update: if suyo(uid) && !('rol' in request.resource.data);
+      allow delete: if esAdmin();
+    }
+
+    // Prospectos del embudo: cualquiera los crea (formulario, chat), solo el admin los lee y mueve.
+    match /prospectos/{id} {
+      allow create: if request.resource.data.etapa == "Nuevo"
+                    && request.resource.data.keys().hasOnly(['nombre','telefono','correo','busca','presupuesto','zona','mensaje','propiedad','origen','etapa','creado','uid']);
+      allow read, update, delete: if esAdmin();
+    }
+
+    // Conversaciones del asesor IA y pagos: los escribe el servidor; el cliente solo lee lo suyo.
+    match /conversaciones/{id} { allow read: if esAdmin(); allow write: if false; }
+    match /pagos/{id} {
+      allow read: if esAdmin() || (request.auth != null && resource.data.uid == request.auth.uid);
+      allow write: if false;
+    }
+    match /citas/{id} {
+      allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+      allow read: if esAdmin() || (request.auth != null && resource.data.uid == request.auth.uid);
+      allow update, delete: if esAdmin();
+    }
+  }
+}

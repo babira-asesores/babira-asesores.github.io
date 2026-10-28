@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "firestore.rules", "functions/**", "herramientas/**", ".github/**", "**/.*", "README.md", "GUIA_*.md"],
+    "rewrites": [
+      { "source": "/api/asesor", "function": { "functionId": "asesor", "region": "us-central1" } },
+      { "source": "/api/meta", "function": { "functionId": "metaWebhook", "region": "us-central1" } },
+      { "source": "/api/mercadopago", "function": { "functionId": "webhookMercadoPago", "region": "us-central1" } },
+      { "source": "/api/stripe", "function": { "functionId": "webhookStripe", "region": "us-central1" } }
+    ]
+  },
+  "firestore": { "rules": "firestore.rules" },
+  "functions": [{ "source": "functions", "runtime": "nodejs20" }]
+}

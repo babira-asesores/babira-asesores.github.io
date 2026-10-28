@@ -23,6 +23,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año. Aceptamos mascotas. Hay opciones sin aval.",
   "facebook": "",
   "fecha_alta": "2026-10-07",
+  "precio_noche": null,
   "fotos": []
  },
  {
@@ -49,6 +50,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-10-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-002/01.jpg"
   ]
@@ -79,6 +81,7 @@ window.PROPIEDADES = [
   "condiciones": "Libre de gravamen.",
   "facebook": "",
   "fecha_alta": "2026-09-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-003/01.jpg",
    "img/casas/BB-003/02.jpg",
@@ -111,6 +114,7 @@ window.PROPIEDADES = [
   "condiciones": "Precio negociable. Te apoyamos con tu crédito Infonavit o bancario.",
   "facebook": "",
   "fecha_alta": "2026-08-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-004/01.jpg",
    "img/casas/BB-004/02.jpg",
@@ -145,6 +149,7 @@ window.PROPIEDADES = [
   "condiciones": "Mantenimiento incluido.",
   "facebook": "",
   "fecha_alta": "2026-07-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-005/01.jpg",
    "img/casas/BB-005/02.jpg",
@@ -178,6 +183,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-06-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-006/01.jpg"
   ]
@@ -207,6 +213,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-05-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-007/01.jpg"
   ]
@@ -236,6 +243,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año.",
   "facebook": "",
   "fecha_alta": "2026-04-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-008/01.jpg",
    "img/casas/BB-008/02.jpg"
@@ -266,6 +274,7 @@ window.PROPIEDADES = [
   "condiciones": "Libre de gravamen.",
   "facebook": "",
   "fecha_alta": "2026-03-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-009/01.jpg"
   ]
@@ -294,6 +303,7 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2026-02-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-010/01.jpg",
    "img/casas/BB-010/02.jpg"
@@ -325,6 +335,7 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2026-01-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-011/01.jpg",
    "img/casas/BB-011/02.jpg",
@@ -357,6 +368,7 @@ window.PROPIEDADES = [
   "condiciones": "Mínimo 1 año. No se aceptan mascotas.",
   "facebook": "",
   "fecha_alta": "2025-06-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-012/01.jpg",
    "img/casas/BB-012/02.jpg",
@@ -388,6 +400,7 @@ window.PROPIEDADES = [
   "condiciones": "Oportunidad para inversionistas.",
   "facebook": "",
   "fecha_alta": "2024-01-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-013/01.jpg",
    "img/casas/BB-013/02.jpg",
@@ -421,6 +434,7 @@ window.PROPIEDADES = [
   "condiciones": "No incluye mobiliario.",
   "facebook": "",
   "fecha_alta": "2023-06-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-014/01.jpg"
   ]
@@ -449,6 +463,7 @@ window.PROPIEDADES = [
   "condiciones": "",
   "facebook": "",
   "fecha_alta": "2023-06-01",
+  "precio_noche": null,
   "fotos": [
    "img/casas/BB-015/01.jpg"
   ]
