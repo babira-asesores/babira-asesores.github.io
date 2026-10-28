@@ -1,16 +1,106 @@
 {
   "_criterio": "Portada = fachada o espacio principal, con buena luz y nitidez. Luego cocina y estancia, recámaras, baños y exteriores. Se quitan duplicados, códigos QR, banners genéricos y fotos oscuras o de objetos sueltos. Los flyers con precio se dejan al final.",
-  "BB-002": {"orden": ["01.jpg"], "nota": "Flyer con collage y precio de $12,000. Es la única foto que hay; conviene pedir a Betty la fachada sola."},
-  "BB-003": {"orden": ["01.jpg", "02.jpg", "04.jpg", "03.jpg", "05.jpg"], "nota": "Fachada nítida con cielo azul de portada, luego la cocina (el espacio que más vende), la estancia con abanico, la recámara con persiana y el pasillo."},
-  "BB-004": {"orden": ["01.jpg", "04.jpg", "02.jpg", "05.jpg"], "nota": "Fachada de portada, luego comedor y cocina. Se quita 03 (pasillo lateral con lavadero y escombro: resta valor)."},
-  "BB-005": {"orden": ["01.jpg", "02.jpg"], "nota": "Flyer de Real de Sevilla con $24,000 y collage de la casa club. 03 y 04 eran copias exactas de 01 y 02."},
-  "BB-007": {"orden": ["01.jpg"], "nota": "El flyer revela que es Villa del Cedro, a $7,000."},
-  "BB-009": {"orden": ["01.jpg"], "nota": "El flyer revela el precio de venta: $2,200,000."},
-  "BB-010": {"orden": ["01.jpg"], "nota": "El flyer revela la renta: $9,500. Se quita 02 (código QR de WhatsApp, no es la casa)."},
-  "BB-011": {"orden": ["05.jpg", "04.jpg", "03.jpg", "01.jpg"], "nota": "Cocineta equipada de portada (la mejor luz), luego el exterior de los deptos y la persiana. La parrilla con cajas (01) va al final. Se quita 02 (portón negro, no aporta). Hacen falta fotos de recámara y baño."},
-  "BB-012": {"orden": ["04.jpg", "02.jpg", "05.jpg", "01.jpg", "03.jpg"], "nota": "Las mejores fotos del catálogo. Sala amplia y luminosa de portada, cocina con refrigerador de acero, recámara principal, comedor con pecera y estudio."},
-  "BB-013": {"orden": ["02.jpg", "01.jpg", "05.jpg", "04.jpg", "03.jpg"], "nota": "Panorámica del terreno con cerros de portada, luego el ángulo vertical, el plano de ubicación, la factibilidad económica y la ficha."},
-  "BB-014": {"orden": ["01.jpg"], "nota": "Vista aérea con el predio marcado."},
-  "BB-015": {"orden": ["01.jpg"], "nota": "Sala con techo de madera."},
-  "_vaciar": ["BB-006", "BB-008"]
+  "BB-002": {
+    "orden": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg",
+      "09.jpg"
+    ],
+    "nota": "Fotos reales tomadas del grupo de WhatsApp de Betty (oct 2026): fachada de portada, luego comedor, cocina, recámaras, baño y pasillo. El flyer con el precio va al final. Se omitieron 2 tomas casi idénticas del comedor."
+  },
+  "BB-003": {
+    "orden": [
+      "01.jpg",
+      "02.jpg",
+      "04.jpg",
+      "03.jpg",
+      "05.jpg"
+    ],
+    "nota": "Fachada nítida con cielo azul de portada, luego la cocina (el espacio que más vende), la estancia con abanico, la recámara con persiana y el pasillo."
+  },
+  "BB-004": {
+    "orden": [
+      "01.jpg",
+      "04.jpg",
+      "02.jpg",
+      "05.jpg"
+    ],
+    "nota": "Fachada de portada, luego comedor y cocina. Se quita 03 (pasillo lateral con lavadero y escombro: resta valor)."
+  },
+  "BB-005": {
+    "orden": [
+      "01.jpg",
+      "02.jpg"
+    ],
+    "nota": "Flyer de Real de Sevilla con $24,000 y collage de la casa club. 03 y 04 eran copias exactas de 01 y 02."
+  },
+  "BB-007": {
+    "orden": [
+      "01.jpg"
+    ],
+    "nota": "El flyer revela que es Villa del Cedro, a $7,000."
+  },
+  "BB-009": {
+    "orden": [
+      "01.jpg"
+    ],
+    "nota": "El flyer revela el precio de venta: $2,200,000."
+  },
+  "BB-010": {
+    "orden": [
+      "01.jpg"
+    ],
+    "nota": "El flyer revela la renta: $9,500. Se quita 02 (código QR de WhatsApp, no es la casa)."
+  },
+  "BB-011": {
+    "orden": [
+      "05.jpg",
+      "04.jpg",
+      "03.jpg",
+      "01.jpg"
+    ],
+    "nota": "Cocineta equipada de portada (la mejor luz), luego el exterior de los deptos y la persiana. La parrilla con cajas (01) va al final. Se quita 02 (portón negro, no aporta). Hacen falta fotos de recámara y baño."
+  },
+  "BB-012": {
+    "orden": [
+      "04.jpg",
+      "02.jpg",
+      "05.jpg",
+      "01.jpg",
+      "03.jpg"
+    ],
+    "nota": "Las mejores fotos del catálogo. Sala amplia y luminosa de portada, cocina con refrigerador de acero, recámara principal, comedor con pecera y estudio."
+  },
+  "BB-013": {
+    "orden": [
+      "02.jpg",
+      "01.jpg",
+      "05.jpg",
+      "04.jpg",
+      "03.jpg"
+    ],
+    "nota": "Panorámica del terreno con cerros de portada, luego el ángulo vertical, el plano de ubicación, la factibilidad económica y la ficha."
+  },
+  "BB-014": {
+    "orden": [
+      "01.jpg"
+    ],
+    "nota": "Vista aérea con el predio marcado."
+  },
+  "BB-015": {
+    "orden": [
+      "01.jpg"
+    ],
+    "nota": "Sala con techo de madera."
+  },
+  "_vaciar": [
+    "BB-006",
+    "BB-008"
+  ]
 }

@@ -1,5 +1,44 @@
 window.PROPIEDADES = [
  {
+  "id": "BB-002",
+  "estado": "Disponible",
+  "destacada": "",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Norte",
+  "colonia": "Misión del Arco",
+  "titulo": "Casa en Misión del Arco",
+  "precio": 12000,
+  "precio_dia": null,
+  "precio_anual": null,
+  "recamaras": 3,
+  "banos": 1,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "No",
+  "caracteristicas": [
+   "1 planta",
+   "Cochera 1 auto",
+   "Pet friendly"
+  ],
+  "descripcion": "Cerca del Pabellón Misiones, escuelas y centros comerciales. Una planta, con cochera para un auto.",
+  "condiciones": "Mínimo 1 año.",
+  "facebook": "",
+  "fecha_alta": "2026-10-01",
+  "fotos": [
+   "img/casas/BB-002/01.jpg",
+   "img/casas/BB-002/02.jpg",
+   "img/casas/BB-002/03.jpg",
+   "img/casas/BB-002/04.jpg",
+   "img/casas/BB-002/05.jpg",
+   "img/casas/BB-002/06.jpg",
+   "img/casas/BB-002/07.jpg",
+   "img/casas/BB-002/08.jpg",
+   "img/casas/BB-002/09.jpg"
+  ]
+ },
+ {
   "id": "BB-003",
   "estado": "Disponible",
   "destacada": "",
@@ -207,37 +246,6 @@ window.PROPIEDADES = [
   "fotos": [
    "img/casas/BB-005/01.jpg",
    "img/casas/BB-005/02.jpg"
-  ]
- },
- {
-  "id": "BB-002",
-  "estado": "Disponible",
-  "destacada": "",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Norte",
-  "colonia": "Misión del Arco",
-  "titulo": "Casa en Misión del Arco",
-  "precio": 12000,
-  "precio_dia": null,
-  "precio_anual": null,
-  "recamaras": 3,
-  "banos": 1,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "No",
-  "caracteristicas": [
-   "1 planta",
-   "Cochera 1 auto",
-   "Pet friendly"
-  ],
-  "descripcion": "Cerca del Pabellón Misiones, escuelas y centros comerciales. Una planta, con cochera para un auto.",
-  "condiciones": "Mínimo 1 año.",
-  "facebook": "",
-  "fecha_alta": "2026-10-01",
-  "fotos": [
-   "img/casas/BB-002/01.jpg"
   ]
  },
  {
