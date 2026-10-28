@@ -1,5 +1,5 @@
 // Conexión a Firebase (login, base de datos y funciones). Se carga solo si está configurado.
-import { FIREBASE, firebaseListo } from "./config.js?v=20261028c";
+import { FIREBASE, firebaseListo } from "./config.js?v=20261028d";
 
 const V = "12.1.0";
 // Clave pública de reCAPTCHA Enterprise para la Verificación de aplicaciones (App Check)
@@ -45,7 +45,7 @@ export async function gemini(systemInstruction) {
   return ai.getGenerativeModel(ai.getAI(app, { backend: new ai.GoogleAIBackend() }), {
     model: "gemini-3.8-flash",
     systemInstruction,
-    generationConfig: { maxOutputTokens: 600, temperature: 0.4 },
+    generationConfig: { maxOutputTokens: 2048, temperature: 0.4 },
   });
 }
 

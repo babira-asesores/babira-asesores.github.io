@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261028c";
-import { guardarProspecto, gemini } from "./fb.js?v=20261028c";
+import { firebaseListo } from "./config.js?v=20261028d";
+import { guardarProspecto, gemini } from "./fb.js?v=20261028d";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
