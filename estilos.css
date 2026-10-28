@@ -147,3 +147,15 @@ header#topnav.compacto{box-shadow:0 6px 24px rgba(0,60,90,.14)}header#topnav.com
 .rapidas button{border:1.5px solid var(--azul);background:#fff;color:var(--petroleo);border-radius:20px;padding:6px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
 .rapidas button:hover{background:var(--azul);color:#fff;transform:translateY(-1px)}
 .m{animation:entra .35s ease}@keyframes entra{from{opacity:0;transform:translateY(8px)}}
+
+
+/* ===== Toque premium: tonos grises y marca de agua del logo ===== */
+:root{--fondo:#f2f4f6;--borde:#dde2e7;--grafito:#2b3440;--plata:#8a96a3}
+body{background:linear-gradient(180deg,#f7f8fa 0%,#eef1f4 55%,#e9edf1 100%) fixed;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:url("img/logo-b.png") no-repeat right -60px bottom -40px/520px auto;opacity:.045;filter:grayscale(1)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 12% 18%,rgba(138,150,163,.10),transparent 40%),radial-gradient(circle at 88% 70%,rgba(0,98,127,.06),transparent 45%)}
+.card,.serv,.caso-form,.cobertura,.ficha-serv,.plan,.asesor,.caja,.esp{border:1px solid rgba(43,52,64,.06)}
+h2{color:var(--grafito);letter-spacing:-.3px}
+footer{background:linear-gradient(180deg,#2b3440,#1d242c)}

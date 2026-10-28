@@ -3,7 +3,8 @@ window.ASESORES = [
   {
     nombre: "Beatriz Adriana Aranda Álvarez",
     corto: "Betty Aranda",
-    cargo: "Directora · Bróker hipotecaria AMPI",
+    cargo: "CEO · Asesora inmobiliaria",
+    ceo: true,
     foto: "img/betty.jpg",
     telefono: "6621245820",
     correo: "asesoresbabira@gmail.com",

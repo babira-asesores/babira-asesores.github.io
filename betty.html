@@ -6,24 +6,22 @@
 <meta name="description" content="Beatriz Adriana Aranda Álvarez: más de 16 años resolviendo compra-venta, rentas, desalojos, juicios sucesorios, trámites y créditos en Hermosillo.">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261029k"><link rel="stylesheet" href="secciones.css?v=20261029k">
+<link rel="stylesheet" href="estilos.css?v=20261030a"><link rel="stylesheet" href="secciones.css?v=20261030a">
 </head>
 <body data-cat="">
 <header id="topnav"></header>
 
-<section class="mini-hero"><h1>Nuestros asesores</h1>
-  <p>Un equipo con experiencia en administración de rentas, compra-venta y asesoría jurídica inmobiliaria. Elija con quién desea hablar.</p></section>
-<main><div class="equipo" id="equipo"></div></main>
-<h2 class="tit-centro">Conozca a nuestra directora</h2>
+<section class="mini-hero equipo-hero"><img src="img/logo-babira.png" alt="Babira Asesores" class="logo-hero"><h1>Nuestros asesores</h1>
+  <p>Un equipo con experiencia en administración de rentas, compra-venta y asesoría jurídica inmobiliaria, encabezado por nuestra CEO.</p></section>
 
 <section class="perfil">
   <div class="perfil-in">
     <div class="foto-betty"><img src="img/betty.jpg" alt="Beatriz Aranda" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'BA'}))"></div>
     <div>
-      <span class="sello">✔ Bróker hipotecaria AMPI</span>
+      <span class="sello ceo">CEO · Fundadora</span>
       <h1>Beatriz Adriana Aranda Álvarez</h1>
-      <p class="cargo">Directora de Babira Asesores · Bienes raíces especializados</p>
-      <p>Más de <b>16 años</b> ayudando a familias e inversionistas de Hermosillo y Nogales a comprar, vender, rentar y <b>resolver los problemas legales</b> de sus propiedades. Si tu caso parece complicado, probablemente ya lo hemos resuelto antes.</p>
+      <p class="cargo">CEO de Babira Asesores · Asesora inmobiliaria</p>
+      <p>Más de <b>16 años</b> ayudando a familias e inversionistas de Hermosillo y Nogales a comprar, vender, rentar y <b>resolver los problemas legales</b> de sus propiedades. Bajo su dirección, Babira se ha especializado en la administración de rentas y la asesoría jurídica inmobiliaria.</p>
       <div class="datos-b"><span><b>16+</b>años</span><span><b>2</b>ciudades</span><span><b>15+</b>servicios</span></div>
       <div class="ctas"><a class="btn wa" href="https://wa.me/5216621245820?text=Hola%20Betty%2C%20quiero%20una%20asesor%C3%ADa." target="_blank" rel="noopener">💬 Agendar asesoría</a>
         <a class="btn mail" href="mailto:asesoresbabira@gmail.com?subject=Asesor%C3%ADa%20con%20Betty%20Aranda">✉️ asesoresbabira@gmail.com</a>
@@ -32,6 +30,10 @@
     </div>
   </div>
 </section>
+
+<h2 class="tit-centro">Nuestro equipo de asesores</h2>
+<main><div class="equipo" id="equipo"></div></main>
+
 
 <main>
   <h2 class="tit-centro">Especialidades de Betty</h2>
@@ -44,13 +46,13 @@
   <div class="pasos"><div><b>1</b><h4>Escuchamos</h4><p>Revisamos tu situación y documentos.</p></div><div><b>2</b><h4>Proponemos</h4><p>Ruta, tiempos y costos claros.</p></div><div><b>3</b><h4>Resolvemos</h4><p>Gestionamos todo y te informamos del avance.</p></div><div><b>4</b><h4>Cerramos</h4><p>Firma, entrega o propiedad en regla.</p></div></div>
 </main>
 <div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
-<script src="datos/servicios.js?v=20261029k"></script>
-<script src="datos/asesores.js?v=20261029k"></script>
+<script src="datos/servicios.js?v=20261030a"></script>
+<script src="datos/asesores.js?v=20261030a"></script>
 <script>
   // Tarjetas de contacto del equipo
   const ini = n => n.split(" ").filter(Boolean).slice(0, 2).map(p => p[0]).join("");
   const fmt = t => t.replace(/(\d{3})(\d{3})(\d{4})/, "$1 $2 $3");
-  document.getElementById("equipo").innerHTML = ASESORES.map(a => `<article class="asesor">
+  document.getElementById("equipo").innerHTML = ASESORES.filter(a => !a.ceo).map(a => `<article class="asesor">
     <div class="as-foto">${a.foto ? `<img src="${a.foto}" alt="${a.nombre}">` : `<span>${ini(a.nombre)}</span>`}</div>
     <h3>${a.nombre}</h3><p class="as-cargo">${a.cargo}</p><p class="as-txt">${a.texto}</p>
     <div class="as-tags">${a.especialidad.map(e => `<span>${e}</span>`).join("")}</div>
@@ -68,6 +70,6 @@
     `<a class="esp ${i < 6 ? "fuerte" : ""}" href="https://wa.me/5216621245820?text=${encodeURIComponent("Hola Betty, me interesa: " + s.titulo)}" target="_blank" rel="noopener">
       <i>${s.icono}</i><b>${s.titulo}</b><span>${s.texto}</span><em>Consultar →</em></a>`).join("");
 </script>
-<script src="js/nav.js?v=20261029k"></script>
+<script src="js/nav.js?v=20261030a"></script>
 </body>
 </html>
