@@ -6,7 +6,7 @@
 <meta name="description" content="Historial de casas rentadas y vendidas por Babira Asesores en Hermosillo y Nogales.">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261028d"><link rel="stylesheet" href="secciones.css?v=20261028d">
+<link rel="stylesheet" href="estilos.css?v=20261028e"><link rel="stylesheet" href="secciones.css?v=20261028e">
 </head>
 <body>
 <header id="topnav"></header>
@@ -19,7 +19,7 @@
     <div class="banda-b"><a class="btn wa" href="https://wa.me/5216621245820?text=Hola%2C%20quiero%20rentar%20o%20vender%20mi%20propiedad." target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn mail" href="mailto:asesoresbabira@gmail.com?subject=Quiero%20rentar%20o%20vender">✉️ Correo</a></div></section>
 </main>
 <div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
-<script src="datos/propiedades.js?v=20261028d"></script>
+<script src="datos/propiedades.js?v=20261028e"></script>
 <script>
   const H = PROPIEDADES.filter(p => p.estado === "Rentada" || p.estado === "Vendida")
     .sort((a, b) => (b.fecha_alta || "").localeCompare(a.fecha_alta || ""));
@@ -33,6 +33,6 @@
     <small class="gris">${p.fecha_alta ? new Date(p.fecha_alta + "T12:00").toLocaleDateString("es-MX", { month: "long", year: "numeric" }) : ""}</small></div></article>`).join("")
     : '<p class="gris">Muy pronto verás aquí las casas que hemos rentado y vendido.</p>';
 </script>
-<script src="js/nav.js?v=20261028d"></script>
+<script src="js/nav.js?v=20261028e"></script>
 </body>
 </html>

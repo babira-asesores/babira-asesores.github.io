@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261028d";
-import { guardarProspecto, gemini } from "./fb.js?v=20261028d";
+import { firebaseListo } from "./config.js?v=20261028e";
+import { guardarProspecto, gemini } from "./fb.js?v=20261028e";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -33,7 +33,10 @@ const pintar = (txt, quien) => {
   const d = document.createElement("div");
   d.className = "m " + quien;
   d.textContent = txt;
-  d.innerHTML = d.innerHTML.replace(/\b(BB-\d{3})\b/g, '<a data-ver="$1">$1</a>');
+  d.innerHTML = d.innerHTML
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")          // negritas del asesor
+    .replace(/^\s*[-*]\s+/gm, "• ")                  // viñetas
+    .replace(/\b(BB-\d{3})\b/g, '<a data-ver="$1">$1</a>');
   $("#chatMsgs").append(d); $("#chatMsgs").scrollTop = 1e6;
   return d;
 };

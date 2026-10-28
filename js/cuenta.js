@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261028d";
+import { fb } from "./fb.js?v=20261028e";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
