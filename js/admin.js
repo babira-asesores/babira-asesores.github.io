@@ -7,6 +7,7 @@ const fecha = t => t?.toDate ? t.toDate().toLocaleString("es-MX", { dateStyle: "
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const aviso = t => { $("#aviso").textContent = t; $("#aviso").className = "aviso error"; $("#aviso").hidden = false; };
 
+navigator.serviceWorker?.register("sw.js").catch(() => {});
 const f = await fb();
 if (!f) aviso("Falta conectar Firebase (js/config.js). Revisa la guía de activación.");
 else {
@@ -29,6 +30,27 @@ else {
   });
 
   function iniciar() {
+    // Actividad en tiempo real (se actualiza sola; con avisos activados suena/vibra el celular)
+    let primera = true;
+    $("#activarAvisos").onclick = () => Notification.requestPermission().then(p => $("#activarAvisos").textContent = p === "granted" ? "🔔 Avisos activos" : "🔕 Avisos bloqueados");
+    F.onSnapshot(F.query(F.collection(db, "movimientos"), F.orderBy("creado", "desc"), F.limit(80)), s => {
+      $("#actividad").innerHTML = s.docs.map(d => { const m = d.data(); return `<div class="renglon act"><span>${esc(m.texto)}</span><span class="gris mini">${fecha(m.creado)}</span></div>`; }).join("") || '<p class="gris">Aún no hay movimientos.</p>';
+      if (!primera) s.docChanges().filter(c => c.type === "added").forEach(c => {
+        const t = c.doc.data().texto;
+        if (window.Notification?.permission === "granted") navigator.serviceWorker?.ready.then(r => r.showNotification("Babira", { body: t, icon: "img/logo-babira.png" }));
+        navigator.vibrate?.(200);
+      });
+      primera = false;
+    });
+    F.onSnapshot(F.query(F.collection(db, "clientes"), F.orderBy("alta", "desc")), s => {
+      const L = s.docs.map(d => d.data());
+      const pintar = () => { const q = $("#buscaCliente").value.toLowerCase();
+        $("#clientes").innerHTML = L.filter(c => !q || [c.nombre, c.telefono, c.correo].join(" ").toLowerCase().includes(q)).map(c => {
+          const tel = String(c.telefono || "").replace(/\D/g, "");
+          return `<div class="renglon"><b>${esc(c.nombre || "—")}</b><span>${tel ? `<a href="https://wa.me/521${tel.slice(-10)}" target="_blank" rel="noopener">💬 ${esc(tel)}</a>` : "sin celular"}</span><span><a href="mailto:${esc(c.correo)}">${esc(c.correo)}</a></span><span class="gris mini">${fecha(c.alta)}</span></div>`; }).join("") || '<p class="gris">Sin clientes.</p>'; };
+      $("#buscaCliente").oninput = pintar; pintar();
+    });
+
     $("#kDisp").textContent = P.filter(p => p.estado === "Disponible").length;
     $("#inv").innerHTML = P.map(p => `<div class="renglon"><b>${p.id} · ${esc(p.titulo)}</b><span>${p.operacion} · ${p.ciudad}</span><span>${p.precio ? "$" + p.precio.toLocaleString("es-MX") : "—"}</span><span class="est">${p.estado}</span></div>`).join("");
 

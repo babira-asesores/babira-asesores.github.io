@@ -1,61 +1,5 @@
 window.PROPIEDADES = [
  {
-  "id": "BB-001",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Norte",
-  "colonia": "Cerca de Blvd Ignacio Salazar",
-  "titulo": "Casa semiamueblada al norte",
-  "precio": null,
-  "recamaras": 3,
-  "banos": 1,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Semiamueblada",
-  "caracteristicas": [
-   "Pet friendly",
-   "Lavandería techada",
-   "Patio bardeado"
-  ],
-  "descripcion": "A unas cuadras del Blvd Ignacio Salazar, cerca de escuelas, plazas comerciales y parques, con vías rápidas de acceso. Sala-comedor, lavandería techada y patio encementado y bardeado.",
-  "condiciones": "Mínimo 1 año. Aceptamos mascotas. Hay opciones sin aval.",
-  "facebook": "",
-  "fecha_alta": "2026-10-07",
-  "precio_noche": null,
-  "fotos": []
- },
- {
-  "id": "BB-002",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Norte",
-  "colonia": "Misión del Arco",
-  "titulo": "Casa en Misión del Arco",
-  "precio": 12000,
-  "recamaras": 3,
-  "banos": 1,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "No",
-  "caracteristicas": [
-   "1 planta",
-   "Cochera 1 auto",
-   "Pet friendly"
-  ],
-  "descripcion": "Cerca del Pabellón Misiones, escuelas y centros comerciales. Una planta, con cochera para un auto.",
-  "condiciones": "Mínimo 1 año.",
-  "facebook": "",
-  "fecha_alta": "2026-10-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-002/01.jpg"
-  ]
- },
- {
   "id": "BB-003",
   "estado": "Disponible",
   "operacion": "Venta",
@@ -119,194 +63,7 @@ window.PROPIEDADES = [
    "img/casas/BB-004/01.jpg",
    "img/casas/BB-004/02.jpg",
    "img/casas/BB-004/03.jpg",
-   "img/casas/BB-004/04.jpg",
-   "img/casas/BB-004/05.jpg"
-  ]
- },
- {
-  "id": "BB-005",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Poniente",
-  "colonia": "Por Blvd Colosio",
-  "titulo": "Casa amueblada con casa club",
-  "precio": null,
-  "recamaras": 3,
-  "banos": 2.5,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Sí",
-  "caracteristicas": [
-   "Amueblada",
-   "Casa club con alberca",
-   "Gimnasio",
-   "Cochera eléctrica 2 autos",
-   "Mantenimiento incluido"
-  ],
-  "descripcion": "Una planta, bellamente decorada y amueblada. Cocina integral de granito, patio con asador y bodega. Acceso a casa club con alberca, gimnasio, juegos y canchas. Cerca de escuelas privadas y del aeropuerto.",
-  "condiciones": "Mantenimiento incluido.",
-  "facebook": "",
-  "fecha_alta": "2026-07-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-005/01.jpg",
-   "img/casas/BB-005/02.jpg",
-   "img/casas/BB-005/03.jpg",
-   "img/casas/BB-005/04.jpg"
-  ]
- },
- {
-  "id": "BB-006",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Norte",
-  "colonia": "Sierra Vista",
-  "titulo": "Casa amueblada en Sierra Vista",
-  "precio": 11000,
-  "recamaras": 2,
-  "banos": 1,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Sí",
-  "caracteristicas": [
-   "Amueblada",
-   "1 planta",
-   "Vestidor",
-   "Patio techado",
-   "Cochera eléctrica"
-  ],
-  "descripcion": "A unas cuadras de Blvd López Portillo y Morelos, en zona tranquila. Cocina integral de granito con estufa y refrigerador, recámara principal con cama matrimonial.",
-  "condiciones": "Mínimo 1 año.",
-  "facebook": "",
-  "fecha_alta": "2026-06-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-006/01.jpg"
-  ]
- },
- {
-  "id": "BB-007",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "",
-  "colonia": "",
-  "titulo": "Casa equipada en esquina",
-  "precio": null,
-  "recamaras": 2,
-  "banos": 1.5,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Equipada",
-  "caracteristicas": [
-   "2 plantas",
-   "Terreno excedente",
-   "Minisplits",
-   "Enrejada"
-  ],
-  "descripcion": "Casa en esquina con terreno excedente. Cocina integral con refrigerador y estufa, minisplits y abanicos en toda la casa, persianas.",
-  "condiciones": "Mínimo 1 año.",
-  "facebook": "",
-  "fecha_alta": "2026-05-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-007/01.jpg"
-  ]
- },
- {
-  "id": "BB-008",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Poniente",
-  "colonia": "Real de Sevilla Residencial",
-  "titulo": "Casa amueblada en Real de Sevilla",
-  "precio": null,
-  "recamaras": 3,
-  "banos": 2.5,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Sí",
-  "caracteristicas": [
-   "Privada",
-   "Techos 3.10 m",
-   "Walk-in closet",
-   "Casa club con alberca"
-  ],
-  "descripcion": "Una planta en privada con acceso controlado. Recibidor, estancia y recámara principal con walk-in closet y baño. Amueblada y decorada, con casa club.",
-  "condiciones": "Mínimo 1 año.",
-  "facebook": "",
-  "fecha_alta": "2026-04-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-008/01.jpg",
-   "img/casas/BB-008/02.jpg"
-  ]
- },
- {
-  "id": "BB-009",
-  "estado": "Disponible",
-  "operacion": "Venta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Poniente",
-  "colonia": "Las Quintas",
-  "titulo": "Casa en Las Quintas",
-  "precio": null,
-  "recamaras": 3,
-  "banos": 2,
-  "m2_terreno": 171,
-  "m2_construccion": 109,
-  "amueblada": "No",
-  "caracteristicas": [
-   "1 planta",
-   "Minisplit",
-   "Hidroneumático",
-   "Cochera techada"
-  ],
-  "descripcion": "Muy céntrica, en zona de alta plusvalía, cerca de escuelas, centros comerciales y hospitales. Cocina integral, enrejada y bardeada.",
-  "condiciones": "Libre de gravamen.",
-  "facebook": "",
-  "fecha_alta": "2026-03-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-009/01.jpg"
-  ]
- },
- {
-  "id": "BB-010",
-  "estado": "Disponible",
-  "operacion": "Renta",
-  "tipo": "Casa",
-  "ciudad": "Hermosillo",
-  "zona": "Poniente",
-  "colonia": "Villa del Mediterráneo",
-  "titulo": "Casa en Villa del Mediterráneo",
-  "precio": null,
-  "recamaras": 3,
-  "banos": 1,
-  "m2_terreno": null,
-  "m2_construccion": null,
-  "amueblada": "Equipada",
-  "caracteristicas": [
-   "Privada",
-   "Minisplits",
-   "Estufa y refrigerador"
-  ],
-  "descripcion": "Por Blvd Colosio, en privada con acceso controlado. Enrejada, con interiores de closet y persianas.",
-  "condiciones": "",
-  "facebook": "",
-  "fecha_alta": "2026-02-01",
-  "precio_noche": null,
-  "fotos": [
-   "img/casas/BB-010/01.jpg",
-   "img/casas/BB-010/02.jpg"
+   "img/casas/BB-004/04.jpg"
   ]
  },
  {
@@ -340,8 +97,7 @@ window.PROPIEDADES = [
    "img/casas/BB-011/01.jpg",
    "img/casas/BB-011/02.jpg",
    "img/casas/BB-011/03.jpg",
-   "img/casas/BB-011/04.jpg",
-   "img/casas/BB-011/05.jpg"
+   "img/casas/BB-011/04.jpg"
   ]
  },
  {
@@ -410,6 +166,157 @@ window.PROPIEDADES = [
   ]
  },
  {
+  "id": "BB-005",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Poniente",
+  "colonia": "Real de Sevilla Residencial (por Blvd Colosio)",
+  "titulo": "Casa amueblada en Real de Sevilla con casa club",
+  "precio": 24000,
+  "recamaras": 3,
+  "banos": 2.5,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "Sí",
+  "caracteristicas": [
+   "Amueblada",
+   "Casa club con alberca",
+   "Gimnasio",
+   "Cochera eléctrica 2 autos",
+   "Mantenimiento incluido"
+  ],
+  "descripcion": "Una planta, bellamente decorada y amueblada. Cocina integral de granito, patio con asador y bodega. Acceso a casa club con alberca, gimnasio, juegos y canchas. Cerca de escuelas privadas y del aeropuerto.",
+  "condiciones": "Mantenimiento incluido.",
+  "facebook": "",
+  "fecha_alta": "2026-07-01",
+  "precio_noche": null,
+  "fotos": [
+   "img/casas/BB-005/01.jpg",
+   "img/casas/BB-005/02.jpg"
+  ]
+ },
+ {
+  "id": "BB-002",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Norte",
+  "colonia": "Misión del Arco",
+  "titulo": "Casa en Misión del Arco",
+  "precio": 12000,
+  "recamaras": 3,
+  "banos": 1,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "No",
+  "caracteristicas": [
+   "1 planta",
+   "Cochera 1 auto",
+   "Pet friendly"
+  ],
+  "descripcion": "Cerca del Pabellón Misiones, escuelas y centros comerciales. Una planta, con cochera para un auto.",
+  "condiciones": "Mínimo 1 año.",
+  "facebook": "",
+  "fecha_alta": "2026-10-01",
+  "precio_noche": null,
+  "fotos": [
+   "img/casas/BB-002/01.jpg"
+  ]
+ },
+ {
+  "id": "BB-007",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Norte",
+  "colonia": "Villa del Cedro (Reforma final)",
+  "titulo": "Casa en Villa del Cedro",
+  "precio": 7000,
+  "recamaras": 2,
+  "banos": 1.5,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "Equipada",
+  "caracteristicas": [
+   "2 plantas",
+   "Terreno excedente",
+   "Minisplits",
+   "Enrejada",
+   "Entrada para 2 autos"
+  ],
+  "descripcion": "Casa en esquina con terreno excedente. Cocina integral con refrigerador y estufa, minisplits y abanicos en toda la casa, persianas.",
+  "condiciones": "Mínimo 1 año.",
+  "facebook": "",
+  "fecha_alta": "2026-05-01",
+  "precio_noche": null,
+  "fotos": [
+   "img/casas/BB-007/01.jpg"
+  ]
+ },
+ {
+  "id": "BB-009",
+  "estado": "Disponible",
+  "operacion": "Venta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Poniente",
+  "colonia": "Las Quintas",
+  "titulo": "Casa en Las Quintas",
+  "precio": 2200000,
+  "recamaras": 3,
+  "banos": 2,
+  "m2_terreno": 171,
+  "m2_construccion": 109,
+  "amueblada": "No",
+  "caracteristicas": [
+   "1 planta",
+   "Minisplit",
+   "Hidroneumático",
+   "Cochera techada"
+  ],
+  "descripcion": "Muy céntrica, en zona de alta plusvalía, cerca de escuelas, centros comerciales y hospitales. Cocina integral, enrejada y bardeada.",
+  "condiciones": "Libre de gravamen.",
+  "facebook": "",
+  "fecha_alta": "2026-03-01",
+  "precio_noche": null,
+  "fotos": [
+   "img/casas/BB-009/01.jpg"
+  ]
+ },
+ {
+  "id": "BB-010",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Poniente",
+  "colonia": "Villa del Mediterráneo",
+  "titulo": "Casa en Villa del Mediterráneo",
+  "precio": 9500,
+  "recamaras": 3,
+  "banos": 1,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "Equipada",
+  "caracteristicas": [
+   "Privada",
+   "Minisplits",
+   "Estufa y refrigerador"
+  ],
+  "descripcion": "Por Blvd Colosio, en privada con acceso controlado. Enrejada, con interiores de closet y persianas.",
+  "condiciones": "",
+  "facebook": "",
+  "fecha_alta": "2026-02-01",
+  "precio_noche": null,
+  "fotos": [
+   "img/casas/BB-010/01.jpg"
+  ]
+ },
+ {
   "id": "BB-014",
   "estado": "Disponible",
   "operacion": "Venta",
@@ -467,5 +374,61 @@ window.PROPIEDADES = [
   "fotos": [
    "img/casas/BB-015/01.jpg"
   ]
+ },
+ {
+  "id": "BB-001",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Norte",
+  "colonia": "Cerca de Blvd Ignacio Salazar",
+  "titulo": "Casa semiamueblada al norte",
+  "precio": null,
+  "recamaras": 3,
+  "banos": 1,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "Semiamueblada",
+  "caracteristicas": [
+   "Pet friendly",
+   "Lavandería techada",
+   "Patio bardeado"
+  ],
+  "descripcion": "A unas cuadras del Blvd Ignacio Salazar, cerca de escuelas, plazas comerciales y parques, con vías rápidas de acceso. Sala-comedor, lavandería techada y patio encementado y bardeado.",
+  "condiciones": "Mínimo 1 año. Aceptamos mascotas. Hay opciones sin aval.",
+  "facebook": "",
+  "fecha_alta": "2026-10-07",
+  "precio_noche": null,
+  "fotos": []
+ },
+ {
+  "id": "BB-006",
+  "estado": "Disponible",
+  "operacion": "Renta",
+  "tipo": "Casa",
+  "ciudad": "Hermosillo",
+  "zona": "Norte",
+  "colonia": "Sierra Vista",
+  "titulo": "Casa amueblada en Sierra Vista",
+  "precio": 11000,
+  "recamaras": 2,
+  "banos": 1,
+  "m2_terreno": null,
+  "m2_construccion": null,
+  "amueblada": "Sí",
+  "caracteristicas": [
+   "Amueblada",
+   "1 planta",
+   "Vestidor",
+   "Patio techado",
+   "Cochera eléctrica"
+  ],
+  "descripcion": "A unas cuadras de Blvd López Portillo y Morelos, en zona tranquila. Cocina integral de granito con estufa y refrigerador, recámara principal con cama matrimonial.",
+  "condiciones": "Mínimo 1 año.",
+  "facebook": "",
+  "fecha_alta": "2026-06-01",
+  "precio_noche": null,
+  "fotos": []
  }
 ];

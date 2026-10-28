@@ -1,0 +1,12 @@
+.mini-hero{background:linear-gradient(120deg,var(--petroleo),var(--azul));color:#fff;text-align:center;padding:44px 16px 50px}
+.mini-hero h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.6rem)}.mini-hero p{max-width:640px;margin:0 auto 18px;opacity:.92}
+.mini-hero .chips{display:inline-flex;background:rgba(255,255,255,.2)}.mini-hero .chips button{color:#fff}.mini-hero .chips button.on{background:#fff;color:var(--petroleo)}
+.ventajas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.ventajas span{background:rgba(255,255,255,.18);padding:6px 14px;border-radius:30px;font-size:.85rem}
+main{padding-top:30px}
+.mosaico{columns:3 260px;column-gap:14px}
+.mosaico figure{margin:0 0 14px;break-inside:avoid;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:#fff;box-shadow:0 4px 14px rgba(0,60,90,.08)}
+.mosaico img{width:100%;display:block;transition:transform .3s}.mosaico figure:hover img{transform:scale(1.04)}
+.mosaico figcaption{position:absolute;inset:auto 0 0 0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.8rem}
+.mosaico figcaption b{display:block;font-size:.9rem}
+.mosaico .portada::after{content:"★ Mejor foto";position:absolute;top:10px;left:10px;background:var(--azul);color:#fff;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px}
+.links a[href="departamentos.html"],.links a[href="galeria.html"]{white-space:nowrap}

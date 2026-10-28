@@ -28,11 +28,20 @@
     <div class="sep">o con tu correo</div>
     <form id="fAcceso">
       <input id="aNombre" placeholder="Nombre completo (solo para registrarte)">
+      <input id="aTel" type="tel" placeholder="Celular a 10 dígitos (solo para registrarte)" pattern="[0-9 ]{10,14}">
       <input id="aCorreo" type="email" placeholder="Correo" required>
       <input id="aPass" type="password" placeholder="Contraseña (mín. 6)" minlength="6" required>
       <div class="fila"><button class="btn prim" data-modo="entrar">Entrar</button><button class="btn mail" data-modo="registro">Crear cuenta</button></div>
       <a id="olvide" class="gris mini">¿Olvidaste tu contraseña?</a>
     </form>
+  </section>
+
+  <section id="vPerfil" class="caja angosta" hidden>
+    <h1>Completa tu perfil</h1>
+    <p class="gris">Tu celular nos sirve para confirmarte citas y pagos por WhatsApp.</p>
+    <form id="fPerfil"><input id="perNombre" placeholder="Nombre completo" required><input id="perTel" type="tel" placeholder="Celular a 10 dígitos" pattern="[0-9 ]{10,14}" required>
+      <label class="mini gris"><input type="checkbox" id="perOk" required> Acepto que Babira Asesores use mis datos para darme seguimiento, según su aviso de privacidad.</label>
+      <button class="btn prim ancho">Guardar</button></form>
   </section>
 
   <section id="vCuenta" hidden>

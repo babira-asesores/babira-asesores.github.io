@@ -42,6 +42,7 @@ if (!f) {
     e.preventDefault();
     try {
       if (modo === "registro") {
+        sessionStorage.babiraTel = $("#aTel").value;
         const c = await A.createUserWithEmailAndPassword(auth, $("#aCorreo").value, $("#aPass").value);
         if ($("#aNombre").value) await A.updateProfile(c.user, { displayName: $("#aNombre").value });
       } else await A.signInWithEmailAndPassword(auth, $("#aCorreo").value, $("#aPass").value);
@@ -54,12 +55,31 @@ if (!f) {
 
   // Sesión
   A.onAuthStateChanged(auth, async u => {
-    $("#vAcceso").hidden = !!u; $("#vCuenta").hidden = !u;
+    $("#vAcceso").hidden = !!u; $("#vCuenta").hidden = true; $("#vPerfil").hidden = true;
     if (!u) return;
-    $("#nombre").textContent = u.displayName || u.email;
-    await F.setDoc(F.doc(db, "clientes", u.uid), {
-      nombre: u.displayName || "", correo: u.email, ultimoAcceso: F.serverTimestamp(),
+    // La contraseña la guarda Firebase Authentication cifrada (nadie la puede ver, ni Betty).
+    // Nombre, celular y correo se guardan en Firestore → clientes/{uid}, visibles en el panel.
+    const ref = F.doc(db, "clientes", u.uid);
+    const previo = (await F.getDoc(ref)).data() || {};
+    const tel = previo.telefono || sessionStorage.babiraTel || "";
+    await F.setDoc(ref, {
+      nombre: previo.nombre || u.displayName || "", correo: u.email, telefono: tel,
+      proveedor: u.providerData[0]?.providerId || "password", ultimoAcceso: F.serverTimestamp(),
+      ...(previo.alta ? {} : { alta: F.serverTimestamp() }),
     }, { merge: true });
+    if (!tel || !(previo.nombre || u.displayName)) {
+      $("#vPerfil").hidden = false;
+      $("#perNombre").value = previo.nombre || u.displayName || "";
+      $("#fPerfil").onsubmit = async e => {
+        e.preventDefault();
+        await F.setDoc(ref, { nombre: $("#perNombre").value, telefono: $("#perTel").value.replace(/\D/g, ""), aceptoPrivacidad: F.serverTimestamp() }, { merge: true });
+        location.reload();
+      };
+      return;
+    }
+    $("#vCuenta").hidden = false;
+    $("#nombre").textContent = previo.nombre || u.displayName || u.email;
+    $("#cTel").value = tel;
     F.onSnapshot(F.query(F.collection(db, "pagos"), F.where("uid", "==", u.uid), F.orderBy("creado", "desc")), s => {
       $("#pagos").innerHTML = s.empty ? '<p class="gris">Aún no tienes pagos.</p>' :
         s.docs.map(d => { const p = d.data(); return `<div class="renglon"><b>${p.concepto}</b><span>$${p.monto.toLocaleString("es-MX")} MXN</span><span class="est ${p.estado}">${p.estado}</span><span class="gris">${fecha(p.creado)}</span></div>`; }).join("");

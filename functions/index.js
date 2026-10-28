@@ -4,7 +4,7 @@
 // - webhookMercadoPago / webhookStripe: confirman pagos y actualizan el inventario
 // - metaWebhook: bot de WhatsApp, Messenger e Instagram con el mismo asesor IA
 import { onRequest, onCall, HttpsError } from "firebase-functions/v2/https";
-import { onDocumentCreated } from "firebase-functions/v2/firestore";
+import { onDocumentCreated, onDocumentWritten } from "firebase-functions/v2/firestore";
 import { defineSecret, defineString } from "firebase-functions/params";
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore, FieldValue } from "firebase-admin/firestore";
@@ -224,6 +224,23 @@ export const metaWebhook = onRequest({ secrets: [META_TOKEN, META_VERIFY, ANTHRO
       }
     }
   } catch (e) { console.error("metaWebhook", e); }
+});
+
+// ---------- Bitácora: cada movimiento del negocio queda registrado y aparece al instante en la app ----------
+const DESCRIBIR = {
+  clientes: (a, d) => !a ? `👤 Nuevo cliente registrado: ${d.nombre || d.correo} ${d.telefono || ""}` : null,
+  prospectos: (a, d) => !a ? `🎯 Prospecto nuevo (${d.origen || "web"}): ${d.nombre || "sin nombre"} · ${d.busca || ""}`
+    : a.etapa !== d.etapa ? `➡️ ${d.nombre || "Prospecto"} pasó de ${a.etapa} a ${d.etapa}` : null,
+  pagos: (a, d) => !a ? `💳 Pago iniciado: ${d.concepto} · $${d.monto}`
+    : a.estado !== d.estado ? `💰 Pago ${d.estado}: ${d.concepto} · $${d.monto}` : null,
+  citas: (a, d) => !a ? `📅 Cita solicitada: ${d.nombre} · ${d.propiedad || "asesoría"} · ${d.fecha}`
+    : a.estado !== d.estado ? `📅 Cita ${d.estado}: ${d.nombre}` : null,
+};
+export const bitacora = onDocumentWritten("{col}/{id}", async (ev) => {
+  const col = ev.params.col;
+  if (!DESCRIBIR[col] || !ev.data.after.exists) return;
+  const texto = DESCRIBIR[col](ev.data.before.exists ? ev.data.before.data() : null, ev.data.after.data());
+  if (texto) await db.collection("movimientos").add({ texto, tipo: col, ref: `${col}/${ev.params.id}`, creado: FieldValue.serverTimestamp() });
 });
 
 // ---------- Aviso a Betty de cada prospecto nuevo ----------

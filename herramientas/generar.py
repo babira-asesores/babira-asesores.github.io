@@ -17,7 +17,7 @@ def numero(v):
 props = []
 with open(RAIZ / "datos" / "inventario.csv", encoding="utf-8-sig", newline="") as f:
     for fila in csv.DictReader(f):
-        if not fila.get("id"):
+        if not fila.get("id") or fila.get("estado") == "Duplicada":
             continue
         p = {k: (numero(v or "") if k in NUM else (v or "").strip()) for k, v in fila.items()}
         p["caracteristicas"] = [c.strip() for c in fila["caracteristicas"].split(";") if c.strip()]
@@ -28,6 +28,8 @@ with open(RAIZ / "datos" / "inventario.csv", encoding="utf-8-sig", newline="") a
 
 orden = {"Disponible": 0, "Apartada": 1, "Rentada": 2, "Vendida": 2}
 props.sort(key=lambda p: p["fecha_alta"], reverse=True)
+# Las propiedades con más fotos reales (ya curadas) van primero: venden mejor
+props.sort(key=lambda p: -min(len(p["fotos"]), 3))
 props.sort(key=lambda p: orden.get(p["estado"], 3))
 (RAIZ / "datos" / "propiedades.js").write_text(
     "window.PROPIEDADES = " + json.dumps(props, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
