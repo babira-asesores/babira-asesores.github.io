@@ -1,7 +1,7 @@
 // Permite instalar el panel como app en el celular y que abra rápido aunque la señal sea mala.
 // Los datos siempre llegan en vivo desde Firebase; aquí solo se guarda la "cáscara" de la app.
 const CACHE = "babira-v1";
-const BASE = ["admin.html", "estilos.css", "panel.css", "js/admin.js?v=20261029e", "js/fb.js?v=20261029e", "js/config.js?v=20261029e", "img/logo-babira.png"];
+const BASE = ["admin.html", "estilos.css", "panel.css", "js/admin.js?v=20261029f", "js/fb.js?v=20261029f", "js/config.js?v=20261029f", "img/logo-babira.png"];
 
 self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(BASE)).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(

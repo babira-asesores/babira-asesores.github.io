@@ -2,14 +2,19 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beatriz Aranda | Asesora inmobiliaria y bróker hipotecaria AMPI</title>
+<title>Nuestros asesores | Babira Asesores</title>
 <meta name="description" content="Beatriz Adriana Aranda Álvarez: más de 16 años resolviendo compra-venta, rentas, desalojos, juicios sucesorios, trámites y créditos en Hermosillo.">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261029e"><link rel="stylesheet" href="secciones.css?v=20261029e">
+<link rel="stylesheet" href="estilos.css?v=20261029f"><link rel="stylesheet" href="secciones.css?v=20261029f">
 </head>
 <body data-cat="">
 <header id="topnav"></header>
+
+<section class="mini-hero"><h1>Nuestros asesores</h1>
+  <p>Un equipo con experiencia en administración de rentas, compra-venta y asesoría jurídica inmobiliaria. Elija con quién desea hablar.</p></section>
+<main><div class="equipo" id="equipo"></div></main>
+<h2 class="tit-centro">Conozca a nuestra directora</h2>
 
 <section class="perfil">
   <div class="perfil-in">
@@ -39,7 +44,23 @@
   <div class="pasos"><div><b>1</b><h4>Escuchamos</h4><p>Revisamos tu situación y documentos.</p></div><div><b>2</b><h4>Proponemos</h4><p>Ruta, tiempos y costos claros.</p></div><div><b>3</b><h4>Resolvemos</h4><p>Gestionamos todo y te informamos del avance.</p></div><div><b>4</b><h4>Cerramos</h4><p>Firma, entrega o propiedad en regla.</p></div></div>
 </main>
 <div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
-<script src="datos/servicios.js?v=20261029e"></script>
+<script src="datos/servicios.js?v=20261029f"></script>
+<script src="datos/asesores.js?v=20261029f"></script>
+<script>
+  // Tarjetas de contacto del equipo
+  const ini = n => n.split(" ").filter(Boolean).slice(0, 2).map(p => p[0]).join("");
+  const fmt = t => t.replace(/(\d{3})(\d{3})(\d{4})/, "$1 $2 $3");
+  document.getElementById("equipo").innerHTML = ASESORES.map(a => `<article class="asesor">
+    <div class="as-foto">${a.foto ? `<img src="${a.foto}" alt="${a.nombre}">` : `<span>${ini(a.nombre)}</span>`}</div>
+    <h3>${a.nombre}</h3><p class="as-cargo">${a.cargo}</p><p class="as-txt">${a.texto}</p>
+    <div class="as-tags">${a.especialidad.map(e => `<span>${e}</span>`).join("")}</div>
+    <div class="as-btns">
+      <a class="btn wa" href="https://wa.me/521${a.telefono}?text=${encodeURIComponent(`Buen día ${a.corto}, me gustaría recibir asesoría.`)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="btn prim" href="tel:+52${a.telefono}">📞 ${fmt(a.telefono)}</a>
+      <a class="btn mail" href="mailto:${a.correo}?subject=${encodeURIComponent("Atención de " + a.corto)}">✉️ Correo</a>
+      ${a.instagram ? `<a class="btn ig" href="https://www.instagram.com/${a.instagram}/" target="_blank" rel="noopener">📸 @${a.instagram}</a>` : ""}
+    </div></article>`).join("");
+</script>
 <script>
   // Fichas llamativas de las especialidades (lo jurídico primero)
   const orden = ["desalojos", "sucesorios", "problemas", "juridica", "tramitologia", "express", "rehabilitacion", "inversion", "creditos", "avaluos", "compraventa", "rentas", "administracion", "remates"];
@@ -47,6 +68,6 @@
     `<a class="esp ${i < 6 ? "fuerte" : ""}" href="https://wa.me/5216621245820?text=${encodeURIComponent("Hola Betty, me interesa: " + s.titulo)}" target="_blank" rel="noopener">
       <i>${s.icono}</i><b>${s.titulo}</b><span>${s.texto}</span><em>Consultar →</em></a>`).join("");
 </script>
-<script src="js/nav.js?v=20261029e"></script>
+<script src="js/nav.js?v=20261029f"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 // Conexión a Firebase (login, base de datos y funciones). Se carga solo si está configurado.
-import { FIREBASE, firebaseListo } from "./config.js?v=20261029e";
+import { FIREBASE, firebaseListo } from "./config.js?v=20261029f";
 
 const V = "12.1.0";
 // Clave pública de reCAPTCHA Enterprise para la Verificación de aplicaciones (App Check)

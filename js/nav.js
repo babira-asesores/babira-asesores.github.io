@@ -10,7 +10,7 @@
     ["index.html#caso", "Su caso"],
     ["avaluo.html", "Avalúos"],
     ["inversionistas.html", "Inversionistas"],
-    ["betty.html", "Betty Aranda"],
+    ["betty.html", "Nuestros asesores"],
     ["galeria.html", "Galería"],
     ["historial.html", "Historial"],
   ];
