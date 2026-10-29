@@ -256,3 +256,50 @@ main>section:nth-of-type(odd):not(.propietarios):not(.filtros){background-color:
 .ic.mail small{color:#fff}
 /* Respaldo del asesor: botón directo a WhatsApp */
 .rapidas-wa{display:block;width:100%;margin-top:4px;text-align:center;background:linear-gradient(135deg,#2bd96f,#14a84f);color:#fff;font-weight:700;font-size:.82rem;padding:9px;border-radius:12px}
+
+
+/* ===== Inversionistas ===== */
+.alianza-inv{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#ffffff,#eaf3f9 60%,#e3ecf3);border:1px solid #d9e3ec;border-radius:24px;padding:26px 28px;margin:10px 0 30px;box-shadow:0 14px 34px rgba(0,60,90,.10)}
+.ai-logos{display:flex;align-items:center;gap:14px}.ai-logos img{width:120px;background:#fff;border-radius:16px;padding:10px;box-shadow:0 6px 16px rgba(0,60,90,.12)}
+.ai-logos span{font-size:2rem;font-weight:800;color:#00627f}
+.ai-ing{background:linear-gradient(135deg,#2b3440,#00627f);color:#fff;border-radius:16px;padding:14px 16px}.ai-ing b{display:block}.ai-ing small{opacity:.85}
+.alianza-inv h2{margin:0 0 8px}.alianza-inv p{margin:0;color:#4a5560}
+.negocios{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:34px}
+.neg{border-radius:20px;padding:22px;color:#1d242c;border:1px solid rgba(0,0,0,.05);box-shadow:0 10px 24px rgba(43,52,64,.08)}
+.neg i{font-style:normal;font-size:2rem}.neg h3{margin:6px 0 6px}.neg p{margin:0 0 10px;font-size:.92rem;color:#3d4853}
+.neg ul{margin:0;padding-left:18px;font-size:.85rem;color:#3d4853}
+.n1{background:linear-gradient(150deg,#e3f4fc,#cde9f7)}.n2{background:linear-gradient(150deg,#e4f7ec,#cdeedb)}.n3{background:linear-gradient(150deg,#eef1f4,#dde3e9)}
+.n4{background:linear-gradient(150deg,#fdecea,#f8d7d3)}.n5{background:linear-gradient(150deg,#e8eefc,#d6e0f8)}.n6{background:linear-gradient(150deg,#f3f6f8,#e2e9ef)}
+@media(max-width:700px){.alianza-inv{grid-template-columns:1fr;text-align:center}.ai-logos{justify-content:center}}
+/* ===== Socios ===== */
+.socio-banda{max-width:1100px;margin:26px auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.socio-banda span{padding:9px 16px;border-radius:30px;font-weight:600;font-size:.88rem;color:#fff;box-shadow:0 6px 14px rgba(0,60,90,.15)}
+.socio-banda span:nth-child(1){background:linear-gradient(135deg,#0aa6e6,#00789e)}.socio-banda span:nth-child(2){background:linear-gradient(135deg,#2b3440,#4a5867)}
+.socio-banda span:nth-child(3){background:linear-gradient(135deg,#2bd96f,#14a84f)}.socio-banda span:nth-child(4){background:linear-gradient(135deg,#ef5a4c,#c62828)}
+.socio-datos b{color:#00627f}
+/* ===== Mi cuenta en pestañas ===== */
+.tabs-cuenta{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;margin-bottom:6px;scroll-snap-type:x mandatory}
+.tabs-cuenta button{flex:0 0 auto;scroll-snap-align:start;border:0;border-radius:30px;padding:10px 16px;font:inherit;font-weight:600;font-size:.88rem;cursor:pointer;color:#fff;background:linear-gradient(135deg,#8a96a3,#5b6773);transition:transform .2s,box-shadow .2s}
+.tabs-cuenta button.on{background:linear-gradient(135deg,#0aa6e6,#00627f);box-shadow:0 8px 18px rgba(0,98,127,.3)}
+.tabs-cuenta button:hover{transform:translateY(-2px)}
+#vCuenta .tarjetas{display:block}
+/* ===== Todos los botones con color ===== */
+.btn.claro{background:linear-gradient(135deg,#5b6773,#2b3440)!important;color:#fff!important;border:0!important}
+.chips button{background:linear-gradient(135deg,#eef2f5,#dfe5ea);color:#2b3440}
+.chips button.on{background:linear-gradient(135deg,#0aa6e6,#00789e)!important;color:#fff}
+.pestanas button{background:linear-gradient(135deg,#e6eef5,#d3dfe9);border:0}
+.tipos button{background:linear-gradient(135deg,#e6f4fb,#d4e9f4);border:0;color:#00627f;font-weight:600}
+.tipos button.on{background:linear-gradient(135deg,#0aa6e6,#00627f);color:#fff}
+.rapidas button{background:linear-gradient(135deg,#0aa6e6,#00789e);color:#fff;border:0}
+.cbtn .v{background:linear-gradient(135deg,#5b6773,#2b3440)!important;color:#fff!important}
+.ic.wa{background:linear-gradient(135deg,#2bd96f,#14a84f)}.ic.tel{background:linear-gradient(135deg,#0aa6e6,#00789e)}.ic.ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
+.ic small{color:#fff}
+.apartar{background:linear-gradient(135deg,#0aa6e6,#00627f);color:#fff!important;border:0!important}
+.esp-ficha a,.ficha-serv .cbtn a{font-weight:700}
+/* Accesos de portada con color */
+.accesos .acceso{color:#fff!important;border:0!important;box-shadow:0 8px 20px rgba(0,60,90,.18)}
+.accesos .acceso:nth-child(4n+1){background:linear-gradient(140deg,#0aa6e6,#00627f)!important}
+.accesos .acceso:nth-child(4n+2){background:linear-gradient(140deg,#2bd96f,#14a84f)!important}
+.accesos .acceso:nth-child(4n+3){background:linear-gradient(140deg,#5b6773,#2b3440)!important}
+.accesos .acceso:nth-child(4n){background:linear-gradient(140deg,#ef5a4c,#c62828)!important}
+.accesos .mini-betty{border-color:#fff}

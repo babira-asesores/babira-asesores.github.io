@@ -6,7 +6,7 @@
 <meta name="description" content="Proyectos inmobiliarios en Hermosillo y Sonora con información abierta: avances, números y documentos. Únete a la red de inversionistas de Babira.">
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261031c"><link rel="stylesheet" href="secciones.css?v=20261031c"><link rel="stylesheet" href="panel.css?v=20261031c">
+<link rel="stylesheet" href="estilos.css?v=20261031d"><link rel="stylesheet" href="secciones.css?v=20261031d"><link rel="stylesheet" href="panel.css?v=20261031d">
 </head>
 <body>
 <header id="topnav"></header>
@@ -17,6 +17,22 @@
 </section>
 
 <main class="panel">
+  <section class="alianza-inv">
+    <div class="ai-logos"><img src="img/logo-babira.png" alt="Babira Asesores"><span>+</span><div class="ai-ing"><b>Ing. Carlos Adrián</b><small>Constructora · todo Sonora</small></div></div>
+    <div><h2>Construcción + administración en un mismo equipo</h2>
+    <p>Babira Asesores y la constructora del Ing. Carlos Adrián trabajan juntos: él construye y nosotros comercializamos, rentamos, administramos y nos encargamos de los trámites. Para el inversionista eso significa un solo interlocutor desde la compra del terreno hasta el cobro de la renta.</p></div>
+  </section>
+
+  <h2>Formas de invertir con nosotros</h2>
+  <div class="negocios">
+    <article class="neg n1"><i>🏗️</i><h3>Construcción para renta</h3><p>Se construyen casas pensadas para rentar y Babira las administra. Usted recibe la renta mensual y un reporte del inmueble.</p><ul><li>Obra a cargo del Ing. Carlos Adrián</li><li>Inquilino, cobranza y mantenimiento por Babira</li></ul></article>
+    <article class="neg n2"><i>🏘️</i><h3>Compra en preventa</h3><p>Adquiera vivienda nueva antes de que termine la obra, a precio de preventa, para revender o rentar al entregarse.</p><ul><li>Precio de etapa temprana</li><li>Opción de que Babira la rente al recibirla</li></ul></article>
+    <article class="neg n3"><i>📐</i><h3>Terrenos y desarrollo</h3><p>Participe en la compra de terreno y en su urbanización y construcción, con estudio de factibilidad antes de decidir.</p><ul><li>Revisión legal del predio</li><li>Proyección de costos y venta</li></ul></article>
+    <article class="neg n4"><i>🛠️</i><h3>Compra, remodelación y venta</h3><p>Casas usadas o adjudicadas que se rehabilitan para venderse o rentarse a un mejor precio.</p><ul><li>Remodelación con la constructora</li><li>Regularización de documentos</li></ul></article>
+    <article class="neg n5"><i>🛏️</i><h3>Rentas por día y amueblados</h3><p>Departamentos equipados para estancias cortas o temporales, con mayor rendimiento que la renta tradicional.</p><ul><li>Amueblado y puesta a punto</li><li>Administración de reservas</li></ul></article>
+    <article class="neg n6"><i>🤝</i><h3>Coinversión por proyecto</h3><p>Varios inversionistas participan en un mismo desarrollo, cada quien con su aportación y su contrato.</p><ul><li>Contrato por escrito y ante notario</li><li>Avances publicados en la bitácora</li></ul></article>
+  </div>
+
   <h2>Proyectos</h2>
   <div class="proyectos" id="proyectos"></div>
 
@@ -44,9 +60,9 @@
   </div>
 </main>
 <div class="flot"><a class="f-mail" href="mailto:asesoresbabira@gmail.com" aria-label="Correo">✉️</a><a class="f-wa" href="https://wa.me/5216621245820" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
-<script src="datos/proyectos.js?v=20261031c"></script>
+<script src="datos/proyectos.js?v=20261031d"></script>
 <script type="module">
-  import { guardarProspecto } from "./js/fb.js?v=20261031c";
+  import { guardarProspecto } from "./js/fb.js?v=20261031d";
   const $ = s => document.querySelector(s), $$ = n => "$" + n.toLocaleString("es-MX");
   $("#proyectos").innerHTML = PROYECTOS.map(p => {
     const pct = p.meta && p.reunido != null ? Math.min(100, Math.round(p.reunido / p.meta * 100)) : null;
@@ -68,6 +84,6 @@
     e.target.innerHTML = "<h2>¡Gracias!</h2><p>Te contactaremos con los proyectos que encajan con tu perfil.</p>";
   };
 </script>
-<script src="js/nav.js?v=20261031c"></script>
+<script src="js/nav.js?v=20261031d"></script>
 </body>
 </html>

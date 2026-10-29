@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261031c";
+import { fb } from "./fb.js?v=20261031d";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
@@ -150,3 +150,20 @@ if (!f) {
     e.target.reset(); aviso("Cita solicitada. Te confirmamos por WhatsApp.");
   };
 }
+
+
+// Pestañas en Mi cuenta: cada sección se ve por separado, sin scroll largo
+(() => {
+  const vista = document.getElementById("vCuenta"); if (!vista) return;
+  const cajas = [...vista.querySelectorAll(".caja")];
+  if (!cajas.length) return;
+  const barra = document.createElement("div"); barra.className = "tabs-cuenta";
+  cajas.forEach((c, i) => {
+    const b = document.createElement("button"); b.type = "button";
+    b.textContent = c.querySelector("h2")?.textContent || `Sección ${i + 1}`;
+    b.onclick = () => { cajas.forEach(x => x.hidden = x !== c); barra.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); };
+    barra.append(b);
+  });
+  (vista.querySelector(".resumen") || vista.firstElementChild).after(barra);
+  barra.firstChild.click();
+})();
