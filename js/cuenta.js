@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261030c";
+import { fb } from "./fb.js?v=20261031a";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
@@ -80,11 +80,30 @@ if (!f) {
     $("#vCuenta").hidden = false;
     $("#nombre").textContent = previo.nombre || u.displayName || u.email;
     $("#cTel").value = tel;
+    // Perfil: avatar virtual a elegir y datos de contacto
+    const AV = ["babira", "casa", "llave", "edificio", "persona"];
+    const pintarAvatar = a => { $("#miAvatar").src = `img/avatares/${a}.svg`; document.querySelectorAll("#avatares button").forEach(b => b.classList.toggle("on", b.dataset.a === a)); };
+    $("#avatares").innerHTML = AV.map(a => `<button type="button" data-a="${a}" title="${a}"><img src="img/avatares/${a}.svg" alt="${a}"></button>`).join("");
+    pintarAvatar(previo.avatar || "babira");
+    $("#avatares").onclick = async e => { const b = e.target.closest("button"); if (!b) return; pintarAvatar(b.dataset.a); await F.setDoc(ref, { avatar: b.dataset.a }, { merge: true }); };
+    $("#miCorreo").textContent = u.email;
+    $("#mpNombre").value = previo.nombre || u.displayName || ""; $("#mpTel").value = tel;
+    $("#mpTipo").value = previo.interes || ""; $("#mpCiudad").value = previo.ciudad || ""; $("#mpContacto").value = previo.contacto || "";
+    $("#rTipo").textContent = previo.interes ? previo.interes.replace(/^(Busco|Soy) /, "") : "—";
+    $("#fMiPerfil").onsubmit = async e => {
+      e.preventDefault();
+      await F.setDoc(ref, { nombre: $("#mpNombre").value, telefono: $("#mpTel").value.replace(/\D/g, ""), interes: $("#mpTipo").value,
+        ciudad: $("#mpCiudad").value, contacto: $("#mpContacto").value }, { merge: true });
+      $("#nombre").textContent = $("#mpNombre").value; $("#rTipo").textContent = $("#mpTipo").value.replace(/^(Busco|Soy) /, "") || "—";
+      aviso("Sus datos se guardaron correctamente.");
+    };
     F.onSnapshot(F.query(F.collection(db, "pagos"), F.where("uid", "==", u.uid), F.orderBy("creado", "desc")), s => {
+      $("#rPagos").textContent = s.size;
       $("#pagos").innerHTML = s.empty ? '<p class="gris">Aún no tienes pagos.</p>' :
         s.docs.map(d => { const p = d.data(); return `<div class="renglon"><b>${p.concepto}</b><span>$${p.monto.toLocaleString("es-MX")} MXN</span><span class="est ${p.estado}">${p.estado}</span><span class="gris">${fecha(p.creado)}</span></div>`; }).join("");
     });
     F.onSnapshot(F.query(F.collection(db, "citas"), F.where("uid", "==", u.uid), F.orderBy("fecha", "desc")), s => {
+      $("#rCitas").textContent = s.size;
       $("#citas").innerHTML = s.empty ? '<p class="gris">Sin citas.</p>' :
         s.docs.map(d => { const c = d.data(); return `<div class="renglon"><b>${c.propiedad || "Asesoría"}</b><span>${new Date(c.fecha).toLocaleString("es-MX")}</span><span class="est ${c.estado}">${c.estado}</span></div>`; }).join("");
     });

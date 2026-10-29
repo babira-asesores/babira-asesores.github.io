@@ -184,3 +184,34 @@ main{padding-top:30px}
   .pasos{grid-template-columns:1fr 1fr}
 }
 @media(max-width:420px){.asesor{grid-template-columns:76px 1fr}.as-foto{width:76px;height:76px}}
+
+
+/* Olga con logo */
+.as-foto img.es-logo{object-fit:contain;background:#fff;padding:14px}
+/* Mi cuenta */
+.perfil-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,#ffffff,#eef4f9);border:1px solid var(--borde);border-radius:22px;padding:20px 22px;margin-bottom:16px}
+.perfil-cta img{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--plata)}
+.perfil-cta h1{margin:0;font-size:1.6rem}.perfil-cta .kicker{margin:0}.perfil-cta .btn{margin-left:auto}
+.resumen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.resumen div{background:linear-gradient(160deg,#fff,#f3f7fb);border:1px solid var(--borde);border-radius:16px;padding:14px;text-align:center}
+.resumen b{display:block;font-size:1.5rem;color:var(--petroleo)}.resumen span{font-size:.8rem;color:var(--gris)}
+.avatares{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.avatares button{border:0;background:none;padding:0;border-radius:50%;cursor:pointer;transition:transform .2s}
+.avatares img{width:62px;height:62px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 4px transparent;transition:box-shadow .2s}
+.avatares button:hover{transform:translateY(-3px)}.avatares button.on img{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--azul)}
+.mi-perfil{display:grid!important;grid-template-columns:1fr 1fr;gap:10px}.mi-perfil .btn{grid-column:1/-1;justify-content:center}
+@media(max-width:640px){.mi-perfil{grid-template-columns:1fr}.perfil-cta .btn{margin-left:0}}
+/* Socios */
+.mini-hero.socios-hero{background:linear-gradient(135deg,#eef3f8 0%,#dfe8f0 45%,#cfdde8 100%);color:var(--grafito);position:relative;overflow:hidden}
+.mini-hero.socios-hero p{color:var(--gris)}
+.mini-hero.socios-hero::after{content:"";position:absolute;right:-50px;bottom:-70px;width:320px;height:400px;background:url("img/logo-b.png") no-repeat center/contain;opacity:.07;filter:grayscale(1)}
+.socio{max-width:1100px;margin:30px auto 0;display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:center;background:linear-gradient(150deg,#ffffff 0%,#f4f7fa 60%,#eaf0f5 100%);border:1px solid var(--borde);border-radius:26px;padding:34px;box-shadow:0 18px 44px rgba(43,52,64,.10);position:relative;overflow:hidden}
+.socio::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,#a9b4bf,#009bdc,#00627f,#a9b4bf)}
+.socio-logo{background:#fff;border-radius:22px;padding:26px;box-shadow:inset 0 0 0 1px var(--borde),0 10px 26px rgba(0,60,90,.08);display:flex;align-items:center;justify-content:center}
+.socio-logo img{width:100%;max-width:220px}
+.socio-tag{display:inline-block;background:linear-gradient(135deg,#e2e7ec,#c3ccd5);color:var(--grafito);font-weight:700;font-size:.78rem;letter-spacing:1px;padding:6px 14px;border-radius:20px}
+.socio h2{margin:10px 0 2px;font-size:clamp(1.4rem,3vw,2rem)}.socio-cargo{color:var(--petroleo);font-weight:600;margin:0 0 12px}
+.socio p{color:#4a5560}
+.socio-datos{display:flex;gap:24px;flex-wrap:wrap;margin:16px 0}.socio-datos span{font-size:.8rem;color:var(--gris)}.socio-datos b{display:block;font-size:1.5rem;color:var(--grafito)}
+.socio-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+@media(max-width:820px){.socio{grid-template-columns:1fr;padding:24px 18px;text-align:center}.socio-logo{max-width:220px;margin:auto}.socio-datos,.socio-btns{justify-content:center}}

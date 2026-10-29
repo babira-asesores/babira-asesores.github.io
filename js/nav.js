@@ -11,6 +11,7 @@
     ["avaluo.html", "Avalúos"],
     ["inversionistas.html", "Inversionistas"],
     ["betty.html", "Nuestros asesores"],
+    ["socios.html", "Socios"],
     ["galeria.html", "Galería"],
     ["historial.html", "Historial"],
   ];
