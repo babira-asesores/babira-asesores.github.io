@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261031b";
+import { fb } from "./fb.js?v=20261031c";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
@@ -120,7 +120,17 @@ if (!f) {
         pasarela: document.querySelector("[name=pas]:checked").value,
       });
       location.href = r.url;
-    } catch (err) { aviso(err.message, "error"); btn.disabled = false; btn.textContent = "Continuar al pago seguro"; }
+    } catch (err) {
+      // Mientras el cobro en línea no esté activo, el pago se coordina con un asesor por WhatsApp con todos los datos
+      const tipoTxt = $("#pTipo").selectedOptions[0].textContent;
+      const prop = $("#pProp").hidden ? "" : $("#pProp").selectedOptions[0]?.textContent || "";
+      const u = auth.currentUser;
+      const msg = `Buen día, deseo realizar un pago desde mi cuenta de la página.\n\n• Concepto: ${tipoTxt}${prop ? `\n• Propiedad: ${prop}` : ""}${$("#pNoches").hidden ? "" : `\n• Días: ${$("#pNoches").value}`}\n• Forma de pago preferida: ${document.querySelector("[name=pas]:checked").parentElement.textContent.trim()}\n• Nombre: ${u.displayName || ""}\n• Correo: ${u.email}\n\n¿Me comparten los datos para pagar?`;
+      await F.addDoc(F.collection(db, "prospectos"), { nombre: u.displayName || u.email, correo: u.email, busca: "Pago: " + tipoTxt, propiedad: prop.split(" · ")[0] || null, origen: "pago-whatsapp", etapa: "Nuevo", creado: F.serverTimestamp(), uid: u.uid }).catch(() => {});
+      aviso("Le llevamos a WhatsApp para coordinar su pago de forma segura con un asesor.");
+      window.open(`https://wa.me/5216621245820?text=${encodeURIComponent(msg)}`, "_blank");
+      btn.disabled = false; btn.textContent = "Continuar al pago seguro";
+    }
   };
 
   // Cita (también entra al embudo como prospecto)

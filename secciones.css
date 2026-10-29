@@ -248,3 +248,11 @@ main>section:nth-of-type(odd):not(.propietarios):not(.filtros){background-color:
 @media(max-width:760px){.linea{grid-template-columns:1fr 1fr}.linea::before{display:none}}
 .socio{background:linear-gradient(150deg,#ffffff 0%,#f5f8fb 45%,#e7eff6 100%)}
 .socio-logo{background:radial-gradient(circle at 30% 20%,#ffffff,#eef3f8)}
+
+/* Correo en rojo, llamativo */
+.btn.mail,.b-mail{background:linear-gradient(135deg,#ef5a4c 0%,#c62828 100%)!important;color:#fff!important;border:0!important;box-shadow:0 6px 16px rgba(198,40,40,.28)}
+.f-mail{background:linear-gradient(135deg,#ef5a4c,#c62828)!important;border:0!important}
+.cbtn .m,.ic.mail{background:linear-gradient(135deg,#ef5a4c,#c62828)!important;color:#fff!important;border:0!important}
+.ic.mail small{color:#fff}
+/* Respaldo del asesor: botón directo a WhatsApp */
+.rapidas-wa{display:block;width:100%;margin-top:4px;text-align:center;background:linear-gradient(135deg,#2bd96f,#14a84f);color:#fff;font-weight:700;font-size:.82rem;padding:9px;border-radius:12px}

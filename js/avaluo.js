@@ -1,6 +1,6 @@
 // Estimador de valor y renta. Orientativo: usa los valores de referencia de datos/valores_zona.js
 // y las propiedades comparables del propio inventario.
-import { guardarProspecto } from "./fb.js?v=20261031b";
+import { guardarProspecto } from "./fb.js?v=20261031c";
 
 const V = window.VALORES_ZONA, P = window.PROPIEDADES || [];
 const $ = s => document.querySelector(s);

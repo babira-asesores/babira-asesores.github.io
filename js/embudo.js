@@ -1,6 +1,6 @@
 // Embudo del sitio público: asesor IA, captura de prospectos y botón de apartado.
-import { firebaseListo } from "./config.js?v=20261031b";
-import { guardarProspecto, gemini } from "./fb.js?v=20261031b";
+import { firebaseListo } from "./config.js?v=20261031c";
+import { guardarProspecto, gemini } from "./fb.js?v=20261031c";
 
 const $ = s => document.querySelector(s);
 const WA = "https://wa.me/5216621245820";
@@ -88,10 +88,48 @@ $("#chatForm").onsubmit = async e => {
     }
     historial.push({ role: "assistant", content: respuesta });
   } catch (e) {
-    console.error(e);
-    esperando.remove(); pintar("Por el momento no fue posible responder. Con gusto le atendemos por WhatsApp al 662 124 5820.", "ia");
+    // Si la IA no está disponible (límite diario o saturación), responde el asistente de respaldo
+    console.warn("Asesor IA no disponible, se usa el respaldo:", e.message);
+    esperando.remove();
+    const { texto, opciones } = respuestaLocal(txt);
+    pintar(texto, "ia");
+    const fila = document.createElement("div"); fila.className = "rapidas";
+    opciones.forEach(t => { const b = document.createElement("button"); b.type = "button"; b.textContent = t; fila.append(b); });
+    const wa = document.createElement("a"); wa.className = "rapidas-wa"; wa.target = "_blank"; wa.rel = "noopener";
+    wa.href = `${WA}?text=${encodeURIComponent("Buen día, vengo de la página web: " + txt)}`; wa.textContent = "💬 Continuar con un asesor por WhatsApp";
+    fila.append(wa);
+    $("#chatMsgs").append(fila); $("#chatMsgs").scrollTop = 1e6;
+    historial.push({ role: "assistant", content: texto });
   }
 };
+
+// Asistente de respaldo: entiende lo básico y recomienda casas reales del inventario sin depender de la IA
+function respuestaLocal(txt) {
+  const t = txt.toLowerCase();
+  const P = (window.PROPIEDADES || []).filter(p => p.estado === "Disponible");
+  const dinero = n => n ? "$" + n.toLocaleString("es-MX") : "precio a consultar";
+  if (/propietari|mi casa|mi propiedad|administr|rentada|desocupada/.test(t))
+    return { texto: "Con gusto le ayudamos. Administramos su propiedad de principio a fin: selección del inquilino, contrato con respaldo jurídico, cobranza y mantenimiento. ¿Su propiedad está rentada actualmente?", opciones: ["Sí, ya está rentada", "No, está desocupada", "Quiero venderla"] };
+  if (/legal|jur[ií]dic|herencia|sucesi|escritura|desaloj|tr[aá]mite|abogad|no paga/.test(t))
+    return { texto: "Entendemos. Nuestra área jurídica revisa su caso sin compromiso y le explica opciones, tiempos y costos. ¿Me comparte brevemente qué ocurre con su propiedad?", opciones: ["Herencia o sucesión", "Escrituras", "Inquilino que no paga", "Trámite express"] };
+  if (/invert|inversi|millon/.test(t))
+    return { texto: "Excelente. Tenemos opciones para invertir en vivienda para renta, remates y desarrollo. ¿Qué monto aproximado le gustaría invertir?", opciones: ["Hasta $1 millón", "De $1 a $5 millones", "Más de $5 millones"] };
+  let L = P;
+  if (/renta|rentar/.test(t)) L = L.filter(p => p.operacion === "Renta");
+  if (/compra|comprar|venta/.test(t)) L = L.filter(p => p.operacion === "Venta");
+  for (const z of ["norte", "sur", "poniente"]) if (t.includes(z)) L = L.filter(p => (p.zona || "").toLowerCase() === z);
+  if (t.includes("nogales")) L = L.filter(p => p.ciudad === "Nogales");
+  const rec = t.match(/(\d)\s*rec/); if (rec) L = L.filter(p => (p.recamaras || 0) >= +rec[1]);
+  if (/busco|propiedad|casa|depa|renta|compra|opciones|zona/.test(t) && L.length) {
+    const top = L.slice(0, 3).map(p => `• ${p.id} · ${p.titulo} (${p.colonia || p.ciudad}) · ${dinero(p.precio)}`).join("\n");
+    return { texto: `Estas son opciones que pueden interesarle:\n${top}\n\n¿Le gustaría agendar una visita a alguna?`, opciones: ["Sí, agendar visita", "Ver más opciones", "Otra zona"] };
+  }
+  if (/agendar|visita|cita/.test(t))
+    return { texto: "Con gusto. Un asesor le confirmará fecha y hora por WhatsApp. Toque el botón verde para continuar.", opciones: [] };
+  if (/busco|propiedad|casa|depa/.test(t))
+    return { texto: "Con gusto le ayudo a encontrar su propiedad. ¿Busca rentar o comprar?", opciones: ["Rentar", "Comprar"] };
+  return { texto: "Gracias por escribirnos. ¿En qué podemos ayudarle?", opciones: ["Busco una propiedad", "Soy propietario", "Tengo un problema legal", "Quiero invertir"] };
+}
 
 // Tocar una respuesta rápida la envía como si la persona la hubiera escrito
 $("#chatMsgs").addEventListener("click", e => {
