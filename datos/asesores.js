@@ -10,8 +10,8 @@ window.ASESORES = [
     correo: "asesoresbabira@gmail.com",
     instagram: "betty_arandads",
     especialidad: ["Administración de rentas", "Asesoría jurídica", "Créditos hipotecarios"],
-    texto: "Más de 16 años ayudando a familias e inversionistas de Sonora a comprar, vender, rentar y regularizar sus propiedades. Bajo su dirección, Babira se ha especializado en la administración de rentas y la asesoría jurídica inmobiliaria.",
-    datos: [["16+", "años"], ["72", "municipios"], ["15+", "servicios"]],
+    texto: "Más de 16 años ayudando a familias e inversionistas de Sonora a comprar, vender, rentar y regularizar sus propiedades. Bajo su dirección, Babira ha rentado más de 50 casas y concretado más de 99 ventas, rentas y convenios, con especialidad en la administración de rentas y la asesoría jurídica inmobiliaria.",
+    datos: [["50+", "casas rentadas"], ["26", "rentadas hoy"], ["24", "disponibles"], ["99+", "operaciones"]],
   },
   {
     nombre: "Olga Álvarez Romo",

@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261031a";
+import { fb } from "./fb.js?v=20261031b";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
@@ -43,7 +43,7 @@ else {
       primera = false;
     });
     F.onSnapshot(F.query(F.collection(db, "clientes"), F.orderBy("alta", "desc")), s => {
-      const L = s.docs.map(d => d.data());
+      const L = s.docs.map(d => d.data()); window.__clientes = L;
       const pintar = () => { const q = $("#buscaCliente").value.toLowerCase();
         $("#clientes").innerHTML = L.filter(c => !q || [c.nombre, c.telefono, c.correo].join(" ").toLowerCase().includes(q)).map(c => {
           const tel = String(c.telefono || "").replace(/\D/g, "");
@@ -55,7 +55,7 @@ else {
     $("#inv").innerHTML = P.map(p => `<div class="renglon"><b>${p.id} · ${esc(p.titulo)}</b><span>${p.operacion} · ${p.ciudad}</span><span>${p.precio ? "$" + p.precio.toLocaleString("es-MX") : "—"}</span><span class="est">${p.estado}</span></div>`).join("");
 
     F.onSnapshot(F.query(F.collection(db, "prospectos"), F.orderBy("creado", "desc")), s => {
-      const L = s.docs.map(d => ({ id: d.id, ...d.data() }));
+      const L = s.docs.map(d => ({ id: d.id, ...d.data() })); window.__prospectos = L;
       const n = e => L.filter(x => x.etapa === e).length;
       $("#kNuevos").textContent = n("Nuevo");
       $("#kActivos").textContent = n("Contactado") + n("Visita agendada") + n("Negociación");
@@ -99,3 +99,24 @@ else {
         <select data-lead="${x.id}">${ETAPAS.map(e => `<option ${e === x.etapa ? "selected" : ""}>${e}</option>`).join("")}</select></div></div>`;
   }
 }
+
+
+// Exportar registros a Excel (CSV con BOM para que Excel respete los acentos)
+const fechaTxt = t => t?.toDate ? t.toDate().toLocaleString("es-MX") : "";
+function descargarExcel(nombre, columnas, filas) {
+  const celda = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const csv = "\ufeff" + [columnas.map(c => celda(c[0])).join(","), ...filas.map(f => columnas.map(c => celda(c[1](f))).join(","))].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+  a.download = `${nombre}_${new Date().toISOString().slice(0, 10)}.csv`; a.click();
+}
+document.addEventListener("click", e => {
+  if (e.target.id === "xlsClientes") descargarExcel("clientes_babira", [
+    ["Nombre(s)", c => c.nombres || c.nombre], ["Apellidos", c => c.apellidos], ["Celular", c => c.telefono], ["Correo", c => c.correo],
+    ["Interés", c => c.interes], ["Ciudad", c => c.ciudad], ["Contacto preferido", c => c.contacto], ["Alta", c => fechaTxt(c.alta)], ["Último acceso", c => fechaTxt(c.ultimoAcceso)],
+  ], window.__clientes || []);
+  if (e.target.id === "xlsProspectos") descargarExcel("prospectos_babira", [
+    ["Nombre", p => p.nombre], ["Teléfono", p => p.telefono], ["Correo", p => p.correo], ["Busca", p => p.busca], ["Zona", p => p.zona],
+    ["Presupuesto", p => p.presupuesto], ["Propiedad", p => p.propiedad], ["Mensaje", p => p.mensaje], ["Origen", p => p.origen], ["Etapa", p => p.etapa], ["Fecha", p => fechaTxt(p.creado)],
+  ], window.__prospectos || []);
+});

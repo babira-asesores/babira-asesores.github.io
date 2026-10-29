@@ -11,8 +11,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Babira">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261031a">
-<link rel="stylesheet" href="panel.css?v=20261031a">
+<link rel="stylesheet" href="estilos.css?v=20261031b">
+<link rel="stylesheet" href="panel.css?v=20261031b">
 </head>
 <body>
 <header><div class="nav">
@@ -38,8 +38,8 @@
     </div>
     <div class="tabs"><button data-t="tActividad" class="on">⚡ Actividad</button><button data-t="tClientes">Clientes</button><button data-t="tEmbudo">Embudo de ventas</button><button data-t="tCitas">Citas</button><button data-t="tPagos">Pagos</button><button data-t="tInv">Inventario</button><button data-t="tChats">Conversaciones IA</button></div>
     <div id="tActividad" class="tab caja"><div class="cab"><h2>Lo que está pasando ahora</h2><button id="activarAvisos" class="btn prim">🔔 Activar avisos</button></div><div id="actividad"></div></div>
-    <div id="tClientes" class="tab caja" hidden><input id="buscaCliente" type="search" placeholder="Buscar por nombre, celular o correo" style="width:100%;margin-bottom:10px"><div id="clientes" class="tabla"></div></div>
-    <div id="tEmbudo" class="tab" hidden><div class="embudo" id="embudo"></div></div>
+    <div id="tClientes" class="tab caja" hidden><div class="fila-acc"><input id="buscaCliente" type="search" placeholder="Buscar por nombre, celular o correo"><button id="xlsClientes" class="btn prim">⬇️ Descargar Excel</button></div><div id="clientes" class="tabla"></div></div>
+    <div id="tEmbudo" class="tab" hidden><div class="fila-acc"><span class="gris mini">Todos los registros del sitio, el asesor IA y los formularios.</span><button id="xlsProspectos" class="btn prim">⬇️ Descargar Excel</button></div><div class="embudo" id="embudo"></div></div>
     <div id="tCitas" class="tab caja" hidden><div id="citas" class="tabla"></div></div>
     <div id="tPagos" class="tab caja" hidden><div id="pagos" class="tabla"></div></div>
     <div id="tInv" class="tab caja" hidden>
@@ -50,7 +50,7 @@
   </section>
 </main>
 
-<script src="datos/propiedades.js?v=20261031a"></script>
-<script type="module" src="js/admin.js?v=20261031a"></script>
+<script src="datos/propiedades.js?v=20261031b"></script>
+<script type="module" src="js/admin.js?v=20261031b"></script>
 </body>
 </html>

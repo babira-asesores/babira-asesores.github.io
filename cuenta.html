@@ -5,8 +5,8 @@
 <title>Mi cuenta | Babira Asesores</title>
 <link rel="icon" href="img/logo-babira.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=20261031a">
-<link rel="stylesheet" href="panel.css?v=20261031a">
+<link rel="stylesheet" href="estilos.css?v=20261031b">
+<link rel="stylesheet" href="panel.css?v=20261031b">
 </head>
 <body>
 <header id="topnav"></header>
@@ -21,7 +21,7 @@
     <button id="google" class="btn prim ancho">Continuar con Google</button>
     <div class="sep">o con tu correo</div>
     <form id="fAcceso">
-      <input id="aNombre" placeholder="Nombre completo (solo para registrarte)">
+      <div class="fila2"><input id="aNombre" placeholder="Nombre(s)"><input id="aApellidos" placeholder="Apellidos"></div>
       <input id="aTel" type="tel" placeholder="Celular a 10 dígitos (solo para registrarte)" pattern="[0-9 ]{10,14}">
       <input id="aCorreo" type="email" placeholder="Correo" required>
       <input id="aPass" type="password" placeholder="Contraseña (mín. 6)" minlength="6" required>
@@ -33,7 +33,7 @@
   <section id="vPerfil" class="caja angosta" hidden>
     <h1>Completa tu perfil</h1>
     <p class="gris">Tu celular nos sirve para confirmarte citas y pagos por WhatsApp.</p>
-    <form id="fPerfil"><input id="perNombre" placeholder="Nombre completo" required><input id="perTel" type="tel" placeholder="Celular a 10 dígitos" pattern="[0-9 ]{10,14}" required>
+    <form id="fPerfil"><div class="fila2"><input id="perNombre" placeholder="Nombre(s)" required><input id="perApellidos" placeholder="Apellidos" required></div><input id="perTel" type="tel" placeholder="Celular a 10 dígitos" pattern="[0-9 ]{10,14}" required>
       <label class="mini gris"><input type="checkbox" id="perOk" required> Acepto que Babira Asesores use mis datos para darme seguimiento, según su aviso de privacidad.</label>
       <button class="btn prim ancho">Guardar</button></form>
   </section>
@@ -107,8 +107,8 @@
   </section>
 </main>
 
-<script src="datos/propiedades.js?v=20261031a"></script>
-<script type="module" src="js/cuenta.js?v=20261031a"></script>
-<script src="js/nav.js?v=20261031a"></script>
+<script src="datos/propiedades.js?v=20261031b"></script>
+<script type="module" src="js/cuenta.js?v=20261031b"></script>
+<script src="js/nav.js?v=20261031b"></script>
 </body>
 </html>

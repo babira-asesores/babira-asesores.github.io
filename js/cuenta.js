@@ -1,4 +1,4 @@
-import { fb } from "./fb.js?v=20261031a";
+import { fb } from "./fb.js?v=20261031b";
 
 const $ = s => document.querySelector(s);
 const P = window.PROPIEDADES || [];
@@ -43,8 +43,9 @@ if (!f) {
     try {
       if (modo === "registro") {
         sessionStorage.babiraTel = $("#aTel").value;
+        sessionStorage.babiraNom = $("#aNombre").value.trim(); sessionStorage.babiraApe = $("#aApellidos").value.trim();
         const c = await A.createUserWithEmailAndPassword(auth, $("#aCorreo").value, $("#aPass").value);
-        if ($("#aNombre").value) await A.updateProfile(c.user, { displayName: $("#aNombre").value });
+        if ($("#aNombre").value) await A.updateProfile(c.user, { displayName: `${$("#aNombre").value} ${$("#aApellidos").value}`.trim() });
       } else await A.signInWithEmailAndPassword(auth, $("#aCorreo").value, $("#aPass").value);
     } catch (err) { aviso("No se pudo: " + err.code.replace("auth/", ""), "error"); }
   };
@@ -63,16 +64,16 @@ if (!f) {
     const previo = (await F.getDoc(ref)).data() || {};
     const tel = previo.telefono || sessionStorage.babiraTel || "";
     await F.setDoc(ref, {
-      nombre: previo.nombre || u.displayName || "", correo: u.email, telefono: tel,
+      nombre: previo.nombre || u.displayName || "", nombres: previo.nombres || sessionStorage.babiraNom || "", apellidos: previo.apellidos || sessionStorage.babiraApe || "", correo: u.email, telefono: tel,
       proveedor: u.providerData[0]?.providerId || "password", ultimoAcceso: F.serverTimestamp(),
       ...(previo.alta ? {} : { alta: F.serverTimestamp() }),
     }, { merge: true });
-    if (!tel || !(previo.nombre || u.displayName)) {
+    if (!tel || !(previo.apellidos || sessionStorage.babiraApe)) {
       $("#vPerfil").hidden = false;
       $("#perNombre").value = previo.nombre || u.displayName || "";
       $("#fPerfil").onsubmit = async e => {
         e.preventDefault();
-        await F.setDoc(ref, { nombre: $("#perNombre").value, telefono: $("#perTel").value.replace(/\D/g, ""), aceptoPrivacidad: F.serverTimestamp() }, { merge: true });
+        await F.setDoc(ref, { nombre: `${$("#perNombre").value} ${$("#perApellidos").value}`.trim(), nombres: $("#perNombre").value, apellidos: $("#perApellidos").value, telefono: $("#perTel").value.replace(/\D/g, ""), aceptoPrivacidad: F.serverTimestamp() }, { merge: true });
         location.reload();
       };
       return;
